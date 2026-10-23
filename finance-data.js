@@ -44,8 +44,8 @@ window.FINANCE_DATA = {
         "symbol": "VLO.US",
         "name": "Valero Energy",
         "note": "公布創歷史新高的季度利潤,燃料供應受擾推升精煉利潤率,受惠油價與能源類股走強(資料來源:Nation Thailand)",
-        "price": 424.18,
-        "change": -0.49,
+        "price": 424.31,
+        "change": -0.46,
         "dir": "down",
         "asOf": "2026-10-23",
         "live": true,
@@ -79,7 +79,7 @@ window.FINANCE_DATA = {
           433.42,
           436.75,
           426.28,
-          424.18
+          424.31
         ],
         "verified": true,
         "check2": {
@@ -87,9 +87,9 @@ window.FINANCE_DATA = {
           "id": "VLO",
           "cnbc": 424.18,
           "cnbcChange": -0.49,
-          "valueDiff": 0,
+          "valueDiff": 0.03,
           "diffUnit": "%",
-          "changeDiff": 0,
+          "changeDiff": 0.03,
           "status": "ok"
         }
       },
@@ -138,7 +138,12 @@ window.FINANCE_DATA = {
         "check2": {
           "src": "CNBC",
           "id": "2330-TW",
-          "status": "none"
+          "cnbc": 2385,
+          "cnbcChange": -1.45,
+          "valueDiff": 0,
+          "diffUnit": "%",
+          "changeDiff": 0,
+          "status": "ok"
         }
       },
       {
@@ -1463,7 +1468,7 @@ window.FINANCE_DATA = {
   ],
   "days": [
     {
-      "moodNote": "風險溫度計 33.5 分(前一日 35.2),維持 Risk-Off。由股市動能(22.3 分,費半距 50 日線 -9.5%)與信用壓力(27.2 分,高收益債利差 3.4%,近一年第 99 百分位)主導;胡塞攻擊沙烏地使 WTI 漲 3.29% 至 102.74 美元,通膨與升息疑慮壓抑風險資產。FOMC 將於台北10/29凌晨2:00公布。需留意避險分項偏中性。部分數據來源不一致,已略過。",
+      "moodNote": "風險溫度計 33.5 分(前一日 35.2),維持 Risk-Off。主導分項為股市動能(22.3,費半距50日線-9.5%)與信用壓力(27.2,高收益債利差處第99百分位);胡塞攻擊沙烏地使WTI漲3.29%,通膨疑慮升溫。FOMC台北10/29凌晨2:00公布。部分數據來源不一致,已略過。",
       "news": [
         {
           "id": "20261023-01",
