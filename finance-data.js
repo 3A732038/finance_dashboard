@@ -10,21 +10,21 @@ window.FINANCE_DATA = {
     "sectors": [
       {
         "name": "能源領漲(胡塞攻擊沙烏地、油價走高)",
-        "change": 2.68,
+        "change": 2.58,
         "dir": "up",
-        "note": "美股能源類股漲2.68%居冠,WTI原油漲3.29%至102.74美元;胡塞武裝攻擊沙烏地石油設施、沙烏地阿美下令撤離達蘭總部,同時推升通膨疑慮(資料來源:Nation Thailand)"
+        "note": "美股能源類股漲2.58%居冠,WTI原油漲3.45%至102.9美元;胡塞武裝攻擊沙烏地石油設施、沙烏地阿美下令撤離達蘭總部,同時推升通膨疑慮(資料來源:Nation Thailand)"
       },
       {
         "name": "防禦退場、消費與金融走弱",
-        "change": -1.94,
+        "change": -2.03,
         "dir": "down",
-        "note": "美股必需消費跌1.94%、非必需消費跌1.48%、金融跌1.31%為最弱,10/22領漲的防禦類股出現獲利了結,道瓊盤中跌1.1%"
+        "note": "美股必需消費跌2.03%、非必需消費跌1.53%、金融跌1.36%為最弱,10/22領漲的防禦類股出現獲利了結,道瓊盤中跌1.2%"
       },
       {
         "name": "半導體與科技相對強勢",
-        "change": 1.01,
+        "change": 0.86,
         "dir": "up",
-        "note": "美股半導體類股漲1.01%、科技漲0.68%,費城半導體指數漲0.78%,在大盤震盪下相對抗跌"
+        "note": "美股半導體類股漲0.86%、科技漲0.54%,費城半導體指數漲0.59%,在大盤震盪下相對抗跌"
       },
       {
         "name": "台股塑化與電子零組件重挫",
@@ -44,8 +44,8 @@ window.FINANCE_DATA = {
         "symbol": "VLO.US",
         "name": "Valero Energy",
         "note": "公布創歷史新高的季度利潤,燃料供應受擾推升精煉利潤率,受惠油價與能源類股走強(資料來源:Nation Thailand)",
-        "price": 424.34,
-        "change": -0.46,
+        "price": 424.74,
+        "change": -0.36,
         "dir": "down",
         "asOf": "2026-10-23",
         "live": true,
@@ -79,14 +79,14 @@ window.FINANCE_DATA = {
           433.42,
           436.75,
           426.28,
-          424.34
+          424.74
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "VLO",
-          "cnbc": 424.34,
-          "cnbcChange": -0.46,
+          "cnbc": 424.74,
+          "cnbcChange": -0.36,
           "valueDiff": 0,
           "diffUnit": "%",
           "changeDiff": 0,
@@ -266,37 +266,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLK",
             "name": "科技",
-            "value": 183.58,
+            "value": 183.32,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": 0.68,
-            "w1": 0.06,
-            "m1": -6.47,
+            "d1": 0.54,
+            "w1": -0.08,
+            "m1": -6.6,
             "check2": {
               "src": "CNBC",
               "id": "XLK",
-              "cnbc": 183.61,
-              "cnbcChange": 0.7,
-              "valueDiff": 0.02,
-              "diffUnit": "%",
-              "changeDiff": 0.02,
-              "status": "ok"
-            }
-          },
-          {
-            "symbol": "SMH",
-            "name": "半導體",
-            "value": 528.64,
-            "asOf": "2026-10-23",
-            "live": true,
-            "d1": 1.01,
-            "w1": -2.07,
-            "m1": -12.85,
-            "check2": {
-              "src": "CNBC",
-              "id": "SMH",
-              "cnbc": 528.61,
-              "cnbcChange": 1.01,
+              "cnbc": 183.33,
+              "cnbcChange": 0.54,
               "valueDiff": 0.01,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -304,19 +284,39 @@ window.FINANCE_DATA = {
             }
           },
           {
-            "symbol": "XLC",
-            "name": "通訊服務",
-            "value": 106.28,
+            "symbol": "SMH",
+            "name": "半導體",
+            "value": 527.85,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -1.07,
-            "w1": -3.67,
-            "m1": -5.92,
+            "d1": 0.86,
+            "w1": -2.21,
+            "m1": -12.98,
+            "check2": {
+              "src": "CNBC",
+              "id": "SMH",
+              "cnbc": 527.74,
+              "cnbcChange": 0.84,
+              "valueDiff": 0.02,
+              "diffUnit": "%",
+              "changeDiff": 0.02,
+              "status": "ok"
+            }
+          },
+          {
+            "symbol": "XLC",
+            "name": "通訊服務",
+            "value": 106.15,
+            "asOf": "2026-10-23",
+            "live": true,
+            "d1": -1.18,
+            "w1": -3.78,
+            "m1": -6.03,
             "check2": {
               "src": "CNBC",
               "id": "XLC",
-              "cnbc": 106.28,
-              "cnbcChange": -1.07,
+              "cnbc": 106.15,
+              "cnbcChange": -1.18,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -326,37 +326,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLY",
             "name": "非必需消費",
-            "value": 113.31,
+            "value": 113.25,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -1.48,
-            "w1": 0.76,
-            "m1": 2.49,
+            "d1": -1.53,
+            "w1": 0.7,
+            "m1": 2.43,
             "check2": {
               "src": "CNBC",
               "id": "XLY",
-              "cnbc": 113.33,
-              "cnbcChange": -1.46,
-              "valueDiff": 0.02,
-              "diffUnit": "%",
-              "changeDiff": 0.02,
-              "status": "ok"
-            }
-          },
-          {
-            "symbol": "XLF",
-            "name": "金融",
-            "value": 55.91,
-            "asOf": "2026-10-23",
-            "live": true,
-            "d1": -1.31,
-            "w1": 0.7,
-            "m1": 1.95,
-            "check2": {
-              "src": "CNBC",
-              "id": "XLF",
-              "cnbc": 55.91,
-              "cnbcChange": -1.31,
+              "cnbc": 113.25,
+              "cnbcChange": -1.53,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -364,19 +344,39 @@ window.FINANCE_DATA = {
             }
           },
           {
-            "symbol": "XLI",
-            "name": "工業",
-            "value": 164.99,
+            "symbol": "XLF",
+            "name": "金融",
+            "value": 55.88,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -1.05,
-            "w1": -1.65,
-            "m1": -3.19,
+            "d1": -1.36,
+            "w1": 0.65,
+            "m1": 1.9,
+            "check2": {
+              "src": "CNBC",
+              "id": "XLF",
+              "cnbc": 55.88,
+              "cnbcChange": -1.37,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0.01,
+              "status": "ok"
+            }
+          },
+          {
+            "symbol": "XLI",
+            "name": "工業",
+            "value": 164.78,
+            "asOf": "2026-10-23",
+            "live": true,
+            "d1": -1.17,
+            "w1": -1.78,
+            "m1": -3.32,
             "check2": {
               "src": "CNBC",
               "id": "XLI",
-              "cnbc": 164.99,
-              "cnbcChange": -1.05,
+              "cnbc": 164.78,
+              "cnbcChange": -1.17,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -391,7 +391,7 @@ window.FINANCE_DATA = {
             "live": true,
             "d1": -0.98,
             "w1": 1.59,
-            "m1": 5.17,
+            "m1": 5.16,
             "check2": {
               "src": "CNBC",
               "id": "XLV",
@@ -406,17 +406,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLP",
             "name": "必需消費",
-            "value": 88.24,
+            "value": 88.17,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -1.94,
-            "w1": 0.71,
-            "m1": 7.53,
+            "d1": -2.03,
+            "w1": 0.62,
+            "m1": 7.44,
             "check2": {
               "src": "CNBC",
               "id": "XLP",
-              "cnbc": 88.24,
-              "cnbcChange": -1.94,
+              "cnbc": 88.17,
+              "cnbcChange": -2.03,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -426,18 +426,18 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLE",
             "name": "能源",
-            "value": 69.38,
+            "value": 69.31,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": 2.68,
-            "w1": 1.67,
-            "m1": 11.83,
+            "d1": 2.58,
+            "w1": 1.57,
+            "m1": 11.72,
             "check2": {
               "src": "CNBC",
               "id": "XLE",
-              "cnbc": 69.38,
-              "cnbcChange": 2.68,
-              "valueDiff": 0,
+              "cnbc": 69.32,
+              "cnbcChange": 2.58,
+              "valueDiff": 0.01,
               "diffUnit": "%",
               "changeDiff": 0,
               "status": "ok"
@@ -446,17 +446,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLB",
             "name": "原物料",
-            "value": 51.4,
+            "value": 51.38,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -0.56,
-            "w1": 0.94,
-            "m1": 3.21,
+            "d1": -0.6,
+            "w1": 0.9,
+            "m1": 3.17,
             "check2": {
               "src": "CNBC",
               "id": "XLB",
-              "cnbc": 51.4,
-              "cnbcChange": -0.56,
+              "cnbc": 51.38,
+              "cnbcChange": -0.6,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -466,17 +466,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLU",
             "name": "公用事業",
-            "value": 42.48,
+            "value": 42.44,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -0.91,
-            "w1": 0.63,
-            "m1": 7.51,
+            "d1": -1.01,
+            "w1": 0.53,
+            "m1": 7.4,
             "check2": {
               "src": "CNBC",
               "id": "XLU",
-              "cnbc": 42.48,
-              "cnbcChange": -0.91,
+              "cnbc": 42.44,
+              "cnbcChange": -1.01,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -486,20 +486,20 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLRE",
             "name": "房地產",
-            "value": 42.5,
+            "value": 42.46,
             "asOf": "2026-10-23",
             "live": true,
-            "d1": -0.06,
-            "w1": 0.79,
-            "m1": 2.25,
+            "d1": -0.15,
+            "w1": 0.7,
+            "m1": 2.15,
             "check2": {
               "src": "CNBC",
               "id": "XLRE",
-              "cnbc": 42.5,
-              "cnbcChange": -0.05,
+              "cnbc": 42.46,
+              "cnbcChange": -0.15,
               "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.01,
+              "changeDiff": 0,
               "status": "ok"
             }
           }
@@ -1468,7 +1468,7 @@ window.FINANCE_DATA = {
   ],
   "days": [
     {
-      "moodNote": "風險溫度計 33.5 分(前一日 35.2),維持 Risk-Off。主導分項為股市動能(22.3,費半距50日線-9.5%)與信用壓力(27.2,高收益債利差處第99百分位);胡塞攻擊沙烏地使WTI漲3.29%,通膨疑慮升溫。部分數據來源不一致,已略過。",
+      "moodNote": "風險溫度計 32.4 分(前一日 35.2),維持 Risk-Off。主導分項為股市動能(21.5,費半距50日線-9.6%)與波動恐慌(25.6)、信用壓力(27.2,高收益債利差處第99百分位);胡塞攻擊沙烏地使WTI漲3.45%,通膨疑慮升溫。需留意半導體相對抗跌。部分數據來源不一致,已略過。",
       "news": [
         {
           "id": "20261023-01",
@@ -1509,7 +1509,7 @@ window.FINANCE_DATA = {
         {
           "id": "20261023-05",
           "title": "FOMC 10/29 凌晨2:00公布利率決議,美國9月CPI升至3.7%",
-          "summary": "FOMC 10/27~10/28 召開,利率決議與聲明於美東10/28下午2:00公布、記者會2:30,換算台北時間為10/29(四)凌晨2:00決議、2:30記者會(聯準會官網行事曆列記者會2:30,決議2:00出自第三方行事曆)。美國9月CPI年增3.7%(前值3.4%)、失業率4.2%、非農新增29千人(前值133千人);本週財報(依程式日曆為10/29美股盤後,美股收盤16:00 ET=台北時間10/30凌晨04:00後公布,時間待官方確認):MSFT、GOOG;另有網路資料顯示兩家可能改在10/28盤後(台北10/29凌晨04:00後),日期與電話會議時間均未獲官方證實。同週經濟數據:10/28 20:30(台北)美國核心PCE與GDP、21:15 歐洲央行決議,10/29 11:00 日本央行決議(時間依程式日曆)。",
+          "summary": "FOMC 10/27~10/28 召開,利率決議於美東10/28下午2:00公布,換算台北時間10/29(四)凌晨2:00(依慣例推算,待官方確認),市場預期維持4.00%。美國9月CPI年增3.7%(前值3.4%)、失業率4.2%、非農新增29千人(前值133千人)。同週(台北時間):10/29 20:30 美國核心PCE與GDP、21:15 歐洲央行決議,10/30 11:00 日本央行決議;財報:MSFT、GOOG 10/29美股盤後(台北10/30凌晨),AMZN、INTC 10/30盤後(時間依程式日曆,待官方確認)。",
           "importance": "high",
           "category": "macro",
           "source": "聯準會官網 / fedratecalc.com / FRED",
@@ -1521,8 +1521,8 @@ window.FINANCE_DATA = {
           {
             "name": "道瓊工業指數",
             "symbol": "^DJI",
-            "value": 52289.05,
-            "change": -1.1,
+            "value": 52232.25,
+            "change": -1.2,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -1558,7 +1558,7 @@ window.FINANCE_DATA = {
               52495.88,
               52856.09,
               52867.98,
-              52289.05
+              52232.25
             ],
             "note": "",
             "check": {
@@ -1577,9 +1577,9 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".DJI",
-              "cnbc": 52290.57,
-              "cnbcChange": -1.09,
-              "valueDiff": 0,
+              "cnbc": 52238.48,
+              "cnbcChange": -1.19,
+              "valueDiff": 0.01,
               "diffUnit": "%",
               "changeDiff": 0.01,
               "status": "ok"
@@ -1589,8 +1589,8 @@ window.FINANCE_DATA = {
           {
             "name": "標普500",
             "symbol": "^GSPC",
-            "value": 7637.56,
-            "change": -0.34,
+            "value": 7628.99,
+            "change": -0.45,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -1626,7 +1626,7 @@ window.FINANCE_DATA = {
               7712.57,
               7757.17,
               7663.43,
-              7637.56
+              7628.99
             ],
             "note": "",
             "check": {
@@ -1645,11 +1645,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".SPX",
-              "cnbc": 7637.62,
-              "cnbcChange": -0.34,
-              "valueDiff": 0,
+              "cnbc": 7629.65,
+              "cnbcChange": -0.44,
+              "valueDiff": 0.01,
               "diffUnit": "%",
-              "changeDiff": 0,
+              "changeDiff": 0.01,
               "status": "ok"
             },
             "verified": true
@@ -1657,10 +1657,10 @@ window.FINANCE_DATA = {
           {
             "name": "那斯達克綜合指數",
             "symbol": "^IXIC",
-            "value": 26016.02,
-            "change": 0.03,
+            "value": 25981.94,
+            "change": -0.1,
             "unit": "%",
-            "dir": "up",
+            "dir": "down",
             "asOf": "2026-10-23",
             "live": true,
             "bigMove": false,
@@ -1694,7 +1694,7 @@ window.FINANCE_DATA = {
               26424.82,
               26702.86,
               26008.86,
-              26016.02
+              25981.94
             ],
             "note": "",
             "check": {
@@ -1713,11 +1713,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".IXIC",
-              "cnbc": 26017.377,
-              "cnbcChange": 0.03,
+              "cnbc": 25984.982,
+              "cnbcChange": -0.09,
               "valueDiff": 0.01,
               "diffUnit": "%",
-              "changeDiff": 0,
+              "changeDiff": 0.01,
               "status": "ok"
             },
             "verified": true
@@ -1725,8 +1725,8 @@ window.FINANCE_DATA = {
           {
             "name": "費城半導體指數",
             "symbol": "^SOX",
-            "value": 10815.33,
-            "change": 0.78,
+            "value": 10795.73,
+            "change": 0.59,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -1762,17 +1762,17 @@ window.FINANCE_DATA = {
               11283.81,
               11505.56,
               10731.98,
-              10815.33
+              10795.73
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".SOX",
-              "cnbc": 10816.271,
-              "cnbcChange": 0.79,
-              "valueDiff": 0.01,
+              "cnbc": 10799.113,
+              "cnbcChange": 0.63,
+              "valueDiff": 0.03,
               "diffUnit": "%",
-              "changeDiff": 0.01,
+              "changeDiff": 0.04,
               "status": "ok"
             },
             "verified": true
@@ -2212,8 +2212,8 @@ window.FINANCE_DATA = {
           {
             "name": "VIX恐慌指數",
             "symbol": "^VIX",
-            "value": 19.64,
-            "change": 3.21,
+            "value": 20.36,
+            "change": 6.99,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2249,7 +2249,7 @@ window.FINANCE_DATA = {
               17.31,
               16.68,
               19.03,
-              19.64
+              20.36
             ],
             "note": "",
             "check": {
@@ -2268,11 +2268,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".VIX",
-              "cnbc": 20,
-              "cnbcChange": 5.1,
-              "valueDiff": 1.8,
+              "cnbc": 20.2,
+              "cnbcChange": 6.15,
+              "valueDiff": 0.79,
               "diffUnit": "%",
-              "changeDiff": 1.89,
+              "changeDiff": 0.84,
               "status": "mismatch"
             },
             "verified": false
@@ -2336,9 +2336,9 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "US10Y",
-              "cnbc": 4.994,
-              "cnbcChange": 0.8278,
-              "valueDiff": 0.4,
+              "cnbc": 4.99,
+              "cnbcChange": 0.747,
+              "valueDiff": 0,
               "diffUnit": "bp",
               "status": "ok"
             },
@@ -2347,8 +2347,8 @@ window.FINANCE_DATA = {
           {
             "name": "美債30年期殖利率",
             "symbol": "^TYX",
-            "value": 5.315,
-            "change": 2.8,
+            "value": 5.316,
+            "change": 2.9,
             "unit": "bp",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2384,7 +2384,7 @@ window.FINANCE_DATA = {
               5.425,
               5.439,
               5.287,
-              5.315
+              5.316
             ],
             "note": "",
             "check": {
@@ -2403,9 +2403,9 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "US30Y",
-              "cnbc": 5.317,
-              "cnbcChange": -0.4492,
-              "valueDiff": 0.2,
+              "cnbc": 5.316,
+              "cnbcChange": -0.4336,
+              "valueDiff": 0,
               "diffUnit": "bp",
               "status": "ok"
             },
@@ -2414,8 +2414,8 @@ window.FINANCE_DATA = {
           {
             "name": "美元指數(DXY)",
             "symbol": "DX-Y.NYB",
-            "value": 101.81,
-            "change": 0.2,
+            "value": 101.84,
+            "change": 0.23,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2451,17 +2451,17 @@ window.FINANCE_DATA = {
               101.73,
               101.78,
               101.61,
-              101.81
+              101.84
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".DXY",
-              "cnbc": 101.838,
-              "cnbcChange": 0.23,
-              "valueDiff": 0.03,
+              "cnbc": 101.819,
+              "cnbcChange": 0.21,
+              "valueDiff": 0.02,
               "diffUnit": "%",
-              "changeDiff": 0.03,
+              "changeDiff": 0.02,
               "status": "ok"
             },
             "verified": true
@@ -2471,8 +2471,8 @@ window.FINANCE_DATA = {
           {
             "name": "布蘭特原油",
             "symbol": "BZ=F",
-            "value": 111.39,
-            "change": -1.57,
+            "value": 111.44,
+            "change": -1.53,
             "unit": "%",
             "dir": "flat",
             "asOf": "2026-10-23",
@@ -2508,7 +2508,7 @@ window.FINANCE_DATA = {
               108.79,
               108.82,
               113.17,
-              111.39
+              111.44
             ],
             "note": "",
             "contract": "Brent Crude Oil Last Day Financ",
@@ -2517,11 +2517,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@LCO.1",
-              "cnbc": 116.25,
-              "cnbcChange": 2.72,
-              "valueDiff": 4.18,
+              "cnbc": 116.26,
+              "cnbcChange": 2.73,
+              "valueDiff": 4.15,
               "diffUnit": "%",
-              "changeDiff": 4.29,
+              "changeDiff": 4.26,
               "status": "mismatch"
             },
             "verified": false
@@ -2529,8 +2529,8 @@ window.FINANCE_DATA = {
           {
             "name": "WTI原油",
             "symbol": "CL=F",
-            "value": 102.74,
-            "change": 3.29,
+            "value": 102.9,
+            "change": 3.45,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2566,18 +2566,18 @@ window.FINANCE_DATA = {
               101.79,
               97.15,
               99.47,
-              102.74
+              102.9
             ],
             "note": "",
             "contract": "Crude Oil Dec 26",
             "check2": {
               "src": "CNBC",
               "id": "@CL.1",
-              "cnbc": 102.74,
-              "cnbcChange": 3.29,
-              "valueDiff": 0,
+              "cnbc": 102.88,
+              "cnbcChange": 3.43,
+              "valueDiff": 0.02,
               "diffUnit": "%",
-              "changeDiff": 0,
+              "changeDiff": 0.02,
               "status": "ok"
             },
             "verified": true
@@ -2585,8 +2585,8 @@ window.FINANCE_DATA = {
           {
             "name": "黃金",
             "symbol": "GC=F",
-            "value": 4014.3,
-            "change": -1.14,
+            "value": 4006.8,
+            "change": -1.32,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -2622,18 +2622,18 @@ window.FINANCE_DATA = {
               4142.6,
               4150,
               4060.4,
-              4014.3
+              4006.8
             ],
             "note": "",
             "contract": "Gold Dec 26",
             "check2": {
               "src": "CNBC",
               "id": "@GC.1",
-              "cnbc": 4014.3,
-              "cnbcChange": -1.14,
-              "valueDiff": 0,
+              "cnbc": 4007.8,
+              "cnbcChange": -1.3,
+              "valueDiff": 0.02,
               "diffUnit": "%",
-              "changeDiff": 0,
+              "changeDiff": 0.02,
               "status": "ok"
             },
             "verified": true
@@ -2641,8 +2641,8 @@ window.FINANCE_DATA = {
           {
             "name": "白銀",
             "symbol": "SI=F",
-            "value": 54.09,
-            "change": -1.23,
+            "value": 53.97,
+            "change": -1.45,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -2678,18 +2678,18 @@ window.FINANCE_DATA = {
               57.706,
               57.422,
               54.764,
-              54.09
+              53.97
             ],
             "note": "",
             "contract": "Silver Dec 26",
             "check2": {
               "src": "CNBC",
               "id": "@SI.1",
-              "cnbc": 54.08,
-              "cnbcChange": -1.69,
-              "valueDiff": 0.02,
+              "cnbc": 53.985,
+              "cnbcChange": -1.86,
+              "valueDiff": 0.03,
               "diffUnit": "%",
-              "changeDiff": 0.46,
+              "changeDiff": 0.41,
               "status": "ok"
             },
             "verified": true
@@ -2697,8 +2697,8 @@ window.FINANCE_DATA = {
           {
             "name": "銅",
             "symbol": "HG=F",
-            "value": 6.506,
-            "change": 2.26,
+            "value": 6.498,
+            "change": 2.13,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2734,15 +2734,15 @@ window.FINANCE_DATA = {
               6.567,
               6.543,
               6.363,
-              6.506
+              6.498
             ],
             "note": "",
             "contract": "Copper Dec 26",
             "check2": {
               "src": "CNBC",
               "id": "@HG.1",
-              "cnbc": 6.506,
-              "cnbcChange": 1.69,
+              "cnbc": 6.498,
+              "cnbcChange": 1.56,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0.57,
@@ -2753,8 +2753,8 @@ window.FINANCE_DATA = {
           {
             "name": "天然氣",
             "symbol": "NG=F",
-            "value": 3.042,
-            "change": 8.8,
+            "value": 3.046,
+            "change": 8.94,
             "unit": "%",
             "dir": "flat",
             "asOf": "2026-10-23",
@@ -2790,7 +2790,7 @@ window.FINANCE_DATA = {
               2.963,
               2.79,
               2.796,
-              3.042
+              3.046
             ],
             "note": "",
             "contract": "Natural Gas Nov 26",
@@ -2799,11 +2799,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@NG.1",
-              "cnbc": 2.656,
-              "cnbcChange": -5.01,
-              "valueDiff": 14.53,
+              "cnbc": 2.65,
+              "cnbcChange": -5.22,
+              "valueDiff": 14.94,
               "diffUnit": "%",
-              "changeDiff": 13.81,
+              "changeDiff": 14.16,
               "status": "mismatch"
             },
             "verified": false
@@ -2813,8 +2813,8 @@ window.FINANCE_DATA = {
           {
             "name": "比特幣",
             "symbol": "BTC-USD",
-            "value": 81657,
-            "change": 0.42,
+            "value": 81498,
+            "change": 0.23,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2850,7 +2850,7 @@ window.FINANCE_DATA = {
               82941,
               84012,
               81312,
-              81657
+              81498
             ],
             "note": "",
             "check": {
@@ -2869,11 +2869,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "BTC.CM=",
-              "cnbc": 81653.95,
-              "cnbcChange": 0.38,
-              "valueDiff": 0,
+              "cnbc": 81508.9,
+              "cnbcChange": 0.21,
+              "valueDiff": 0.01,
               "diffUnit": "%",
-              "changeDiff": 0.04,
+              "changeDiff": 0.02,
               "status": "ok"
             },
             "verified": true
@@ -2881,8 +2881,8 @@ window.FINANCE_DATA = {
           {
             "name": "以太幣",
             "symbol": "ETH-USD",
-            "value": 2406.55,
-            "change": 0.99,
+            "value": 2403.55,
+            "change": 0.88,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -2918,7 +2918,7 @@ window.FINANCE_DATA = {
               2446.73,
               2470.77,
               2386.19,
-              2406.55
+              2403.55
             ],
             "note": "",
             "check": {
@@ -2937,12 +2937,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "ETH.CM=",
-              "cnbc": 2406.68,
-              "cnbcChange": 0.99,
-              "valueDiff": 0.01,
+              "cnbc": 2404.19,
+              "cnbcChange": 0.88,
+              "valueDiff": 0.03,
               "diffUnit": "%",
-              "changeDiff": 0.14,
-              "changeFrom": 0.85,
+              "changeDiff": 0.15,
+              "changeFrom": 0.73,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -2953,8 +2953,8 @@ window.FINANCE_DATA = {
           {
             "name": "美元兌台幣(USD/TWD)",
             "symbol": "TWD=X",
-            "value": 32.569,
-            "change": -0.09,
+            "value": 32.562,
+            "change": -0.11,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -2990,7 +2990,7 @@ window.FINANCE_DATA = {
               32.48,
               32.578,
               32.366,
-              32.569
+              32.562
             ],
             "note": "",
             "check": {
@@ -3009,12 +3009,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "TWD=",
-              "cnbc": 32.57,
-              "cnbcChange": -0.089,
+              "cnbc": 32.563,
+              "cnbcChange": -0.1104,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0.72,
-              "changeFrom": 0.63,
+              "changeFrom": 0.61,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -3023,8 +3023,8 @@ window.FINANCE_DATA = {
           {
             "name": "美元兌日圓(USD/JPY)",
             "symbol": "JPY=X",
-            "value": 156.95,
-            "change": 0.11,
+            "value": 156.85,
+            "change": 0.06,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-23",
@@ -3060,7 +3060,7 @@ window.FINANCE_DATA = {
               158.52,
               158.27,
               158.13,
-              156.95
+              156.85
             ],
             "note": "",
             "check": {
@@ -3079,12 +3079,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "JPY=",
-              "cnbc": 156.94,
-              "cnbcChange": 0.11,
-              "valueDiff": 0.01,
+              "cnbc": 156.85,
+              "cnbcChange": 0.06,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.86,
-              "changeFrom": -0.75,
+              "changeDiff": 0.87,
+              "changeFrom": -0.81,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -3094,7 +3094,7 @@ window.FINANCE_DATA = {
             "name": "歐元兌美元(EUR/USD)",
             "symbol": "EURUSD=X",
             "value": 1.1196,
-            "change": -0.21,
+            "change": -0.19,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-23",
@@ -3149,11 +3149,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "EUR=",
-              "cnbc": 1.1191,
-              "cnbcChange": -0.2051,
-              "valueDiff": 0.04,
+              "cnbc": 1.1193,
+              "cnbcChange": -0.1873,
+              "valueDiff": 0.03,
               "diffUnit": "%",
-              "changeDiff": 0.13,
+              "changeDiff": 0.15,
               "changeFrom": -0.34,
               "changeAdopted": true,
               "status": "ok"
@@ -3848,7 +3848,9 @@ window.FINANCE_DATA = {
           "end": "2026-10-28",
           "sep": false,
           "daysToDecision": 4,
-          "decisionTpe": "10-29 02:00"
+          "decisionTpe": "10-29 02:00",
+          "consensus": "4.00%",
+          "previous": "4.00%"
         },
         "events": [
           {
@@ -3904,81 +3906,16 @@ window.FINANCE_DATA = {
             "actual": ""
           },
           {
-            "date": "2026-10-28",
-            "time": "20:30",
-            "sortKey": "2026-10-28T20:30",
-            "country": "美國",
-            "flag": "🇺🇸",
-            "name": "核心 PCE 物價",
-            "raw": "Core PCE Price Index",
-            "importance": "high",
-            "previous": "0.2% / 3.0%",
-            "consensus": "0.3%",
-            "actual": ""
-          },
-          {
-            "date": "2026-10-28",
-            "time": "20:30",
-            "sortKey": "2026-10-28T20:30",
-            "country": "美國",
-            "flag": "🇺🇸",
-            "name": "GDP",
-            "raw": "GDP",
-            "importance": "high",
-            "previous": "2.2%",
-            "consensus": "3.0%",
-            "actual": ""
-          },
-          {
-            "date": "2026-10-28",
-            "time": "20:30",
-            "sortKey": "2026-10-28T20:30",
-            "country": "美國",
-            "flag": "🇺🇸",
-            "name": "初領失業救濟金",
-            "raw": "Initial Jobless Claims",
-            "importance": "medium",
-            "previous": "194K",
-            "consensus": "",
-            "actual": ""
-          },
-          {
-            "date": "2026-10-28",
-            "time": "21:15",
-            "sortKey": "2026-10-28T21:15",
-            "country": "歐元區",
-            "flag": "🇪🇺",
-            "name": "歐洲央行利率決議",
-            "raw": "ECB Interest Rate Decision",
-            "importance": "high",
-            "previous": "2.65%",
-            "consensus": "2.65%",
-            "actual": ""
-          },
-          {
             "date": "2026-10-29",
-            "time": "07:30",
-            "sortKey": "2026-10-29T07:30",
-            "country": "日本",
-            "flag": "🇯🇵",
-            "name": "東京核心 CPI",
-            "raw": "Tokyo Core CPI",
-            "importance": "medium",
-            "previous": "2.7%",
-            "consensus": "",
-            "actual": ""
-          },
-          {
-            "date": "2026-10-29",
-            "time": "11:00",
-            "sortKey": "2026-10-29T11:00",
-            "country": "日本",
-            "flag": "🇯🇵",
-            "name": "日本央行利率決議",
-            "raw": "BoJ Interest Rate Decision",
+            "time": "02:00",
+            "sortKey": "2026-10-29T02:00",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "聯準會利率決議",
+            "raw": "Fed Interest Rate Decision",
             "importance": "high",
-            "previous": "1.25%",
-            "consensus": "1.25%",
+            "previous": "4.00%",
+            "consensus": "4.00%",
             "actual": ""
           },
           {
@@ -4347,7 +4284,7 @@ window.FINANCE_DATA = {
       },
       "mood": "risk-off",
       "risk": {
-        "score": 33.5,
+        "score": 32.4,
         "zone": "risk-off",
         "asOf": "2026-10-23",
         "zones": {
@@ -4361,8 +4298,8 @@ window.FINANCE_DATA = {
             "key": "vix",
             "name": "波動恐慌",
             "weight": 25,
-            "score": 29.5,
-            "detail": "VIX 19.71,近一年第 80 百分位"
+            "score": 25.6,
+            "detail": "VIX 20.39,近一年第 84 百分位"
           },
           {
             "key": "credit",
@@ -4375,15 +4312,15 @@ window.FINANCE_DATA = {
             "key": "momentum",
             "name": "股市動能",
             "weight": 25,
-            "score": 22.3,
-            "detail": "標普500 距 50 日均線 -0.8%;費城半導體 -9.5%"
+            "score": 21.5,
+            "detail": "標普500 距 50 日均線 -0.9%;費城半導體 -9.6%"
           },
           {
             "key": "haven",
             "name": "避險需求",
             "weight": 15,
             "score": 55.9,
-            "detail": "近 20 日標普500 減黃金報酬 +5.7 個百分點;美元指數 +0.8%"
+            "detail": "近 20 日標普500 減黃金報酬 +5.8 個百分點;美元指數 +0.9%"
           },
           {
             "key": "curve",
@@ -4691,7 +4628,7 @@ window.FINANCE_DATA = {
           },
           {
             "d": "2026-10-23",
-            "s": 33.5,
+            "s": 32.4,
             "z": "risk-off"
           }
         ]
