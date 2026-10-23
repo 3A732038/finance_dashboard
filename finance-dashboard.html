@@ -1047,7 +1047,7 @@ function renderOverview(){
     if(cal.fomc){
       const decDate=dec?dec.date:new Date(Date.parse(cal.fomc.end)+864e5).toISOString().slice(0,10);
       const days=Math.max(0,Math.round((Date.parse(decDate)-Date.parse(today))/864e5));
-      fomc=`<div class="nx-fomc"><span class="big num">${days===0?'今晚':days}</span>${days===0?'':'<small>天後</small>'}<span class="nx-t">FOMC 利率決議<br><i>台北 ${shortDate(decDate)}(${wdOf(decDate)})${dec&&dec.time?dec.time:'凌晨'}</i></span></div>`;
+      fomc=`<div class="nx-fomc"><span class="big num">${days===0?'今晚':days}</span>${days===0?'':'<small>天後</small>'}<span class="nx-t">FOMC 利率決議<br><i>台北 ${shortDate(decDate)}(${wdOf(decDate)})${dec&&dec.time?dec.time:(cal.fomc.decisionTpe?cal.fomc.decisionTpe.split(' ')[1]:'凌晨')}</i></span></div>`;
     }
     const up=cal.events.filter(e=>e.importance==='high'&&e.raw!=='Fed Interest Rate Decision'&&`${e.date}T${e.time||'99'}`>=nowKey).slice(0,3);
     nx.innerHTML=`<div class="ov-lbl">接下來</div>${fomc}
@@ -1100,7 +1100,7 @@ function renderCalendar(cal){
   if(cal.fomc){
     const f=cal.fomc, dec=cal.events.find(e=>e.raw==='Fed Interest Rate Decision');
     // 決議在美東下午 2 點:台北隔天凌晨 2 點(夏令)或 3 點(冬令);Nasdaq 有給時間就用它的
-    const decDate=dec?dec.date:new Date(Date.parse(f.end)+864e5).toISOString().slice(0,10), decTime=dec&&dec.time?dec.time:'凌晨';
+    const decDate=dec?dec.date:new Date(Date.parse(f.end)+864e5).toISOString().slice(0,10), decTime=dec&&dec.time?dec.time:(f.decisionTpe?f.decisionTpe.split(' ')[1]:'凌晨');
     const days=Math.max(0,Math.round((Date.parse(decDate)-Date.parse(today))/864e5));
     fomcHtml=`<div class="fomc card fx brk rv"><span class="ring"></span>
       <div class="lbl">NEXT FOMC</div>
