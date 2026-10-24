@@ -7,7 +7,8 @@
      node fetch-quotes.mjs today.json   以 market.json(過舊則重抓)覆蓋 today.json 的 day.market / day.macro,
                                         並依 stocks.movers 的 symbol 抓個股收盤價;模型寫的 note 會保留
    資料來源:
-     市場行情 Yahoo Finance chart API(非官方、免金鑰)
+     官方主來源(免金鑰):台股加權指數與台股個股 臺灣證券交易所 / 櫃買中心、VIX CBOE、美債殖利率 美國財政部
+     市場行情 Yahoo Finance chart API(非官方、免金鑰);有官方來源的項目只在官方失敗或尚未公布時備援
      美國總經 FRED(聖路易聯準銀行)fredgraph.csv(免金鑰)
    數據防護:
      - 超過 7 天沒更新的報價視為失敗(避免到期合約停在舊值)
@@ -39,13 +40,14 @@ const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML,
 // fred: 以 FRED 官方序列交叉核對(tol 容許誤差:'%' 類為相對 %,'bp' 類為基點)
 // alert: 單日漲跌超過此值標記「大幅波動」,未設定則用 ALERT_DEFAULT
 // cnbc: 第二來源(CNBC)代號,當天就能比對數值與漲跌幅
+// official: 官方主來源(見 OFFICIAL_SOURCES),Yahoo 改為備援
 const MARKETS = {
   indices: [
     { name: '道瓊工業指數',     symbol: '^DJI',  cnbc: '.DJI',  fred: { id: 'DJIA' } },
     { name: '標普500',          symbol: '^GSPC', cnbc: '.SPX',  fred: { id: 'SP500' } },
     { name: '那斯達克綜合指數', symbol: '^IXIC', cnbc: '.IXIC', fred: { id: 'NASDAQCOM' } },
     { name: '費城半導體指數',   symbol: '^SOX',  cnbc: '.SOX' },
-    { name: '台灣加權指數',     symbol: '^TWII', cnbc: '.TWII' },
+    { name: '台灣加權指數',     symbol: '^TWII', cnbc: '.TWII', official: { src: 'taiex' } },
     { name: '日經225',          symbol: '^N225', cnbc: '.N225' },
     { name: '南韓KOSPI',        symbol: '^KS11', cnbc: '.KS11' },
     { name: '恒生指數',         symbol: '^HSI',  cnbc: '.HSI' },
@@ -55,10 +57,10 @@ const MARKETS = {
     { name: '印度Sensex',       symbol: '^BSESN' },
   ],
   indicators: [
-    { name: 'VIX恐慌指數',      symbol: '^VIX', dec: 2, alert: 30, cnbc: '.VIX', fred: { id: 'VIXCLS', tol: 2 } },
-    // ^TNX/^TYX 為 CBOE 收盤值,與財政部公布的固定期限殖利率本來就會差 1~3bp
-    { name: '美債10年期殖利率', symbol: '^TNX',  unit: 'bp', dec: 3, cnbc: 'US10Y', fred: { id: 'DGS10', tol: 6 } },
-    { name: '美債30年期殖利率', symbol: '^TYX',  unit: 'bp', dec: 3, cnbc: 'US30Y', fred: { id: 'DGS30', tol: 6 } },
+    { name: 'VIX恐慌指數',      symbol: '^VIX', dec: 2, alert: 30, cnbc: '.VIX', fred: { id: 'VIXCLS', tol: 2 }, official: { src: 'cboe-vix' } },
+    // 主來源為財政部固定期限殖利率(與 FRED DGS10/DGS30 同源);備援 ^TNX/^TYX 為 CBOE 收盤值,與財政部本來就會差 1~3bp
+    { name: '美債10年期殖利率', symbol: '^TNX',  unit: 'bp', dec: 3, cnbc: 'US10Y', fred: { id: 'DGS10', tol: 6 }, official: { src: 'treasury', col: '10 Yr' } },
+    { name: '美債30年期殖利率', symbol: '^TYX',  unit: 'bp', dec: 3, cnbc: 'US30Y', fred: { id: 'DGS30', tol: 6 }, official: { src: 'treasury', col: '30 Yr' } },
     { name: '美元指數(DXY)',    symbol: 'DX-Y.NYB', dec: 2, alert: 1.5, cnbc: '.DXY' },
   ],
   commodities: [
@@ -252,11 +254,118 @@ function toMarketItem(cfg, chart, group) {
   return {
     name: cfg.name, symbol: cfg.symbol,
     value: round(last.c, dec), change, unit: cfg.unit || '%', dir: dirOf(change),
-    asOf: last.d, live,
+    asOf: last.d, live, source: chart.source || 'Yahoo',
     bigMove: alert != null && Math.abs(change) >= alert,
     series: pts.slice(-SERIES_LEN).map(p => round(p.c, dec)),
     note: '',
   };
+}
+
+/* ---------- 官方主來源 ----------
+   有官方來源的項目以官方收盤為主,Yahoo 只在兩種情況備援:官方抓取失敗,
+   或 Yahoo 已有更新的「已收盤」交易日而官方尚未公布(兩邊不混用,避免來源差異算出假漲跌)。
+   「尚未公布」只認當地最近 lag 天內的交易日:證交所當天就公布,所以更早的日期官方沒有就代表休市,
+   Yahoo 在台股休市日會補一筆零漲跌的假資料,不能採用;CBOE、財政部可能晚一天更新。
+   盤中執行時,官方只有前一日收盤,仍以官方為準。 */
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+let twseNext = 0;
+async function twseGet(url) { // 證交所與櫃買有流量限制,請求間隔至少 1 秒
+  const at = Math.max(Date.now(), twseNext);
+  twseNext = at + 1000;
+  await sleep(at - Date.now());
+  return getText(url);
+}
+const rocDate = s => { const [y, m, d] = s.split('/'); return `${+y + 1911}-${m}-${d}`; };
+const numOf = s => parseFloat(String(s).replace(/<[^>]+>|,/g, ''));
+/* 台北時間本月起往前的月份(月初 15 日前多抓一個月,走勢線才湊得滿 SERIES_LEN 筆) */
+function recentMonths() {
+  const t = tpeToday(); let y = +t.slice(0, 4), m = +t.slice(5, 7);
+  const out = [];
+  for (let i = 0; i < (+t.slice(8, 10) < 15 ? 3 : 2); i++) { out.unshift({ y, m }); if (--m === 0) { m = 12; y--; } }
+  return out;
+}
+async function twMonthly(urlOf, rowsOf, col) {
+  const pts = [];
+  for (const ym of recentMonths()) {
+    const j = JSON.parse(await twseGet(urlOf(ym)));
+    for (const r of rowsOf(j) || []) { const c = numOf(r[col]); if (isFinite(c)) pts.push({ d: rocDate(r[0]), c }); }
+  }
+  return pts;
+}
+const ymd1 = ({ y, m }) => `${y}${String(m).padStart(2, '0')}01`;
+
+let cboeVixP;
+function cboeVix() { // 1990 年至今的 VIX 日收盤
+  return cboeVixP ||= getText('https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv').then(csv =>
+    csv.trim().split(/\r?\n/).slice(1).map(l => l.split(','))
+      .map(([d, , , , c]) => { const [m, dd, y] = d.split('/'); return { d: `${y}-${m}-${dd}`, c: +c }; })
+      .filter(p => isFinite(p.c) && p.c > 0));
+}
+
+const treasuryYears = new Map();
+function treasuryYear(y) { // 財政部每日固定期限殖利率(par yield curve),依年份分檔
+  if (!treasuryYears.has(y)) treasuryYears.set(y, getText('https://home.treasury.gov/resource-center/data-chart-center/interest-rates/'
+    + `daily-treasury-rates.csv/${y}/all?type=daily_treasury_yield_curve&field_tdr_date_value=${y}`).then(csv => {
+    const [head, ...rows] = csv.trim().split(/\r?\n/).map(l => l.split(','));
+    const cols = head.map(h => h.replace(/"/g, '').trim());
+    return rows.map(r => { const [m, d, yy] = r[0].split('/'); return { d: `${yy}-${m}-${d}`, v: Object.fromEntries(cols.map((c, i) => [c, r[i]])) }; });
+  }));
+  return treasuryYears.get(y);
+}
+
+const OFFICIAL_SOURCES = {
+  taiex: { label: '證交所', tz: 'Asia/Taipei', lag: 0, fetch: () => twMonthly(
+    ym => `https://www.twse.com.tw/rwd/zh/TAIEX/MI_5MINS_HIST?date=${ymd1(ym)}&response=json`, j => j.data, 4) },
+  twse: { label: '證交所', tz: 'Asia/Taipei', lag: 0, fetch: o => twMonthly(
+    ym => `https://www.twse.com.tw/rwd/zh/afterTrading/STOCK_DAY?date=${ymd1(ym)}&stockNo=${o.code}&response=json`, j => j.data, 6) },
+  tpex: { label: '櫃買中心', tz: 'Asia/Taipei', lag: 0, fetch: o => twMonthly(
+    ym => `https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock?code=${o.code}&date=${ym.y}/${String(ym.m).padStart(2, '0')}/01&response=json`,
+    j => j.tables?.[0]?.data, 6) },
+  'cboe-vix': { label: 'CBOE', tz: 'America/New_York', lag: 1, fetch: async () => (await cboeVix()).slice(-90) },
+  treasury: { label: '美國財政部', tz: 'America/New_York', lag: 1, fetch: async o => {
+    const y = +new Date().toISOString().slice(0, 4);
+    let rows = await treasuryYear(y);
+    if (rows.length < 45) rows = [...rows, ...await treasuryYear(y - 1)];
+    return rows.map(r => ({ d: r.d, c: parseFloat(r.v[o.col]) })).filter(p => isFinite(p.c)).sort((a, b) => a.d < b.d ? -1 : 1);
+  } },
+};
+
+async function officialChart(official) {
+  const pts = await OFFICIAL_SOURCES[official.src].fetch(official);
+  if (pts.length < 2) throw new Error('資料點不足');
+  const lastD = pts[pts.length - 1].d;
+  if ((Date.now() - Date.parse(lastD)) / 864e5 > 7) throw new Error(`資料過舊(最後一筆 ${lastD})`);
+  return { pts, live: false, contract: '' };
+}
+
+/* 個股代號對應的台股官方來源:2330.TW / 純數字 → 證交所,6488.TWO → 櫃買中心 */
+function twOfficial(sym) {
+  const s = String(sym).trim().toUpperCase(); let m;
+  if ((m = s.match(/^(\d{4,6}[A-Z]?)\.TWO$/))) return { src: 'tpex', code: m[1] };
+  if ((m = s.match(/^(\d{4,6}[A-Z]?)\.TW$/)) || (m = s.match(/^(\d{4,6})$/))) return { src: 'twse', code: m[1] };
+  return null;
+}
+
+/* 取得報價走勢:有官方來源就以官方為主,notes 收集改用 Yahoo 備援的原因 */
+async function primaryChart(official, yahooSymbol, label, notes) {
+  if (!official) return { ...(await yahooChart(yahooSymbol)), source: 'Yahoo' };
+  const { label: src, tz, lag } = OFFICIAL_SOURCES[official.src];
+  const [o, y] = await Promise.allSettled([officialChart(official), yahooChart(yahooSymbol)]);
+  if (o.status === 'rejected') {
+    if (y.status === 'rejected') throw new Error(`${src}:${o.reason.message};Yahoo:${y.reason.message}`);
+    notes.push(`${label} ${src}抓取失敗(${o.reason.message}),改用 Yahoo`);
+    return { ...y.value, source: 'Yahoo' };
+  }
+  const oLast = o.value.pts[o.value.pts.length - 1].d;
+  if (y.status === 'fulfilled' && !y.value.live) {
+    const yLast = y.value.pts[y.value.pts.length - 1].d;
+    const localToday = new Intl.DateTimeFormat('en-CA', { timeZone: tz }).format(new Date());
+    if (yLast > oLast && yLast >= shiftDate(localToday, -lag)) {
+      notes.push(`${label} ${src}尚未公布 ${yLast} 收盤(最新 ${oLast}),暫用 Yahoo`);
+      return { ...y.value, source: 'Yahoo' };
+    }
+  }
+  return { ...o.value, source: src };
 }
 
 /* ---------- 期貨換月偵測 ----------
@@ -671,9 +780,12 @@ function pctRank(arr, v) {
 }
 
 async function riskInputs() {
-  const ySyms = { spx: '^GSPC', sox: '^SOX', vix: '^VIX', gold: 'GC=F', dxy: 'DX-Y.NYB' };
+  const ySyms = { spx: '^GSPC', sox: '^SOX', gold: 'GC=F', dxy: 'DX-Y.NYB' };
   const out = {};
   await pool(Object.entries(ySyms), 5, async ([k, s]) => { out[k] = (await yahooChart(s, '2y')).pts.map(p => ({ d: p.d, v: p.c })); });
+  // VIX 以 CBOE 官方收盤為主,失敗才用 Yahoo
+  try { out.vix = (await cboeVix()).map(p => ({ d: p.d, v: p.c })); }
+  catch { out.vix = (await yahooChart('^VIX', '2y')).pts.map(p => ({ d: p.d, v: p.c })); }
   await pool([['hy', 'BAMLH0A0HYM2'], ['curve', 'T10Y2Y']], 2, async ([k, id]) => { out[k] = await fredSeries(id); });
   return out;
 }
@@ -783,7 +895,7 @@ async function fetchAll() {
   const flat = Object.entries(MARKETS).flatMap(([g, arr]) => arr.map(cfg => ({ g, cfg })));
   const items = await pool(flat, 6, async ({ g, cfg }) => {
     try {
-      const chart = await yahooChart(cfg.symbol);
+      const chart = await primaryChart(cfg.official, cfg.symbol, cfg.name, warnings);
       const item = toMarketItem(cfg, chart, g);
       markRollover(item, chart.contract, prevItems.find(p => p.symbol === cfg.symbol));
       if (cfg.fred) {
@@ -870,7 +982,7 @@ function summary(data) {
   for (const [g, arr] of Object.entries(data.market)) {
     lines.push(`【${g}】`);
     for (const x of arr) lines.push(`  ${x.name} ${x.value} ${x.rollover ? '(換月,漲跌不可信)' : (x.change > 0 ? '+' : '') + x.change + x.unit}`
-      + ` (${x.asOf}${x.live ? ' 盤中' : ''})${checkLabel(x)}`);
+      + ` (${x.asOf}${x.live ? ' 盤中' : ''}${x.source && x.source !== 'Yahoo' ? ',' + x.source + '官方' : ''})${checkLabel(x)}`);
   }
   lines.push('【美國總經】');
   for (const x of data.macro) lines.push(`  ${x.name} ${x.value}${x.unit} (前值 ${x.prev}${x.unit}, ${x.period})`);
@@ -924,15 +1036,15 @@ async function apply(patchPath) {
     patch.day.risk = data.risk;
   }
 
-  // 個股:以 symbol 抓收盤價,失敗則保留模型原值並標記
+  // 個股:以 symbol 抓收盤價(台股以證交所/櫃買為主),失敗則保留模型原值並標記
   const movers = patch.stocks?.movers || [];
-  const mlog = [];
+  const mlog = [], mnotes = [];
   await pool(movers, 4, async m => {
     if (!m.symbol) return;
     try {
-      const c = await yahooChart(toYahooSymbol(m.symbol));
+      const c = await primaryChart(twOfficial(m.symbol), toYahooSymbol(m.symbol), m.symbol, mnotes);
       const it = toMarketItem({ name: m.name, symbol: m.symbol }, c);
-      Object.assign(m, { price: it.value, change: it.change, dir: it.dir, asOf: it.asOf, live: it.live, series: it.series, verified: true });
+      Object.assign(m, { price: it.value, change: it.change, dir: it.dir, asOf: it.asOf, live: it.live, source: it.source, series: it.series, verified: true });
     } catch (e) {
       m.verified = false;
       mlog.push(`${m.symbol}:${e.message}`);
@@ -956,6 +1068,7 @@ async function apply(patchPath) {
   console.log('✅ 已將程式抓取的數字寫入 ' + patchPath);
   console.log(`   市場 ${Object.values(market).flat().length} 項(雙來源一致 ${Object.values(market).flat().filter(x => x.verified).length} 項)| 總經 ${data.macro.length} 項 | 個股 ${movers.filter(m => m.verified).length}/${movers.length} 檔已校正(CNBC 一致 ${movers.filter(m => m.check2?.status === 'ok').length} 檔)`);
   if (dropped.length) console.log('   略過模型自填、不在清單內的市場項目:' + dropped.join('、'));
+  if (mnotes.length) console.log('   ℹ️ 個股來源備援:' + mnotes.join('; '));
   if (mlog.length) console.log('   ⚠️ 個股抓取失敗(保留原值):' + mlog.join('; '));
   if (data.warnings?.length) console.log('   ⚠️ 數據警示:\n     - ' + data.warnings.join('\n     - '));
   if (data.failures.length) console.log('   ⚠️ 市場/總經抓取失敗:' + data.failures.join('; '));
