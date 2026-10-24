@@ -9,7 +9,7 @@
    資料來源:
      官方主來源(免金鑰):台股加權指數與台股個股 臺灣證券交易所 / 櫃買中心、VIX CBOE、美債殖利率 美國財政部
      市場行情 Yahoo Finance chart API(非官方、免金鑰);有官方來源的項目只在官方失敗或尚未公布時備援
-     美國總經 FRED(聖路易聯準銀行)fredgraph.csv(免金鑰)
+     美國總經 FRED(聖路易聯準銀行)正式 API(環境變數 FRED_API_KEY);無金鑰或失敗時用 fredgraph.csv
    數據防護:
      - 超過 7 天沒更新的報價視為失敗(避免到期合約停在舊值)
      - 期貨換月偵測:合約名稱改變、近月最後交易日、或與 CNBC 近月價差過大,漲跌不可信,標 rollover
@@ -492,9 +492,19 @@ function toYahooSymbol(sym) {
   return s;
 }
 
-/* ---------- FRED ---------- */
+/* ---------- FRED ----------
+   有 FRED_API_KEY 環境變數時用正式 API;沒有金鑰或 API 失敗時退回網頁 CSV */
 async function fredSeries(id) {
   const start = new Date(Date.now() - 4 * 365 * 864e5).toISOString().slice(0, 10);
+  const key = process.env.FRED_API_KEY;
+  if (key) {
+    try {
+      const j = JSON.parse(await getText(`https://api.stlouisfed.org/fred/series/observations?series_id=${id}`
+        + `&observation_start=${start}&file_type=json&api_key=${encodeURIComponent(key)}`));
+      const obs = (j.observations || []).filter(o => o.value !== '.' && isFinite(+o.value)).map(o => ({ d: o.date, v: +o.value }));
+      if (obs.length) return obs;
+    } catch {} // 錯誤訊息可能含金鑰網址,不往外丟,直接退回 CSV
+  }
   const url = `https://fred.stlouisfed.org/graph/fredgraph.csv?id=${id}&cosd=${start}`;
   let csv;
   try { csv = await getText(url); }
