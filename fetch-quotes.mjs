@@ -46,8 +46,10 @@ const MARKETS = {
     { name: '道瓊工業指數',     symbol: '^DJI',  cnbc: '.DJI',  fred: { id: 'DJIA' } },
     { name: '標普500',          symbol: '^GSPC', cnbc: '.SPX',  fred: { id: 'SP500' } },
     { name: '那斯達克綜合指數', symbol: '^IXIC', cnbc: '.IXIC', fred: { id: 'NASDAQCOM' } },
+    { name: '羅素2000',         symbol: '^RUT',  cnbc: '.RUT', hint: '美國 2,000 檔中小型股指數,對利率與美國內需景氣較敏感' },
     { name: '費城半導體指數',   symbol: '^SOX',  cnbc: '.SOX', hint: '美國 30 檔主要半導體股組成(含台積電 ADR),和台股電子股連動很高' },
     { name: '台灣加權指數',     symbol: '^TWII', cnbc: '.TWII', official: { src: 'taiex' } },
+    { name: '櫃買指數',         symbol: '^TWOII', official: { src: 'tpex-index' }, hint: '台灣上櫃股票指數,以中小型電子、生技股為主,反映內資與散戶的風險偏好' },
     { name: '日經225',          symbol: '^N225', cnbc: '.N225' },
     { name: '南韓KOSPI',        symbol: '^KS11', cnbc: '.KS11' },
     { name: '恒生指數',         symbol: '^HSI',  cnbc: '.HSI' },
@@ -298,7 +300,7 @@ async function twseGet(url) { // 證交所與櫃買有流量限制,請求間隔�
   await sleep(at - Date.now());
   return getText(url);
 }
-const rocDate = s => { const [y, m, d] = s.split('/'); return `${+y + 1911}-${m}-${d}`; };
+const rocDate = s => { const [y, m, d] = s.split('/'); return `${+y < 1911 ? +y + 1911 : y}-${m}-${d}`; }; // 民國或西元年皆可
 const numOf = s => parseFloat(String(s).replace(/<[^>]+>|,/g, ''));
 /* 台北時間本月起往前的月份(月初 15 日前多抓一個月,走勢線才湊得滿 SERIES_LEN 筆) */
 function recentMonths() {
@@ -344,6 +346,9 @@ const OFFICIAL_SOURCES = {
   tpex: { label: '櫃買中心', tz: 'Asia/Taipei', lag: 0, fetch: o => twMonthly(
     ym => `https://www.tpex.org.tw/www/zh-tw/afterTrading/tradingStock?code=${o.code}&date=${ym.y}/${String(ym.m).padStart(2, '0')}/01&response=json`,
     j => j.tables?.[0]?.data, 6) },
+  'tpex-index': { label: '櫃買中心', tz: 'Asia/Taipei', lag: 0, fetch: () => twMonthly(
+    ym => `https://www.tpex.org.tw/www/zh-tw/indexInfo/inx?date=${ym.y}/${String(ym.m).padStart(2, '0')}/01&response=json`,
+    j => j.tables?.[0]?.data, 4) },
   'cboe-vix': { label: 'CBOE', tz: 'America/New_York', lag: 1, fetch: async () => (await cboeVix()).slice(-90) },
   treasury: { label: '美國財政部', tz: 'America/New_York', lag: 1, fetch: async o => {
     const y = +new Date().toISOString().slice(0, 4);
