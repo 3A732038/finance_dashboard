@@ -89,20 +89,36 @@ const ALERT_DEFAULT = { indices: 4, indicators: 15, commodities: 6, crypto: 10, 
 const FRED_TOL_DEFAULT = 0.15; // 指數類相對誤差 %
 
 /* ---------- 美國總經(FRED) ---------- */
-// tf: level 原值 / yoy 年增率(%)/ diff 月增量;fmt 決定顯示單位
+// tf: level 原值 / yoy 年增率(%)/ mom 月增率(%)/ diff 月增量;scale: 原值換算倍數(如百萬→兆);group 決定儀表板分組與順序
 const MACRO = [
   { name: '聯邦基金利率(上限)', id: 'DFEDTARU',         tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策' },
   { name: '美債2年期殖利率',     id: 'DGS2',             tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '對聯準會利率預期最敏感的天期' },
   { name: '10年-2年期利差',      id: 'T10Y2Y',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '負值=殖利率曲線倒掛,常被視為衰退前兆' },
-  { name: '高收益債利差',        id: 'BAMLH0A0HYM2',     tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力', hint: '利差擴大=信用風險升溫' },
+  { name: '10年-3個月利差',      id: 'T10Y3M',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '紐約聯準銀行衰退機率模型採用的利差' },
+  { name: '10年期實質利率',      id: 'DFII10',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '抗通膨公債(TIPS)殖利率;上升通常壓抑黃金與成長股' },
+  { name: '聯準會資產負債表',    id: 'WALCL',            tf: 'level', unit: '兆美元', dec: 2, scale: 1e-6, freq: 'weekly', group: '貨幣政策', hint: '縮表=資產減少,市場資金收緊' },
+  { name: 'M2貨幣供給年增率',    id: 'M2SL',             tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '貨幣政策', hint: '市場整體資金量的變化' },
   { name: 'CPI年增率',           id: 'CPIAUCSL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
   { name: '核心CPI年增率',       id: 'CPILFESL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
+  { name: 'PCE年增率',           id: 'PCEPI',            tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
   { name: '核心PCE年增率',       id: 'PCEPILFE',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '聯準會最重視的通膨指標,目標 2%' },
+  { name: 'PPI年增率',           id: 'PPIFIS',           tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '最終需求生產者物價,常領先 CPI' },
+  { name: '5年期通膨預期',       id: 'T5YIE',            tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '通膨', hint: '債市隱含的未來 5 年平均通膨' },
   { name: '失業率',              id: 'UNRATE',           tf: 'level', unit: '%',  dec: 1, freq: 'monthly',   group: '就業' },
   { name: '非農新增就業',        id: 'PAYEMS',           tf: 'diff',  unit: '千人', dec: 0, freq: 'monthly', group: '就業' },
+  { name: '平均時薪年增率',      id: 'CES0500000003',    tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '就業', hint: '薪資漲幅過高會推升服務業通膨' },
+  { name: 'JOLTS職缺數',         id: 'JTSJOL',           tf: 'level', unit: '千個', dec: 0, freq: 'monthly', group: '就業', hint: '職缺減少=勞動市場降溫' },
   { name: '初領失業救濟金',      id: 'ICSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業' },
+  { name: '續領失業救濟金',      id: 'CCSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業', hint: '持續增加=失業者較難找到工作' },
   { name: '實質GDP季增年率',     id: 'A191RL1Q225SBEA',  tf: 'level', unit: '%',  dec: 1, freq: 'quarterly', group: '成長' },
+  { name: '零售銷售月增率',      id: 'RSAFS',            tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長', hint: '美國消費強弱,約占 GDP 七成的消費動能' },
+  { name: '工業生產月增率',      id: 'INDPRO',           tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長' },
   { name: '密大消費者信心',      id: 'UMCSENT',          tf: 'level', unit: '',   dec: 1, freq: 'monthly',   group: '成長' },
+  { name: '30年期房貸利率',      id: 'MORTGAGE30US',     tf: 'level', unit: '%',  dec: 2, freq: 'weekly',    group: '房市', hint: '房地美每週調查' },
+  { name: '新屋開工',            id: 'HOUST',            tf: 'level', unit: '千戶', dec: 0, freq: 'monthly', group: '房市', hint: '經季節調整年率' },
+  { name: '高收益債利差',        id: 'BAMLH0A0HYM2',     tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力', hint: '利差擴大=信用風險升溫' },
+  { name: '投資級債利差',        id: 'BAMLC0A0CM',       tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力' },
+  { name: '聖路易金融壓力指數',  id: 'STLFSI4',          tf: 'level', unit: '',   dec: 2, freq: 'weekly',    group: '金融壓力', hint: '0=正常水準,正值=壓力高於平均' },
 ];
 
 /* ---------- 經濟日曆:只挑對全球總經有影響的重要數據 ----------
@@ -528,9 +544,11 @@ function toMacroItem(cfg, obs) {
       const base = byDate.get(d.toISOString().slice(0, 10));
       return base ? { d: o.d, v: (o.v / base - 1) * 100 } : null;
     }).filter(Boolean);
+  } else if (cfg.tf === 'mom') {
+    pts = obs.slice(1).map((o, i) => ({ d: o.d, v: (o.v / obs[i].v - 1) * 100 }));
   } else if (cfg.tf === 'diff') {
     pts = obs.slice(1).map((o, i) => ({ d: o.d, v: o.v - obs[i].v }));
-  } else pts = obs;
+  } else pts = obs.map(o => cfg.scale ? { d: o.d, v: o.v * cfg.scale } : o);
   if (pts.length < 2) throw new Error('資料點不足');
   const last = pts[pts.length - 1], prev = pts[pts.length - 2];
   const period = cfg.freq === 'monthly' ? last.d.slice(0, 7)
