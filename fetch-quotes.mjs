@@ -46,7 +46,7 @@ const MARKETS = {
     { name: '道瓊工業指數',     symbol: '^DJI',  cnbc: '.DJI',  fred: { id: 'DJIA' } },
     { name: '標普500',          symbol: '^GSPC', cnbc: '.SPX',  fred: { id: 'SP500' } },
     { name: '那斯達克綜合指數', symbol: '^IXIC', cnbc: '.IXIC', fred: { id: 'NASDAQCOM' } },
-    { name: '費城半導體指數',   symbol: '^SOX',  cnbc: '.SOX' },
+    { name: '費城半導體指數',   symbol: '^SOX',  cnbc: '.SOX', hint: '美國 30 檔主要半導體股組成(含台積電 ADR),和台股電子股連動很高' },
     { name: '台灣加權指數',     symbol: '^TWII', cnbc: '.TWII', official: { src: 'taiex' } },
     { name: '日經225',          symbol: '^N225', cnbc: '.N225' },
     { name: '南韓KOSPI',        symbol: '^KS11', cnbc: '.KS11' },
@@ -57,18 +57,21 @@ const MARKETS = {
     { name: '印度Sensex',       symbol: '^BSESN' },
   ],
   indicators: [
-    { name: 'VIX恐慌指數',      symbol: '^VIX', dec: 2, alert: 30, cnbc: '.VIX', fred: { id: 'VIXCLS', tol: 2 }, official: { src: 'cboe-vix' } },
+    { name: 'VIX恐慌指數',      symbol: '^VIX', dec: 2, alert: 30, cnbc: '.VIX', fred: { id: 'VIXCLS', tol: 2 }, official: { src: 'cboe-vix' },
+      hint: '由標普500選擇權價格算出市場預期的未來 30 天波動。20 以下偏平靜,30 以上代表市場恐慌' },
     // 主來源為財政部固定期限殖利率(與 FRED DGS10/DGS30 同源);備援 ^TNX/^TYX 為 CBOE 收盤值,與財政部本來就會差 1~3bp
-    { name: '美債10年期殖利率', symbol: '^TNX',  unit: 'bp', dec: 3, cnbc: 'US10Y', fred: { id: 'DGS10', tol: 6 }, official: { src: 'treasury', col: '10 Yr' } },
-    { name: '美債30年期殖利率', symbol: '^TYX',  unit: 'bp', dec: 3, cnbc: 'US30Y', fred: { id: 'DGS30', tol: 6 }, official: { src: 'treasury', col: '30 Yr' } },
-    { name: '美元指數(DXY)',    symbol: 'DX-Y.NYB', dec: 2, alert: 1.5, cnbc: '.DXY' },
+    { name: '美債10年期殖利率', symbol: '^TNX',  unit: 'bp', dec: 3, cnbc: 'US10Y', fred: { id: 'DGS10', tol: 6 }, official: { src: 'treasury', col: '10 Yr' },
+      hint: '買美國 10 年期公債每年可拿到的報酬率,是全球房貸、企業借款與股票估值的基準。1bp(基點)= 0.01%' },
+    { name: '美債30年期殖利率', symbol: '^TYX',  unit: 'bp', dec: 3, cnbc: 'US30Y', fred: { id: 'DGS30', tol: 6 }, official: { src: 'treasury', col: '30 Yr' },
+      hint: '最長天期公債的利率,反映市場對長期通膨與美國財政赤字的擔憂' },
+    { name: '美元指數(DXY)',    symbol: 'DX-Y.NYB', dec: 2, alert: 1.5, cnbc: '.DXY', hint: '美元對歐元、日圓等 6 種主要貨幣的強弱。上升=美元走強,資金常流出新興市場' },
   ],
   commodities: [
     { name: '布蘭特原油', symbol: 'BZ=F', cnbc: '@LCO.1' },
     { name: 'WTI原油',    symbol: 'CL=F', cnbc: '@CL.1' },
     { name: '黃金',       symbol: 'GC=F', cnbc: '@GC.1' },
     { name: '白銀',       symbol: 'SI=F', cnbc: '@SI.1' },
-    { name: '銅',         symbol: 'HG=F', dec: 3, cnbc: '@HG.1' },
+    { name: '銅',         symbol: 'HG=F', dec: 3, cnbc: '@HG.1', hint: '用途廣泛的工業原料,價格常反映全球景氣,有「銅博士」之稱(單位:美元/磅)' },
     { name: '天然氣',     symbol: 'NG=F', dec: 3, cnbc: '@NG.1' },
   ],
   crypto: [
@@ -91,34 +94,34 @@ const FRED_TOL_DEFAULT = 0.15; // 指數類相對誤差 %
 /* ---------- 美國總經(FRED) ---------- */
 // tf: level 原值 / yoy 年增率(%)/ mom 月增率(%)/ diff 月增量;scale: 原值換算倍數(如百萬→兆);group 決定儀表板分組與順序
 const MACRO = [
-  { name: '聯邦基金利率(上限)', id: 'DFEDTARU',         tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策' },
-  { name: '美債2年期殖利率',     id: 'DGS2',             tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '對聯準會利率預期最敏感的天期' },
-  { name: '10年-2年期利差',      id: 'T10Y2Y',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '負值=殖利率曲線倒掛,常被視為衰退前兆' },
-  { name: '10年-3個月利差',      id: 'T10Y3M',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '紐約聯準銀行衰退機率模型採用的利差' },
-  { name: '10年期實質利率',      id: 'DFII10',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '抗通膨公債(TIPS)殖利率;上升通常壓抑黃金與成長股' },
-  { name: '聯準會資產負債表',    id: 'WALCL',            tf: 'level', unit: '兆美元', dec: 2, scale: 1e-6, freq: 'weekly', group: '貨幣政策', hint: '縮表=資產減少,市場資金收緊' },
-  { name: 'M2貨幣供給年增率',    id: 'M2SL',             tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '貨幣政策', hint: '市場整體資金量的變化' },
-  { name: 'CPI年增率',           id: 'CPIAUCSL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
-  { name: '核心CPI年增率',       id: 'CPILFESL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
-  { name: 'PCE年增率',           id: 'PCEPI',            tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨' },
-  { name: '核心PCE年增率',       id: 'PCEPILFE',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '聯準會最重視的通膨指標,目標 2%' },
-  { name: 'PPI年增率',           id: 'PPIFIS',           tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '最終需求生產者物價,常領先 CPI' },
-  { name: '5年期通膨預期',       id: 'T5YIE',            tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '通膨', hint: '債市隱含的未來 5 年平均通膨' },
-  { name: '失業率',              id: 'UNRATE',           tf: 'level', unit: '%',  dec: 1, freq: 'monthly',   group: '就業' },
-  { name: '非農新增就業',        id: 'PAYEMS',           tf: 'diff',  unit: '千人', dec: 0, freq: 'monthly', group: '就業' },
-  { name: '平均時薪年增率',      id: 'CES0500000003',    tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '就業', hint: '薪資漲幅過高會推升服務業通膨' },
-  { name: 'JOLTS職缺數',         id: 'JTSJOL',           tf: 'level', unit: '千個', dec: 0, freq: 'monthly', group: '就業', hint: '職缺減少=勞動市場降溫' },
-  { name: '初領失業救濟金',      id: 'ICSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業' },
-  { name: '續領失業救濟金',      id: 'CCSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業', hint: '持續增加=失業者較難找到工作' },
-  { name: '實質GDP季增年率',     id: 'A191RL1Q225SBEA',  tf: 'level', unit: '%',  dec: 1, freq: 'quarterly', group: '成長' },
-  { name: '零售銷售月增率',      id: 'RSAFS',            tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長', hint: '美國消費強弱,約占 GDP 七成的消費動能' },
-  { name: '工業生產月增率',      id: 'INDPRO',           tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長' },
-  { name: '密大消費者信心',      id: 'UMCSENT',          tf: 'level', unit: '',   dec: 1, freq: 'monthly',   group: '成長' },
-  { name: '30年期房貸利率',      id: 'MORTGAGE30US',     tf: 'level', unit: '%',  dec: 2, freq: 'weekly',    group: '房市', hint: '房地美每週調查' },
-  { name: '新屋開工',            id: 'HOUST',            tf: 'level', unit: '千戶', dec: 0, freq: 'monthly', group: '房市', hint: '經季節調整年率' },
-  { name: '高收益債利差',        id: 'BAMLH0A0HYM2',     tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力', hint: '利差擴大=信用風險升溫' },
-  { name: '投資級債利差',        id: 'BAMLC0A0CM',       tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力' },
-  { name: '聖路易金融壓力指數',  id: 'STLFSI4',          tf: 'level', unit: '',   dec: 2, freq: 'weekly',    group: '金融壓力', hint: '0=正常水準,正值=壓力高於平均' },
+  { name: '聯邦基金利率(上限)', id: 'DFEDTARU',         tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '聯準會設定的銀行間隔夜借款利率,是美國所有利率的基準。升息=借錢變貴、壓抑經濟與通膨。' },
+  { name: '美債2年期殖利率',     id: 'DGS2',             tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '美國政府借 2 年期的利率。市場預期聯準會會升息它就先漲、預期降息就先跌,是猜測央行動向的風向球。' },
+  { name: '10年-2年期利差',      id: 'T10Y2Y',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '10 年期減 2 年期公債殖利率。正常時長天期利率較高(正值);變負值稱為「倒掛」,過去常出現在經濟衰退之前。' },
+  { name: '10年-3個月利差',      id: 'T10Y3M',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '10 年期減 3 個月期公債殖利率,另一種衰退訊號。紐約聯準銀行用它推估未來一年衰退機率,負值代表風險升高。' },
+  { name: '10年期實質利率',      id: 'DFII10',           tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '貨幣政策', hint: '扣掉通膨後的 10 年期利率(取自抗通膨公債 TIPS)。代表「真正的」借錢成本;上升時黃金和科技成長股通常承壓。' },
+  { name: '聯準會資產負債表',    id: 'WALCL',            tf: 'level', unit: '兆美元', dec: 2, scale: 1e-6, freq: 'weekly', group: '貨幣政策', hint: '聯準會持有的公債與房貸債券總額。增加(QE 量化寬鬆)=往市場放錢;減少(縮表 QT)=把錢收回,市場資金變緊。' },
+  { name: 'M2貨幣供給年增率',    id: 'M2SL',             tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '貨幣政策', hint: '市面上的錢有多少(現金、存款、貨幣基金等)比一年前增加幾 %。成長快=資金充沛,有利資產價格,但也可能推升通膨。' },
+  { name: 'CPI年增率',           id: 'CPIAUCSL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '消費者物價指數:一般人買東西的價格比一年前漲多少,是最常見的通膨數字。' },
+  { name: '核心CPI年增率',       id: 'CPILFESL',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '扣掉價格起伏大的食物與能源後的 CPI,比較能看出通膨的長期趨勢。' },
+  { name: 'PCE年增率',           id: 'PCEPI',            tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '個人消費支出物價:另一種通膨算法,涵蓋範圍比 CPI 廣。' },
+  { name: '核心PCE年增率',       id: 'PCEPILFE',         tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '扣掉食物與能源的 PCE 物價,是聯準會最重視的通膨指標,目標 2%;高於目標就不容易降息。' },
+  { name: 'PPI年增率',           id: 'PPIFIS',           tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '通膨', hint: '生產者物價:企業出廠或批發價格漲多少。成本上升常會轉嫁給消費者,所以常被當作 CPI 的領先指標。' },
+  { name: '5年期通膨預期',       id: 'T5YIE',            tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '通膨', hint: '債市投資人預期未來 5 年平均通膨多少(普通公債與抗通膨公債的殖利率差)。升高代表市場擔心通膨,聯準會很重視。' },
+  { name: '失業率',              id: 'UNRATE',           tf: 'level', unit: '%',  dec: 1, freq: 'monthly',   group: '就業', hint: '想工作但找不到工作的人占勞動力比例。快速上升通常是經濟轉弱的訊號。' },
+  { name: '非農新增就業',        id: 'PAYEMS',           tf: 'diff',  unit: '千人', dec: 0, freq: 'monthly', group: '就業', hint: '上個月美國新增多少個工作(不含農業)。每月第一個週五公布,是對股市、債市影響最大的數據之一。' },
+  { name: '平均時薪年增率',      id: 'CES0500000003',    tf: 'yoy',   unit: '%',  dec: 1, freq: 'monthly',   group: '就業', hint: '勞工平均時薪比一年前漲多少。薪資漲太快會推高服務業價格,讓通膨降不下來。' },
+  { name: 'JOLTS職缺數',         id: 'JTSJOL',           tf: 'level', unit: '千個', dec: 0, freq: 'monthly', group: '就業', hint: '企業開出、還沒補滿的職缺數。職缺多=缺工、勞動市場熱;職缺減少=企業招募轉趨保守。' },
+  { name: '初領失業救濟金',      id: 'ICSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業', hint: '每週第一次申請失業救濟的人數,最即時的裁員指標。持續升高代表裁員增加。' },
+  { name: '續領失業救濟金',      id: 'CCSA',             tf: 'level', unit: '人', dec: 0, freq: 'weekly',    group: '就業', hint: '持續領取失業救濟的人數。增加代表失業者比較難找到新工作,勞動市場在降溫。' },
+  { name: '實質GDP季增年率',     id: 'A191RL1Q225SBEA',  tf: 'level', unit: '%',  dec: 1, freq: 'quarterly', group: '成長', hint: '國內生產毛額:美國經濟這一季成長多快(換算成年率、扣除通膨)。連續兩季負成長常被稱為技術性衰退。' },
+  { name: '零售銷售月增率',      id: 'RSAFS',            tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長', hint: '美國零售與餐飲營業額比上個月增加多少。消費占美國經濟約七成,是看民眾還敢不敢花錢的重要數據。' },
+  { name: '工業生產月增率',      id: 'INDPRO',           tf: 'mom',   unit: '%',  dec: 1, freq: 'monthly',   group: '成長', hint: '工廠、礦業與公用事業的產出比上個月增加多少,反映製造業景氣。' },
+  { name: '密大消費者信心',      id: 'UMCSENT',          tf: 'level', unit: '',   dec: 1, freq: 'monthly',   group: '成長', hint: '密西根大學調查民眾對經濟與自身財務的信心。數字越低越悲觀,長期平均約 85。' },
+  { name: '30年期房貸利率',      id: 'MORTGAGE30US',     tf: 'level', unit: '%',  dec: 2, freq: 'weekly',    group: '房市', hint: '美國 30 年期固定房貸平均利率(房地美每週調查)。利率高=買房負擔重,壓抑房市。' },
+  { name: '新屋開工',            id: 'HOUST',            tf: 'level', unit: '千戶', dec: 0, freq: 'monthly', group: '房市', hint: '當月新開工興建的住宅數量(換算成年率)。房市是對利率最敏感的產業,常被當作景氣領先指標。' },
+  { name: '高收益債利差',        id: 'BAMLH0A0HYM2',     tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力', hint: '債券利差=公司債殖利率減同天期公債殖利率,是投資人借錢給企業要求多拿的「風險補償」。這裡看信用較差的「高收益債(垃圾債)」:利差擴大=市場擔心企業倒債,常伴隨股市下跌。' },
+  { name: '投資級債利差',        id: 'BAMLC0A0CM',       tf: 'level', unit: '%',  dec: 2, freq: 'daily',     group: '金融壓力', hint: '信用評等較好的「投資級」公司債,比公債多出的殖利率。比高收益債穩定;連它都明顯擴大,代表市場壓力已擴散。' },
+  { name: '聖路易金融壓力指數',  id: 'STLFSI4',          tf: 'level', unit: '',   dec: 2, freq: 'weekly',    group: '金融壓力', hint: '聖路易聯準銀行綜合利率、利差、波動率等 18 項數據算出的金融壓力分數。0=正常水準,正值=壓力高於平均,負值=市場平穩。' },
 ];
 
 /* ---------- 經濟日曆:只挑對全球總經有影響的重要數據 ----------
@@ -132,11 +135,15 @@ const CAL_EVENTS = {
     ['Core CPI', '核心 CPI', 'high'],
     ['PPI', 'PPI 生產者物價', 'medium'],
     ['Core PCE Price Index', '核心 PCE 物價', 'high'],
+    ['PCE Price Index', 'PCE 物價', 'medium'],
     ['Nonfarm Payrolls', '非農就業人數', 'high'],
     ['Unemployment Rate', '失業率', 'high'],
     ['Average Hourly Earnings (YoY)', '平均時薪年增', 'medium'],
     ['GDP', 'GDP', 'high'],
     ['Retail Sales', '零售銷售', 'medium'],
+    ['Industrial Production', '工業生產', 'medium'],
+    ['Housing Starts', '新屋開工', 'medium'],
+    ["Fed's Balance Sheet", '聯準會資產負債表', 'medium'],
     ['ISM Manufacturing PMI', 'ISM 製造業 PMI', 'medium'],
     ['ISM Non-Manufacturing PMI', 'ISM 服務業 PMI', 'medium'],
     ['JOLTS Job Openings', 'JOLTS 職缺', 'medium'],
@@ -268,7 +275,7 @@ function toMarketItem(cfg, chart, group) {
     : round((last.c / prev.c - 1) * 100, 2);
   const alert = cfg.alert ?? (cfg.unit === 'bp' ? ALERT_DEFAULT.indicators : ALERT_DEFAULT[group]);
   return {
-    name: cfg.name, symbol: cfg.symbol,
+    name: cfg.name, symbol: cfg.symbol, ...(cfg.hint && { hint: cfg.hint }),
     value: round(last.c, dec), change, unit: cfg.unit || '%', dir: dirOf(change),
     asOf: last.d, live, source: chart.source || 'Yahoo',
     bigMove: alert != null && Math.abs(change) >= alert,
@@ -657,10 +664,10 @@ async function fetchCalendar() {
   for (const [listed, rows] of rowsByListed) {
     for (const r of rows) {
       const c = CAL_EVENTS[r.country]; if (!c) continue;
-      const hit = c.list.find(([n]) => n === r.eventName); if (!hit) continue;
+      const hit = c.list.find(([n]) => n.toLowerCase() === String(r.eventName).toLowerCase()); if (!hit) continue;
       const tp = toTaipei(shiftDate(listed, offset), r.gmt);
       if (tp.date < from || tp.date > to) continue;
-      const key = `${r.country}|${r.eventName}|${tp.sortKey}`;
+      const key = `${r.country}|${hit[0]}|${tp.sortKey}`;
       const prev = clean(r.previous), cons = clean(r.consensus), act = clean(r.actual);
       const ex = byKey.get(key);
       // 同一事件常有 MoM/YoY 多列,數值合併顯示

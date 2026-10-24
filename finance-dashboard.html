@@ -155,6 +155,7 @@
   .mkt .val{font-size:25px;font-weight:800}
   .mkt .chg{font-size:13.5px;font-weight:700;margin-top:2px}
   .mkt .note{font-size:11px;color:var(--muted);margin-top:8px;border-top:1px dashed var(--line);padding-top:7px}
+  .mkt .hint{font-size:11px;color:var(--muted);opacity:.8;margin-top:6px}
   .spark{width:100%;height:34px;margin-top:9px;display:block;overflow:visible}
   .spark polyline{fill:none;stroke-width:1.8;stroke-linejoin:round;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
   .spark polygon{opacity:0;transition:opacity 1s .6s}
@@ -714,7 +715,8 @@ function mktCard(m, series, i){
     ${chg}
     ${sparkline(m.series&&m.series.length>1?m.series:series)}
     ${srcTags(m)}
-    ${m.note?`<div class="note">${m.note}</div>`:''}</div>`;
+    ${m.note?`<div class="note">${m.note}</div>`:''}
+    ${m.hint?`<div class="hint">ⓘ ${m.hint}</div>`:''}</div>`;
 }
 /* 總經卡:顏色中性(數據升降不等於好壞) */
 function macroCard(m, i){
