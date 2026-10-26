@@ -264,7 +264,9 @@ async function yahooChart(symbol, range = '3mo') {
   const ageDays = (Date.now() - Date.parse(dedup[dedup.length - 1].d)) / 864e5;
   if (ageDays > 7) throw new Error(`資料過舊(最後一筆 ${dedup[dedup.length - 1].d})`);
   const now = Date.now() / 1000, reg = meta.currentTradingPeriod?.regular;
-  const live = !!(reg && now >= reg.start && now < reg.end);
+  // 「盤中」除了現在落在交易時段內,最新一筆還必須是交易所當地的今天;
+  // 期貨在週末時 Yahoo 的交易時段資訊不可靠,會把上週五的收盤誤判成盤中
+  const live = !!(reg && now >= reg.start && now < reg.end) && dedup[dedup.length - 1].d === day(now);
   return { pts: dedup, live, currency: meta.currency, contract: (meta.shortName || '').trim() };
 }
 
@@ -399,16 +401,25 @@ async function primaryChart(official, yahooSymbol, label, notes) {
 /* ---------- 期貨換月偵測 ----------
    Yahoo 的 XX=F 是「近月連續合約」,近月到期就自動接到下一個月份。
    新舊合約本來就有價差,換月當天用「今天新合約 vs 昨天舊合約」算出的漲跌是假的。
-   判斷方式:(1) 合約名稱與上次抓取時不同 (2) 名稱含 Last Day(近月最後交易日,隨時會切換)
+   判斷方式:
+   (1) 最新一根 K 棒與前一根 K 棒的合約名稱不同。合約名稱要「綁 K 棒」比:
+       Yahoo 常在週末先改名、下個交易日才真正換資料,所以同一根 K 棒重抓時沿用第一次看到的名稱,
+       等新 K 棒出現時,才拿它和舊 K 棒的名稱比對(barContract / prevBarContract)
+   (2) 名稱含月份且含 Last Day(近月最後交易日)。BZ=F 的商品名本身就叫
+       「Brent Crude Oil Last Day Financial」,沒有月份,不能據此判斷
+   (3) 與 CNBC 同一交易日比對不符(在 fetchAll 判斷)
    換月時保留價格,但漲跌改標 flat 並加 rollover 旗標,儀表板顯示灰色「換月」。 */
+const CONTRACT_MONTH_RE = /\b(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)[a-z]*\.?\s+'?\d{2}\b/i;
 function markRollover(item, contract, prevItem) {
   if (!item.symbol.endsWith('=F')) return;
   item.contract = contract;
+  const sameBar = !!prevItem && prevItem.asOf === item.asOf;
+  item.barContract = sameBar ? (prevItem.barContract || prevItem.contract || contract) : contract;
+  item.prevBarContract = sameBar ? prevItem.prevBarContract : (prevItem?.barContract || prevItem?.contract);
   const reasons = [];
-  if (prevItem?.contract && prevItem.contract !== contract) reasons.push(`合約由「${prevItem.contract}」換成「${contract}」`);
-  if (/last day/i.test(contract)) reasons.push('近月合約最後交易日');
-  // 同一交易日重跑時沿用先前的判斷,避免換月旗標被第二次抓取洗掉
-  if (!reasons.length && prevItem?.rollover && prevItem.asOf === item.asOf) reasons.push(prevItem.rolloverReason || '同日先前已判定換月');
+  if (item.prevBarContract && item.prevBarContract !== item.barContract)
+    reasons.push(`合約由「${item.prevBarContract}」換成「${item.barContract}」`);
+  if (/last day/i.test(contract) && CONTRACT_MONTH_RE.test(contract)) reasons.push('近月合約最後交易日');
   if (reasons.length) {
     item.rollover = true;
     item.rolloverReason = reasons.join(';');
@@ -455,14 +466,23 @@ function toCnbcSymbol(sym) {
 function crossCheck2(item, q, cnbcSym, group) {
   if (!q) return { src: 'CNBC', id: cnbcSym, status: 'none' };
   const bp = item.unit === 'bp';
-  // CNBC 已進入新交易日、Yahoo 還停在前一日收盤:改拿 CNBC 的「前日收盤」比對數值(漲跌無法比)
+  const diffTo = v => bp ? Math.abs(item.value - v) * 100 : Math.abs(item.value / v - 1) * 100;
+  let sameSession = q.date === item.asOf;
+  // CNBC 日期比 Yahoo 晚,有兩種可能:
+  //   a. CNBC 真的進入新交易日,它的「前日收盤」才是 Yahoo 的最新收盤
+  //   b. 只是日期標示不同(週末、期貨夜盤以隔天為交易日),CNBC 的最新價其實就是 Yahoo 那天的收盤
+  // 舊版一律當成 a,週末會拿週五收盤去比週四收盤,把週五的正常漲跌誤判成「不符」再誤判成換月。
+  // 現在看 Yahoo 的數值比較接近 CNBC 的最新價還是前日收盤來決定
   if (q.date > item.asOf && !item.live && q.prev != null) {
-    const d = bp ? Math.abs(item.value - q.prev) * 100 : Math.abs(item.value / q.prev - 1) * 100;
-    return { src: 'CNBC', id: cnbcSym, status: d <= (bp ? 3 : 0.15) ? 'ok' : 'mismatch', viaPrev: true,
-      cnbc: q.prev, cnbcChange: null, valueDiff: round(d, 2), diffUnit: bp ? 'bp' : '%' };
+    if (diffTo(q.last) <= diffTo(q.prev)) sameSession = true;
+    else {
+      const d = diffTo(q.prev);
+      return { src: 'CNBC', id: cnbcSym, status: d <= (bp ? 3 : 0.15) ? 'ok' : 'mismatch', viaPrev: true,
+        cnbc: q.prev, cnbcChange: null, valueDiff: round(d, 2), diffUnit: bp ? 'bp' : '%' };
+    }
   }
-  if (q.date !== item.asOf) return { src: 'CNBC', id: cnbcSym, status: 'skip', reason: `報價日期不同(Yahoo ${item.asOf} / CNBC ${q.date})` };
-  const valueDiff = bp ? Math.abs(item.value - q.last) * 100 : Math.abs(item.value / q.last - 1) * 100;
+  if (!sameSession) return { src: 'CNBC', id: cnbcSym, status: 'skip', reason: `報價日期不同(Yahoo ${item.asOf} / CNBC ${q.date})` };
+  const valueDiff = diffTo(q.last);
   const valueTol = bp ? (item.live ? 5 : 3) : (item.live ? 0.6 : 0.15);
   const out = { src: 'CNBC', id: cnbcSym, cnbc: q.last, cnbcChange: q.chg, valueDiff: round(valueDiff, 2), diffUnit: bp ? 'bp' : '%' };
   let ok = valueDiff <= valueTol;
@@ -998,7 +1018,33 @@ async function fetchAll() {
   const heatmap = await fetchHeatmap(failures);
   for (const x of heatmap.us?.items || [])
     if (x.check2?.status === 'mismatch') warnings.push(`類股 ${x.symbol} 與 CNBC 不符:Yahoo ${x.value}(${x.d1}%) vs CNBC ${x.check2.cnbc}(${x.check2.cnbcChange}%)`);
-  return { fetchedAt: new Date().toISOString(), market, macro, calendar, risk, heatmap, failures, warnings };
+  const fresh = freshness(market);
+  return { fetchedAt: new Date().toISOString(), fresh, market, macro, calendar, risk, heatmap, failures, warnings };
+}
+
+/* ---------- 本次是否有新的交易日 ----------
+   拿各國股市指數的最新收盤日,和儀表板上「今天以前」最新一天的收盤日比對。
+   全部指數都沒有新收盤(週日、全球同時休市)才代表今天沒有新的市場資料;
+   台股或美股單獨休市時,亞洲、歐洲其他市場仍算新資料。舊格式的日子沒有 asOf,一律視為有新資料。 */
+function freshness(market) {
+  let prevDay = null;
+  try {
+    const win = {};
+    new Function('window', readTextClean(join(HERE, 'finance-data.js')))(win);
+    prevDay = (win.FINANCE_DATA?.days || []).find(d => d.date < tpeToday() && d.market) || null;
+  } catch {}
+  const prevAsOf = new Map((prevDay?.market?.indices || []).map(x => [x.name, x.asOf]));
+  const rows = (market.indices || []).map(x => {
+    const prev = prevAsOf.get(x.name) || null;
+    return { name: x.name, asOf: x.asOf, prev, isNew: !x.asOf || !prev || x.asOf > prev };
+  });
+  const of = name => rows.find(r => r.name === name) || { asOf: null, prev: null, isNew: true };
+  return {
+    comparedWith: prevDay?.date || null,
+    us: of('標普500'), tw: of('台灣加權指數'),
+    newIndices: rows.filter(r => r.isNew).map(r => r.name),
+    any: rows.some(r => r.isNew),
+  };
 }
 
 function checkLabel(x) {
@@ -1013,6 +1059,13 @@ function checkLabel(x) {
 const ZONE_ZH = { 'risk-on': '風險偏好 Risk-On', 'risk-off': '避險 Risk-Off', neutral: '中性' };
 function summary(data) {
   const lines = [`抓取時間 ${data.fetchedAt}`];
+  const f = data.fresh;
+  if (f) {
+    const tag = x => `${x.asOf || '—'} 收盤${x.isNew ? '(新)' : '(與上次相同)'}`;
+    lines.push(`【交易日】美股 ${tag(f.us)};台股 ${tag(f.tw)};有新收盤的指數 ${f.newIndices.length} 檔`
+      + `${f.comparedWith ? `(對照儀表板 ${f.comparedWith})` : ''}`);
+    if (!f.any) lines.push(`📅 本次沒有新的交易日資料:所有股市指數的最新收盤都已在 ${f.comparedWith} 的儀表板上`);
+  }
   const r = data.risk;
   if (r) {
     const prev = r.history[r.history.length - 2];

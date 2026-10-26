@@ -145,19 +145,56 @@ function mergePatch(patchPath) {
   const saved = saveData(d);
   console.log('✅ 合併完成');
   console.log(`   日期 ${saved.lastUpdated} | days ${saved.days.length} 天 | majorEvents ${saved.majorEvents.length} 筆`);
-  if (patch.day) console.log(`   今日新聞 ${(saved.days[0].news || []).length} 則`);
+  if (patch.day) {
+    const news = saved.days[0].news || [];
+    console.log(`   今日新聞 ${news.length} 則`);
+    // 新聞必須是上次更新之後的新文章:和前一天比對網址與標題
+    const prevDay = saved.days.find(x => x.date < patch.date);
+    if (prevDay) {
+      const urls = new Set((prevDay.news || []).map(n => n.url).filter(Boolean));
+      const titles = new Set((prevDay.news || []).map(n => n.title).filter(Boolean));
+      const dup = news.filter(n => (n.url && urls.has(n.url)) || (n.title && titles.has(n.title)));
+      if (dup.length) console.log(`   ⚠️ 有 ${dup.length} 則新聞和 ${prevDay.date} 重複(網址或標題相同),請換成上次更新後發布的新文章:`
+        + dup.map(n => `\n     - ${n.title}`).join(''));
+    }
+    const noUrl = news.filter(n => !/^https?:\/\//.test(n.url || ''));
+    if (noUrl.length) console.log(`   ⚠️ 有 ${noUrl.length} 則新聞沒有文章網址:` + noUrl.map(n => `\n     - ${n.title}`).join(''));
+  }
   if (!patch.marketFetchedAt) console.log('   ⚠️ today.json 未經 fetch-quotes.mjs 校正,市場數字為模型自填,可能不準確');
   if (evlog.length) console.log('   事件線:' + evlog.join('; '));
+}
+
+/* 推送後確認 GitHub Pages 已經是新版本(Pages 部署通常要 1~3 分鐘,只看 HTTP 200 會拿到舊檔) */
+const PAGES_URL = process.env.PAGES_URL || 'https://3a732038.github.io/finance_dashboard/finance-data.js';
+async function checkPages() {
+  const want = loadData().lastUpdated;
+  let got = null, last = '';
+  for (let i = 0; i < 12; i++) {
+    try {
+      const r = await fetch(`${PAGES_URL}?t=${Date.now()}`, { cache: 'no-store', signal: AbortSignal.timeout(20000) });
+      last = `HTTP ${r.status}`;
+      if (r.ok) {
+        got = ((await r.text()).match(/"lastUpdated":\s*"([^"]+)"/) || [])[1] || null;
+        if (got === want) { console.log(`✅ 網頁已更新:${PAGES_URL} lastUpdated ${got}`); return; }
+        last += `,網頁上 lastUpdated 仍是 ${got}`;
+      }
+    } catch (e) { last = e.message; }
+    await new Promise(r => setTimeout(r, 20000));
+  }
+  console.log(`⚠️ 等了 4 分鐘網頁仍不是最新版(本機 ${want};${last})。檔案已推送,可能是 GitHub Pages 部署延遲`);
+  process.exitCode = 2;
 }
 
 const arg = process.argv[2];
 try {
   if (arg === '--events') {
     listEvents(loadData());
+  } else if (arg === '--check-pages') {
+    await checkPages();
   } else if (arg) {
     mergePatch(arg);
   } else {
-    console.error('用法: node update.mjs --events | node update.mjs today.json');
+    console.error('用法: node update.mjs --events | node update.mjs today.json | node update.mjs --check-pages');
     process.exit(1);
   }
 } catch (e) {
