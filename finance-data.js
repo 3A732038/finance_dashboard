@@ -5,7 +5,7 @@
    結構: window.FINANCE_DATA = { lastUpdated, stocks{sectors,movers}, majorEvents[], days[] }
    ============================================================ */
 window.FINANCE_DATA = {
-  "lastUpdated": "2026-10-30",
+  "lastUpdated": "2026-10-31",
   "stocks": {
     "sectors": [
       {
@@ -44,11 +44,11 @@ window.FINANCE_DATA = {
         "symbol": "INTC.US",
         "name": "英特爾",
         "note": "Q4營收指引150~160億美元低於預期,預計今年無正向現金流,盤前暴跌約25%,引發全球晶片股拋售",
-        "price": 65.935,
-        "change": -28.39,
+        "price": 65.76,
+        "change": -28.58,
         "dir": "down",
         "asOf": "2026-10-30",
-        "live": true,
+        "live": false,
         "source": "Yahoo",
         "series": [
           121.78,
@@ -80,15 +80,15 @@ window.FINANCE_DATA = {
           93.74,
           95.53,
           92.07,
-          65.935
+          65.76
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "INTC",
-          "cnbc": 65.93,
-          "cnbcChange": -28.39,
-          "valueDiff": 0.01,
+          "cnbc": 65.76,
+          "cnbcChange": -28.58,
+          "valueDiff": 0,
           "diffUnit": "%",
           "changeDiff": 0,
           "status": "ok"
@@ -98,11 +98,11 @@ window.FINANCE_DATA = {
         "symbol": "AMZN.US",
         "name": "亞馬遜",
         "note": "Q4營收預測悲觀、Q3現金消耗大,盤前跌約6.8%,領跌七巨頭",
-        "price": 237.2,
-        "change": -2.71,
+        "price": 240.35,
+        "change": -1.41,
         "dir": "down",
         "asOf": "2026-10-30",
-        "live": true,
+        "live": false,
         "source": "Yahoo",
         "series": [
           258.45,
@@ -134,17 +134,17 @@ window.FINANCE_DATA = {
           253.1,
           254.6,
           243.79,
-          237.2
+          240.35
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "AMZN",
-          "cnbc": 237.13,
-          "cnbcChange": -2.73,
-          "valueDiff": 0.03,
+          "cnbc": 240.35,
+          "cnbcChange": -1.41,
+          "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.02,
+          "changeDiff": 0,
           "status": "ok"
         }
       },
@@ -152,11 +152,11 @@ window.FINANCE_DATA = {
         "symbol": "NVDA.US",
         "name": "輝達",
         "note": "盤前跌約2.9%;另受美司法部調查收購Hugging Face及中國間諜報導干擾",
-        "price": 206.61,
-        "change": -3.3,
+        "price": 204.64,
+        "change": -4.22,
         "dir": "down",
         "asOf": "2026-10-30",
-        "live": true,
+        "live": false,
         "source": "Yahoo",
         "series": [
           227.38,
@@ -188,17 +188,17 @@ window.FINANCE_DATA = {
           217.94,
           215.38,
           213.66,
-          206.61
+          204.64
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "NVDA",
-          "cnbc": 206.52,
-          "cnbcChange": -3.34,
-          "valueDiff": 0.04,
+          "cnbc": 204.64,
+          "cnbcChange": -4.22,
+          "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.04,
+          "changeDiff": 0,
           "status": "ok"
         }
       },
@@ -206,11 +206,11 @@ window.FINANCE_DATA = {
         "symbol": "AMD.US",
         "name": "超微",
         "note": "受英特爾警訊拖累,盤前跌約8%",
-        "price": 518.65,
-        "change": -8.43,
+        "price": 504.8,
+        "change": -10.88,
         "dir": "down",
         "asOf": "2026-10-30",
-        "live": true,
+        "live": false,
         "source": "Yahoo",
         "series": [
           615.52,
@@ -242,17 +242,17 @@ window.FINANCE_DATA = {
           560.26,
           578.44,
           566.42,
-          518.65
+          504.8
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "AMD",
-          "cnbc": 518.3,
-          "cnbcChange": -8.5,
-          "valueDiff": 0.07,
+          "cnbc": 504.8,
+          "cnbcChange": -10.88,
+          "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.07,
+          "changeDiff": 0,
           "status": "ok"
         }
       },
@@ -260,11 +260,11 @@ window.FINANCE_DATA = {
         "symbol": "ARM.US",
         "name": "Arm",
         "note": "晶片股中盤前跌幅居前,約-9%",
-        "price": 206.62,
-        "change": -9.68,
+        "price": 205.97,
+        "change": -9.97,
         "dir": "down",
         "asOf": "2026-10-30",
-        "live": true,
+        "live": false,
         "source": "Yahoo",
         "series": [
           322.9,
@@ -296,17 +296,17 @@ window.FINANCE_DATA = {
           226.6,
           235.9,
           228.77,
-          206.62
+          205.97
         ],
         "verified": true,
         "check2": {
           "src": "CNBC",
           "id": "ARM",
-          "cnbc": 206.8,
-          "cnbcChange": -9.61,
-          "valueDiff": 0.09,
+          "cnbc": 205.97,
+          "cnbcChange": -9.97,
+          "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.07,
+          "changeDiff": 0,
           "status": "ok"
         }
       },
@@ -378,57 +378,57 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLK",
             "name": "科技",
-            "value": 181.5,
+            "value": 179.51,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -3.84,
-            "w1": -0.94,
-            "m1": -9.16,
+            "live": false,
+            "d1": -4.89,
+            "w1": -2.03,
+            "m1": -10.16,
             "check2": {
               "src": "CNBC",
               "id": "XLK",
-              "cnbc": 181.47,
-              "cnbcChange": -3.85,
-              "valueDiff": 0.02,
+              "cnbc": 179.51,
+              "cnbcChange": -4.89,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.01,
+              "changeDiff": 0,
               "status": "ok"
             }
           },
           {
             "symbol": "SMH",
             "name": "半導體",
-            "value": 533.94,
+            "value": 522.49,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -4.94,
-            "w1": 1.28,
-            "m1": -15.33,
+            "live": false,
+            "d1": -6.98,
+            "w1": -0.89,
+            "m1": -17.14,
             "check2": {
               "src": "CNBC",
               "id": "SMH",
-              "cnbc": 533.97,
-              "cnbcChange": -4.93,
-              "valueDiff": 0.01,
+              "cnbc": 522.49,
+              "cnbcChange": -6.98,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.01,
+              "changeDiff": 0,
               "status": "ok"
             }
           },
           {
             "symbol": "XLC",
             "name": "通訊服務",
-            "value": 99.82,
+            "value": 99.9,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -1.37,
-            "w1": -5.39,
-            "m1": -9.52,
+            "live": false,
+            "d1": -1.29,
+            "w1": -5.32,
+            "m1": -9.45,
             "check2": {
               "src": "CNBC",
               "id": "XLC",
-              "cnbc": 99.82,
-              "cnbcChange": -1.37,
+              "cnbc": 99.9,
+              "cnbcChange": -1.29,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -438,17 +438,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLY",
             "name": "非必需消費",
-            "value": 114.96,
+            "value": 115.38,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -1.07,
-            "w1": 1.64,
-            "m1": 4.47,
+            "live": false,
+            "d1": -0.71,
+            "w1": 2.02,
+            "m1": 4.85,
             "check2": {
               "src": "CNBC",
               "id": "XLY",
-              "cnbc": 114.96,
-              "cnbcChange": -1.07,
+              "cnbc": 115.38,
+              "cnbcChange": -0.71,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -458,17 +458,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLF",
             "name": "金融",
-            "value": 56.79,
+            "value": 56.51,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -0.27,
-            "w1": 1.58,
-            "m1": 6.16,
+            "live": false,
+            "d1": -0.76,
+            "w1": 1.09,
+            "m1": 5.65,
             "check2": {
               "src": "CNBC",
               "id": "XLF",
-              "cnbc": 56.79,
-              "cnbcChange": -0.27,
+              "cnbc": 56.51,
+              "cnbcChange": -0.76,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -478,17 +478,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLI",
             "name": "工業",
-            "value": 169.91,
+            "value": 167.4,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": -0.13,
-            "w1": 3.21,
-            "m1": -0.02,
+            "live": false,
+            "d1": -1.6,
+            "w1": 1.69,
+            "m1": -1.5,
             "check2": {
               "src": "CNBC",
               "id": "XLI",
-              "cnbc": 169.91,
-              "cnbcChange": -0.13,
+              "cnbc": 167.4,
+              "cnbcChange": -1.6,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -498,37 +498,37 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLV",
             "name": "醫療保健",
-            "value": 187.44,
+            "value": 184.87,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 1.85,
-            "w1": 4.55,
-            "m1": 12.79,
+            "live": false,
+            "d1": 0.45,
+            "w1": 3.12,
+            "m1": 11.25,
             "check2": {
               "src": "CNBC",
               "id": "XLV",
-              "cnbc": 187.49,
-              "cnbcChange": 1.87,
-              "valueDiff": 0.03,
+              "cnbc": 184.87,
+              "cnbcChange": 0.45,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.02,
+              "changeDiff": 0,
               "status": "ok"
             }
           },
           {
             "symbol": "XLP",
             "name": "必需消費",
-            "value": 89.99,
+            "value": 89.42,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 2.05,
-            "w1": 1.96,
-            "m1": 11.75,
+            "live": false,
+            "d1": 1.41,
+            "w1": 1.31,
+            "m1": 11.04,
             "check2": {
               "src": "CNBC",
               "id": "XLP",
-              "cnbc": 89.99,
-              "cnbcChange": 2.05,
+              "cnbc": 89.42,
+              "cnbcChange": 1.41,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -538,17 +538,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLE",
             "name": "能源",
-            "value": 69.88,
+            "value": 70.02,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 1.7,
-            "w1": 0.79,
-            "m1": 11.23,
+            "live": false,
+            "d1": 1.91,
+            "w1": 1,
+            "m1": 11.46,
             "check2": {
               "src": "CNBC",
               "id": "XLE",
-              "cnbc": 69.88,
-              "cnbcChange": 1.7,
+              "cnbc": 70.02,
+              "cnbcChange": 1.91,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -558,17 +558,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLB",
             "name": "原物料",
-            "value": 52.58,
+            "value": 52.74,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 0.1,
-            "w1": 2.48,
-            "m1": 7.61,
+            "live": false,
+            "d1": 0.4,
+            "w1": 2.79,
+            "m1": 7.94,
             "check2": {
               "src": "CNBC",
               "id": "XLB",
-              "cnbc": 52.58,
-              "cnbcChange": 0.1,
+              "cnbc": 52.74,
+              "cnbcChange": 0.4,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -578,17 +578,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLU",
             "name": "公用事業",
-            "value": 43.51,
+            "value": 43.43,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 0.86,
-            "w1": 2.23,
-            "m1": 9.24,
+            "live": false,
+            "d1": 0.67,
+            "w1": 2.04,
+            "m1": 9.04,
             "check2": {
               "src": "CNBC",
               "id": "XLU",
-              "cnbc": 43.51,
-              "cnbcChange": 0.86,
+              "cnbc": 43.43,
+              "cnbcChange": 0.67,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -598,17 +598,17 @@ window.FINANCE_DATA = {
           {
             "symbol": "XLRE",
             "name": "房地產",
-            "value": 43.28,
+            "value": 43.17,
             "asOf": "2026-10-30",
-            "live": true,
-            "d1": 0.51,
-            "w1": 1.67,
-            "m1": 6.05,
+            "live": false,
+            "d1": 0.26,
+            "w1": 1.41,
+            "m1": 5.78,
             "check2": {
               "src": "CNBC",
               "id": "XLRE",
-              "cnbc": 43.28,
-              "cnbcChange": 0.51,
+              "cnbc": 43.17,
+              "cnbcChange": 0.26,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -846,6 +846,123 @@ window.FINANCE_DATA = {
   },
   "majorEvents": [
     {
+      "id": "evt-binance-hack-2026",
+      "title": "幣安遭駭63億美元,創加密史上最大竊案",
+      "summary": "10/29深夜約20分鐘內遭竊,分析師歸咎北韓;幣安暫停提款並稱以公司資金補損,同業加強防禦。",
+      "category": "加密貨幣",
+      "importance": 4,
+      "status": "ongoing",
+      "timeline": [
+        {
+          "note": "10/30 幣安聯席執行長稱攻擊可能始於工程師筆電遭入侵;Tether凍結部分相關資金,比特幣一度跌逾4%。",
+          "date": "2026-10-31"
+        }
+      ],
+      "relatedStocks": [
+        "COIN.US",
+        "MSTR.US",
+        "HOOD.US"
+      ],
+      "sources": [
+        {
+          "title": "路透:同業呼籲加強防禦",
+          "url": "https://longbridge.com/news/100000001577989"
+        }
+      ],
+      "started": "2026-10-31",
+      "updated": "2026-10-31"
+    },
+    {
+      "id": "evt-ai-debt-credit-selloff-2026",
+      "title": "CoreWeave公司債殖利率飆破15%，引爆AI舉債疑慮全球拋售潮",
+      "summary": "CoreWeave傳出公司債殖利率飆升至約15%，引發市場對AI資料中心高槓桿融資模式的疑慮，疊加熱CPI數據與晶片股賣壓，造成台股創史上第6大跌點(-1655.96點)，日韓股市同步重挫，全球科技股系統性賣壓加劇。",
+      "category": "科技/信用市場",
+      "importance": "high",
+      "status": "ongoing",
+      "timeline": [
+        {
+          "date": "2026-10-31",
+          "note": "10/30 美股收盤納指-2.84%創6月以來最大跌幅,晶片股單日蒸發約1兆美元;美銀稱科技債為「璞玉」。"
+        },
+        {
+          "date": "2026-10-30",
+          "note": "10/30 亞馬遜、英特爾財報加深AI支出疑慮,英特爾盤前跌約25%,費半盤中-5.26%、納指-2.35%,台股櫃買-4.42%(待確認)。"
+        },
+        {
+          "date": "2026-10-29",
+          "note": "10/29 Alphabet因搜尋廣告不如預期與AI支出,盤前跌約11.5%;微軟傳將發行至少250億美元債券,AI債務疑慮再起。"
+        },
+        {
+          "date": "2026-10-28",
+          "note": "10/28 SK海力士利潤暴增七倍,KOSPI+6.63%、記憶體股走強,AI資本支出回報疑慮暫緩;微軟、Alphabet財報成下一檢驗。"
+        },
+        {
+          "date": "2026-10-27",
+          "note": "10/26-27 Anthropic遞交IPO文件、Meta擬募資950億美元;費半反彈2.82%,KOSPI週二+3.09%,但債務疑慮未解。"
+        },
+        {
+          "date": "2026-10-26",
+          "note": "10/26 CoreWeave、Nebius盤前再跌約3%;馬斯克預告新雲端業者整併,SpaceX稱不會收購。"
+        },
+        {
+          "date": "2026-10-21",
+          "note": "Netflix下修2026年廣告營收展望逾10%至27億美元,加劇市場對AI相關資本支出與獲利能力的疑慮,但CoreWeave股價僅小漲1.6%,公司債殖利率仍處約15%高檔;VIX降至17.31、10年期美債殖利率降至5.12%顯示整體風險情緒轉穩,Meta、特斯拉即將公布的資本支出指引為後續觀察重點。"
+        },
+        {
+          "date": "2026-10-20",
+          "note": "CoreWeave盤前再跌逾2%,匯豐降評至「減持」、目標價僅39美元(隱含36.5%下跌空間),質疑其每MW營收僅大型雲端業者7成且公司債殖利率近15%;惟高盛、Longbridge顯示多數分析師(42位中23家)仍喊買、目標價中值138.34美元,市場分歧擴大,ARK基金週一已加碼買進"
+        },
+        {
+          "date": "2026-10-19",
+          "note": "CoreWeave債券殖利率飆破15%進入困境債區間,CDS隱含5年內違約機率逾5成;費城半導體指數(SOX)連8日下跌創2008年來最長連跌紀錄,上週累跌11.41%;週一早盤那斯達克100期貨反彈1.3%,市場觀察是否止跌"
+        },
+        {
+          "date": "2026-10-18",
+          "note": "輝達執行長黃仁勳公開表示CoreWeave財務狀況持續改善、輝達無需為其背書;策略師Melissa Brown警告當單一主題佔大盤市值比重達約40%時歷史上往往接近高點,美股目前已處於此水準。市場靜待本週Meta(10/21)、Netflix(10/20)等財報檢驗AI支出是否轉化為實際營收"
+        },
+        {
+          "date": "2026-10-17",
+          "note": "10/16美股尾盤加速下跌,那斯達克單日重挫2.14%、本週累計跌4.5%,創四週來首見週跌;CoreWeave單日再跌12%,VIX恐慌指數暴漲21.45%至19.99,AI舉債與獲利疑慮持續蔓延全球股市"
+        },
+        {
+          "date": "2026-10-16",
+          "note": "CoreWeave公司債殖利率仍逼近15%，舉債擴張疑慮未解；惟10/15美股四大指數多收紅(道瓊+1.08%)，VIX降至16.45，市場情緒略為喘穩，那斯達克僅微漲0.08%顯示AI概念股壓力仍大"
+        },
+        {
+          "note": "CoreWeave(CRWV)公司債殖利率飆升至約15%，股價盤中重挫逾15%，同業Nebius跌逾9%，引發AI資料中心高槓桿融資模式疑慮；費城半導體指數近五個交易日累跌逾10%，疊加熱CPI數據，觸發全球科技股系統性賣壓，台股、日股、韓股同步重挫",
+          "date": "2026-10-15"
+        }
+      ],
+      "relatedStocks": [
+        {
+          "symbol": "CRWV.US",
+          "name": "CoreWeave",
+          "impact": "受害",
+          "change": -15,
+          "note": "AI算力舉債成本飆升引發信心危機"
+        },
+        {
+          "symbol": "2330.TW",
+          "name": "台積電",
+          "impact": "受害",
+          "change": -2.01
+        },
+        {
+          "name": "SK海力士/三星/鎧俠",
+          "impact": "受害",
+          "note": "亞股記憶體三雄同步重挫9-12%"
+        }
+      ],
+      "sources": [
+        {
+          "source": "CNBC / StockTitan",
+          "url": "https://www.stocktitan.net/articles/netflix-q3-2026-earnings-results"
+        }
+      ],
+      "started": "2026-10-15",
+      "updated": "2026-10-31"
+    },
+    {
       "id": "evt-fed-hawkish-hike-sep2026",
       "title": "聯準會3年來首次升息,鷹派路徑成焦點",
       "summary": "FOMC 9/16無異議通過升息1碼至3.75%-4.00%,終結市場原先的降息預期;18位官員中16位認為年底前可能再升息、4位預期再升兩碼,市場轉為關注鷹派路徑對股市與債市的後續衝擊。",
@@ -928,92 +1045,6 @@ window.FINANCE_DATA = {
         }
       ],
       "started": "2026-09-20",
-      "updated": "2026-10-30"
-    },
-    {
-      "id": "evt-ai-debt-credit-selloff-2026",
-      "title": "CoreWeave公司債殖利率飆破15%，引爆AI舉債疑慮全球拋售潮",
-      "summary": "CoreWeave傳出公司債殖利率飆升至約15%，引發市場對AI資料中心高槓桿融資模式的疑慮，疊加熱CPI數據與晶片股賣壓，造成台股創史上第6大跌點(-1655.96點)，日韓股市同步重挫，全球科技股系統性賣壓加劇。",
-      "category": "科技/信用市場",
-      "importance": "high",
-      "status": "ongoing",
-      "timeline": [
-        {
-          "date": "2026-10-30",
-          "note": "10/30 亞馬遜、英特爾財報加深AI支出疑慮,英特爾盤前跌約25%,費半盤中-5.26%、納指-2.35%,台股櫃買-4.42%(待確認)。"
-        },
-        {
-          "date": "2026-10-29",
-          "note": "10/29 Alphabet因搜尋廣告不如預期與AI支出,盤前跌約11.5%;微軟傳將發行至少250億美元債券,AI債務疑慮再起。"
-        },
-        {
-          "date": "2026-10-28",
-          "note": "10/28 SK海力士利潤暴增七倍,KOSPI+6.63%、記憶體股走強,AI資本支出回報疑慮暫緩;微軟、Alphabet財報成下一檢驗。"
-        },
-        {
-          "date": "2026-10-27",
-          "note": "10/26-27 Anthropic遞交IPO文件、Meta擬募資950億美元;費半反彈2.82%,KOSPI週二+3.09%,但債務疑慮未解。"
-        },
-        {
-          "date": "2026-10-26",
-          "note": "10/26 CoreWeave、Nebius盤前再跌約3%;馬斯克預告新雲端業者整併,SpaceX稱不會收購。"
-        },
-        {
-          "date": "2026-10-21",
-          "note": "Netflix下修2026年廣告營收展望逾10%至27億美元,加劇市場對AI相關資本支出與獲利能力的疑慮,但CoreWeave股價僅小漲1.6%,公司債殖利率仍處約15%高檔;VIX降至17.31、10年期美債殖利率降至5.12%顯示整體風險情緒轉穩,Meta、特斯拉即將公布的資本支出指引為後續觀察重點。"
-        },
-        {
-          "date": "2026-10-20",
-          "note": "CoreWeave盤前再跌逾2%,匯豐降評至「減持」、目標價僅39美元(隱含36.5%下跌空間),質疑其每MW營收僅大型雲端業者7成且公司債殖利率近15%;惟高盛、Longbridge顯示多數分析師(42位中23家)仍喊買、目標價中值138.34美元,市場分歧擴大,ARK基金週一已加碼買進"
-        },
-        {
-          "date": "2026-10-19",
-          "note": "CoreWeave債券殖利率飆破15%進入困境債區間,CDS隱含5年內違約機率逾5成;費城半導體指數(SOX)連8日下跌創2008年來最長連跌紀錄,上週累跌11.41%;週一早盤那斯達克100期貨反彈1.3%,市場觀察是否止跌"
-        },
-        {
-          "date": "2026-10-18",
-          "note": "輝達執行長黃仁勳公開表示CoreWeave財務狀況持續改善、輝達無需為其背書;策略師Melissa Brown警告當單一主題佔大盤市值比重達約40%時歷史上往往接近高點,美股目前已處於此水準。市場靜待本週Meta(10/21)、Netflix(10/20)等財報檢驗AI支出是否轉化為實際營收"
-        },
-        {
-          "date": "2026-10-17",
-          "note": "10/16美股尾盤加速下跌,那斯達克單日重挫2.14%、本週累計跌4.5%,創四週來首見週跌;CoreWeave單日再跌12%,VIX恐慌指數暴漲21.45%至19.99,AI舉債與獲利疑慮持續蔓延全球股市"
-        },
-        {
-          "date": "2026-10-16",
-          "note": "CoreWeave公司債殖利率仍逼近15%，舉債擴張疑慮未解；惟10/15美股四大指數多收紅(道瓊+1.08%)，VIX降至16.45，市場情緒略為喘穩，那斯達克僅微漲0.08%顯示AI概念股壓力仍大"
-        },
-        {
-          "note": "CoreWeave(CRWV)公司債殖利率飆升至約15%，股價盤中重挫逾15%，同業Nebius跌逾9%，引發AI資料中心高槓桿融資模式疑慮；費城半導體指數近五個交易日累跌逾10%，疊加熱CPI數據，觸發全球科技股系統性賣壓，台股、日股、韓股同步重挫",
-          "date": "2026-10-15"
-        }
-      ],
-      "relatedStocks": [
-        {
-          "symbol": "CRWV.US",
-          "name": "CoreWeave",
-          "impact": "受害",
-          "change": -15,
-          "note": "AI算力舉債成本飆升引發信心危機"
-        },
-        {
-          "symbol": "2330.TW",
-          "name": "台積電",
-          "impact": "受害",
-          "change": -2.01
-        },
-        {
-          "name": "SK海力士/三星/鎧俠",
-          "impact": "受害",
-          "note": "亞股記憶體三雄同步重挫9-12%"
-        }
-      ],
-      "sources": [
-        {
-          "source": "CNBC / StockTitan",
-          "url": "https://www.stocktitan.net/articles/netflix-q3-2026-earnings-results"
-        }
-      ],
-      "started": "2026-10-15",
       "updated": "2026-10-30"
     },
     {
@@ -1564,115 +1595,65 @@ window.FINANCE_DATA = {
       ],
       "started": "2026-09-29",
       "updated": "2026-10-18"
-    },
-    {
-      "id": "evt-trump-xi-summit-2026",
-      "title": "川普-習近平白宮峰會登場",
-      "summary": "中國國家主席習近平將於本週四(9/24)赴白宮與川普會晤,為今年5月北京會晤後第二次雙邊峰會,聚焦貿易關稅休兵展延、AI安全通報機制、伊朗戰事及台灣軍售等議題;美方預計延後對中國及其他貿易夥伴加徵新關稅直至峰會後,以保留談判籌碼,雙方均已為重大突破預期降溫。",
-      "category": "地緣政治/貿易",
-      "importance": "high",
-      "status": "closed",
-      "timeline": [
-        {
-          "date": "2026-10-11",
-          "note": "近10多個交易日無新進展,市場焦點轉向財報季與聯準會政策動向,暫列淡出。"
-        },
-        {
-          "date": "2026-09-23",
-          "note": "習近平與夫人彭麗媛9/23抵達安德魯斯聯合基地展開國事訪問(9/23-25)，白宮訂9/24舉行南草坪歡迎儀式及國宴；會談聚焦貿易、AI、伊朗與台灣議題，市場解讀偏正面，AI晶片股及部分亞股走揚，惟陸港AI應用股獲利了結"
-        },
-        {
-          "date": "2026-09-22",
-          "note": "白宮公布接待儀式細節：習近平夫婦9/23抵美進行國是訪問，9/24於白宮南草坪、國事廳及玫瑰園舉行歡迎儀式(含479名三軍儀隊及B-2轟炸機、F-22戰機編隊飛越)，會談聚焦貿易與AI議題；川普22日先於聯合國大會場邊與日本首相高市早苗會晤。"
-        },
-        {
-          "note": "Bloomberg報導美中已於峰會前展開貿易談判;美方傳將延後對中及其他貿易夥伴新關稅至峰會後宣布,以保留談判籌碼。市場關注貿易休兵(原訂11月到期)是否展延、及AI安全通報機制進展。",
-          "date": "2026-09-21"
-        }
-      ],
-      "relatedStocks": [
-        {
-          "name": "台股/科技股",
-          "impact": "中性",
-          "note": "峰會涉及台灣議題與AI政策,市場密切關注後續動向"
-        }
-      ],
-      "sources": [
-        {
-          "source": "白宮聲明",
-          "url": "https://www.whitehouse.gov/briefings-statements/2026/09/first-lady-melania-trump-releases-details-ahead-of-his-excellency-xi-jinping-president-of-the-peoples-republic-of-china-and-madame-peng-liyuans-visit-to-the-white-house/"
-        }
-      ],
-      "started": "2026-09-21",
-      "updated": "2026-10-11"
     }
   ],
   "days": [
     {
-      "moodNote": "風險溫度計 43.5 分(前一日 48.5),仍屬中性但明顯降溫。主導分項為股市動能(25.4):標普500跌破50日均線約0.9%、費半偏離達-8%;其次是信用壓力(38,高收益債利差處近一年第86百分位)。原因是亞馬遜、英特爾財報加深AI支出疑慮。需留意:美債殖利率回落、避險需求(59.8)與殖利率曲線(58)仍偏多。部分數據來源不一致,已略過。",
+      "moodNote": "今日休市,行情沿用 10/30 收盤。風險溫度計 35.3 分(前一日 46.9),Risk-Off。休市期間幣安傳遭駭 63 億美元、輝達中國間諜報導延燒。下週關注:11/3 蘋果、Palantir 財報,11/5 20:00 英國央行決議,11/6 21:30 美國非農。",
       "news": [
         {
-          "id": "20261030-01",
-          "title": "英特爾暴跌25%,PC疲軟與現金流警訊引發全球晶片股拋售",
-          "summary": "Q4營收指引150~160億美元低於預期的170.7億;AMD、Arm、輝達、博通、美光盤前跌2%~9%,戴爾、超微電腦跌6%~12%,台積電ADR跌3.9%。",
-          "importance": "high",
-          "category": "tech",
+          "id": "n1",
+          "title": "美股收盤大跌:AI現金消耗憂慮引爆科技股拋售",
+          "summary": "納指單日-2.84%,為6月5日以來最大跌幅;標普500-1.80%、道瓊-1.09%;標普與那指10月收黑,道瓊月線收漲。",
+          "importance": 5,
+          "category": "美股",
           "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001574042"
+          "url": "https://longbridge.com/news/100000001576897"
         },
         {
-          "id": "20261030-02",
-          "title": "科技巨頭支出狂潮讓投資人緊張,AI概念股回檔",
-          "summary": "亞馬遜盤前跌6.8%領跌七巨頭,CoreWeave、Nebius、IREN跌6.7%~7.5%;費半有望創7月以來最大單月跌幅。",
-          "importance": "high",
-          "category": "tech",
-          "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001573626"
-        },
-        {
-          "id": "20261030-03",
-          "title": "納指開盤跌逾2%,創兩個多月新低",
-          "summary": "亞馬遜與英特爾加劇AI投資回報疑慮;標普500開盤-1.16%,納指-2.26%,道瓊小漲0.08%。",
-          "importance": "high",
-          "category": "macro",
-          "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001574102"
-        },
-        {
-          "id": "20261030-04",
-          "title": "美債殖利率續降,10年期回測4.9%附近",
-          "summary": "避險買盤使10年期低見4.8917%,周四收4.988%,較10/7高點5.3645%持續回落;Q3就業成本指數季增0.8%符合預期,關注20週均線約4.80%。",
-          "importance": "medium",
-          "category": "macro",
-          "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001573729"
-        },
-        {
-          "id": "20261030-05",
-          "title": "輝達遭美司法部調查收購Hugging Face,並捲入中國間諜報導",
-          "summary": "司法部審查129.3億美元併購是否讓輝達掌控AI分發入口;華倫議員要求黃仁勳說明,輝達稱指控已被駁斥,盤後跌1.64%。",
-          "importance": "medium",
-          "category": "tech",
+          "id": "n2",
+          "title": "晶片股一天蒸發約1兆美元,5檔占六成",
+          "summary": "英特爾暴跌約28%,輝達、台積電ADR、博通、AMD合計市值損失約6100億美元;費半單週第二次單日跌逾6%。",
+          "importance": 5,
+          "category": "半導體",
           "source": "Benzinga/Longbridge",
-          "url": "https://longbridge.com/news/100000001570033"
+          "url": "https://longbridge.com/news/100000001576147"
         },
         {
-          "id": "20261030-06",
-          "title": "亞洲晶片供應鏈稱AI需求仍強,但投資人憂回報",
-          "summary": "工業富聯董事長稱AI非泡沫,東京威力科創預測營業利益增87%;SK海力士、台積電、愛德萬測試股價仍承壓。",
-          "importance": "medium",
-          "category": "tech",
+          "id": "n3",
+          "title": "幣安遭駭63億美元,加密貨幣同業趕緊補強防禦",
+          "summary": "分析師指與北韓過往攻擊相似;Coinbase調整離線金鑰系統,比特幣週四一度跌逾4%、週五收復部分跌幅。",
+          "importance": 5,
+          "category": "加密貨幣",
           "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001571140"
+          "url": "https://longbridge.com/news/100000001577989"
         },
         {
-          "id": "20261030-07",
-          "title": "台灣Q3 GDP年增14.36%,優於預期",
-          "summary": "高於經濟學家預期的12%與Q2的12.93%,顯示AI晶片與技術需求具韌性。",
-          "importance": "medium",
-          "category": "macro",
-          "source": "路透/Longbridge",
-          "url": "https://longbridge.com/news/100000001570985"
+          "id": "n4",
+          "title": "美銀哈特內特:科技債是「璞玉」",
+          "summary": "今年美國科技債約下跌9%,AI超大規模業者已發債1820億美元;長天期收益率6%~8%,CoreWeave 2031年債約14.26%。",
+          "importance": 3,
+          "category": "債市",
+          "source": "Benzinga/Longbridge",
+          "url": "https://longbridge.com/news/100000001574536"
+        },
+        {
+          "id": "n5",
+          "title": "十月市場動盪:標普500僅跌0.5%,但75%成分股上漲",
+          "summary": "等權重ETF RSP 10月漲5.5%;英特爾月跌43.5%、Alphabet跌18.5%、輝達跌8.7%,漲勢集中在非大型科技股。",
+          "importance": 3,
+          "category": "美股",
+          "source": "MarketWatch/Longbridge",
+          "url": "https://longbridge.com/news/100000001575282"
+        },
+        {
+          "id": "n6",
+          "title": "輝達與新加坡Megaspeed關係曝光美國晶片管制盲點",
+          "summary": "紐時報導美方曾監控Megaspeed前負責人涉中國情報;輝達稱與區域雲端客戶往來屬正常,未涉機密。",
+          "importance": 4,
+          "category": "科技",
+          "source": "MarketWatch/Longbridge",
+          "url": "https://longbridge.com/news/100000001578393"
         }
       ],
       "market": {
@@ -1680,12 +1661,12 @@ window.FINANCE_DATA = {
           {
             "name": "道瓊工業指數",
             "symbol": "^DJI",
-            "value": 52149.53,
-            "change": -0.37,
+            "value": 51770.31,
+            "change": -1.09,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -1718,15 +1699,15 @@ window.FINANCE_DATA = {
               52377.57,
               52475.1,
               52342.56,
-              52149.53
+              51770.31
             ],
             "note": "",
             "check": {
               "src": "FRED",
               "id": "DJIA",
               "status": "ok",
-              "through": "2026-10-29",
-              "latest": false,
+              "through": "2026-10-30",
+              "latest": true,
               "worstDate": "2026-10-26",
               "yahoo": 52361.5781,
               "fred": 52361.58,
@@ -1737,11 +1718,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".DJI",
-              "cnbc": 52140.29,
-              "cnbcChange": -0.39,
-              "valueDiff": 0.02,
+              "cnbc": 51770.31,
+              "cnbcChange": -1.09,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.02,
+              "changeDiff": 0,
               "status": "ok"
             },
             "verified": true
@@ -1749,12 +1730,12 @@ window.FINANCE_DATA = {
           {
             "name": "標普500",
             "symbol": "^GSPC",
-            "value": 7625.01,
-            "change": -1.24,
+            "value": 7580.07,
+            "change": -1.82,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -1787,7 +1768,7 @@ window.FINANCE_DATA = {
               7722.6,
               7743.98,
               7720.39,
-              7625.01
+              7580.07
             ],
             "note": "",
             "check": {
@@ -1806,8 +1787,8 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".SPX",
-              "cnbc": 7624.73,
-              "cnbcChange": -1.24,
+              "cnbc": 7580.07,
+              "cnbcChange": -1.82,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -1818,12 +1799,12 @@ window.FINANCE_DATA = {
           {
             "name": "那斯達克綜合指數",
             "symbol": "^IXIC",
-            "value": 25570.13,
-            "change": -2.35,
+            "value": 25437,
+            "change": -2.86,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -1856,7 +1837,7 @@ window.FINANCE_DATA = {
               26477.81,
               26549.85,
               26184.72,
-              25570.13
+              25437
             ],
             "note": "",
             "check": {
@@ -1875,8 +1856,8 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".IXIC",
-              "cnbc": 25570.02,
-              "cnbcChange": -2.35,
+              "cnbc": 25436.999,
+              "cnbcChange": -2.86,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -1888,16 +1869,15 @@ window.FINANCE_DATA = {
             "name": "羅素2000",
             "symbol": "^RUT",
             "hint": "美國 2,000 檔中小型股指數,對利率與美國內需景氣較敏感",
-            "value": 2859.22,
-            "change": 1.01,
+            "value": 2811.84,
+            "change": -1.66,
             "unit": "%",
-            "dir": "up",
-            "asOf": "2026-10-29",
+            "dir": "down",
+            "asOf": "2026-10-30",
             "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
-              2860.4,
               2875.36,
               2889.92,
               2838.66,
@@ -1926,14 +1906,15 @@ window.FINANCE_DATA = {
               2786.42,
               2818.87,
               2830.51,
-              2859.22
+              2859.22,
+              2811.84
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".RUT",
-              "cnbc": 2859.217,
-              "cnbcChange": 1.01,
+              "cnbc": 2811.844,
+              "cnbcChange": -1.66,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -1945,12 +1926,12 @@ window.FINANCE_DATA = {
             "name": "費城半導體指數",
             "symbol": "^SOX",
             "hint": "美國 30 檔主要半導體股組成(含台積電 ADR),和台股電子股連動很高",
-            "value": 10912.82,
-            "change": -5.26,
+            "value": 10688.8,
+            "change": -7.2,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": true,
             "series": [
@@ -1983,17 +1964,17 @@ window.FINANCE_DATA = {
               11482.5,
               11684,
               11518.2,
-              10912.82
+              10688.8
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".SOX",
-              "cnbc": 10909.187,
-              "cnbcChange": -5.29,
-              "valueDiff": 0.03,
+              "cnbc": 10688.8,
+              "cnbcChange": -7.2,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.03,
+              "changeDiff": 0,
               "status": "ok"
             },
             "verified": true
@@ -2041,7 +2022,7 @@ window.FINANCE_DATA = {
               46368.33,
               45211.83
             ],
-            "note": "光電、玻陶重挫,金融與生技相對抗跌",
+            "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".TWII",
@@ -2328,12 +2309,12 @@ window.FINANCE_DATA = {
           {
             "name": "德國DAX",
             "symbol": "^GDAXI",
-            "value": 25842.82,
-            "change": -0.76,
+            "value": 25818.21,
+            "change": -0.85,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2366,14 +2347,14 @@ window.FINANCE_DATA = {
               25590.77,
               25704.02,
               26039.68,
-              25842.82
+              25818.21
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".GDAXI",
-              "cnbc": 25842.82,
-              "cnbcChange": -0.76,
+              "cnbc": 25818.21,
+              "cnbcChange": -0.85,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -2384,12 +2365,12 @@ window.FINANCE_DATA = {
           {
             "name": "英國富時100",
             "symbol": "^FTSE",
-            "value": 10725.62,
-            "change": 0.03,
+            "value": 10729.78,
+            "change": 0.07,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2422,14 +2403,14 @@ window.FINANCE_DATA = {
               10686.5,
               10694.5,
               10722.1,
-              10725.62
+              10729.78
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".FTSE",
-              "cnbc": 10725.37,
-              "cnbcChange": 0.03,
+              "cnbc": 10729.78,
+              "cnbcChange": 0.07,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0,
@@ -2489,16 +2470,15 @@ window.FINANCE_DATA = {
             "name": "VIX恐慌指數",
             "symbol": "^VIX",
             "hint": "由標普500選擇權價格算出市場預期的未來 30 天波動。20 以下偏平靜,30 以上代表市場恐慌",
-            "value": 17.2,
-            "change": 1.71,
+            "value": 19.42,
+            "change": 12.91,
             "unit": "%",
             "dir": "up",
-            "asOf": "2026-10-29",
+            "asOf": "2026-10-30",
             "live": false,
             "source": "CBOE",
             "bigMove": false,
             "series": [
-              14.81,
               14.87,
               14.21,
               15.18,
@@ -2527,7 +2507,8 @@ window.FINANCE_DATA = {
               18.39,
               17.52,
               16.91,
-              17.2
+              17.2,
+              19.42
             ],
             "note": "",
             "check": {
@@ -2535,7 +2516,7 @@ window.FINANCE_DATA = {
               "id": "VIXCLS",
               "status": "ok",
               "through": "2026-10-29",
-              "latest": true,
+              "latest": false,
               "worstDate": "2026-10-23",
               "yahoo": 19.45,
               "fred": 19.45,
@@ -2546,12 +2527,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": ".VIX",
-              "status": "ok",
-              "viaPrev": true,
-              "cnbc": 17.2,
-              "cnbcChange": null,
+              "cnbc": 19.42,
+              "cnbcChange": 12.91,
               "valueDiff": 0,
-              "diffUnit": "%"
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
             },
             "verified": true
           },
@@ -2559,16 +2540,15 @@ window.FINANCE_DATA = {
             "name": "美債10年期殖利率",
             "symbol": "^TNX",
             "hint": "買美國 10 年期公債每年可拿到的報酬率,是全球房貸、企業借款與股票估值的基準。1bp(基點)= 0.01%",
-            "value": 4.98,
-            "change": -7,
+            "value": 4.94,
+            "change": -4,
             "unit": "bp",
             "dir": "down",
-            "asOf": "2026-10-29",
+            "asOf": "2026-10-30",
             "live": false,
             "source": "美國財政部",
             "bigMove": false,
             "series": [
-              4.94,
               5.01,
               4.96,
               4.96,
@@ -2597,18 +2577,19 @@ window.FINANCE_DATA = {
               5,
               4.99,
               5.05,
-              4.98
+              4.98,
+              4.94
             ],
             "note": "",
             "check": {
               "src": "FRED",
               "id": "DGS10",
               "status": "ok",
-              "through": "2026-10-28",
+              "through": "2026-10-29",
               "latest": false,
-              "worstDate": "2026-10-22",
-              "yahoo": 4.96,
-              "fred": 4.96,
+              "worstDate": "2026-10-23",
+              "yahoo": 5,
+              "fred": 5,
               "diff": 0,
               "diffUnit": "bp",
               "tol": 6
@@ -2616,12 +2597,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "US10Y",
-              "status": "ok",
-              "viaPrev": true,
-              "cnbc": 4.989,
-              "cnbcChange": null,
-              "valueDiff": 0.9,
-              "diffUnit": "bp"
+              "cnbc": 4.933,
+              "cnbcChange": -1.1225,
+              "valueDiff": 0.7,
+              "diffUnit": "bp",
+              "status": "ok"
             },
             "verified": true
           },
@@ -2629,16 +2609,15 @@ window.FINANCE_DATA = {
             "name": "美債30年期殖利率",
             "symbol": "^TYX",
             "hint": "最長天期公債的利率,反映市場對長期通膨與美國財政赤字的擔憂",
-            "value": 5.32,
-            "change": -5,
+            "value": 5.31,
+            "change": -1,
             "unit": "bp",
             "dir": "down",
-            "asOf": "2026-10-29",
+            "asOf": "2026-10-30",
             "live": false,
             "source": "美國財政部",
             "bigMove": false,
             "series": [
-              5.29,
               5.34,
               5.29,
               5.29,
@@ -2667,18 +2646,19 @@ window.FINANCE_DATA = {
               5.31,
               5.3,
               5.37,
-              5.32
+              5.32,
+              5.31
             ],
             "note": "",
             "check": {
               "src": "FRED",
               "id": "DGS30",
               "status": "ok",
-              "through": "2026-10-28",
+              "through": "2026-10-29",
               "latest": false,
-              "worstDate": "2026-10-22",
-              "yahoo": 5.29,
-              "fred": 5.29,
+              "worstDate": "2026-10-23",
+              "yahoo": 5.33,
+              "fred": 5.33,
               "diff": 0,
               "diffUnit": "bp",
               "tol": 6
@@ -2686,12 +2666,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "US30Y",
-              "status": "ok",
-              "viaPrev": true,
-              "cnbc": 5.329,
-              "cnbcChange": null,
-              "valueDiff": 0.9,
-              "diffUnit": "bp"
+              "cnbc": 5.311,
+              "cnbcChange": 0.2578,
+              "valueDiff": 0.1,
+              "diffUnit": "bp",
+              "status": "ok"
             },
             "verified": true
           },
@@ -2699,12 +2678,12 @@ window.FINANCE_DATA = {
             "name": "美元指數(DXY)",
             "symbol": "DX-Y.NYB",
             "hint": "美元對歐元、日圓等 6 種主要貨幣的強弱。上升=美元走強,資金常流出新興市場",
-            "value": 101.91,
-            "change": -0.13,
+            "value": 101.96,
+            "change": -0.07,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2737,17 +2716,17 @@ window.FINANCE_DATA = {
               102.32,
               102.19,
               102.04,
-              101.91
+              101.96
             ],
             "note": "",
             "check2": {
               "src": "CNBC",
               "id": ".DXY",
-              "cnbc": 101.883,
-              "cnbcChange": -0.15,
-              "valueDiff": 0.03,
+              "cnbc": 101.964,
+              "cnbcChange": -0.07,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 0.02,
+              "changeDiff": 0,
               "status": "ok"
             },
             "verified": true
@@ -2757,12 +2736,12 @@ window.FINANCE_DATA = {
           {
             "name": "布蘭特原油",
             "symbol": "BZ=F",
-            "value": 113.02,
-            "change": -1.62,
+            "value": 113.43,
+            "change": -1.26,
             "unit": "%",
-            "dir": "flat",
+            "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2795,7 +2774,7 @@ window.FINANCE_DATA = {
               113.88,
               115.32,
               114.88,
-              113.02
+              113.43
             ],
             "note": "",
             "contract": "Brent Crude Oil Last Day Financ",
@@ -2804,26 +2783,23 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@LCO.1",
-              "cnbc": 117.18,
-              "cnbcChange": 2,
-              "valueDiff": 3.55,
+              "cnbc": 113.43,
+              "cnbcChange": null,
+              "valueDiff": 0,
               "diffUnit": "%",
-              "changeDiff": 3.62,
-              "status": "mismatch"
+              "status": "ok"
             },
-            "rollover": true,
-            "rolloverReason": "與 CNBC 近月報價差 3.55%(CNBC 117.18),疑似 Yahoo 已換到下個月合約",
-            "verified": false
+            "verified": true
           },
           {
             "name": "WTI原油",
             "symbol": "CL=F",
-            "value": 103.87,
-            "change": 1.83,
+            "value": 104.12,
+            "change": 2.08,
             "unit": "%",
-            "dir": "up",
+            "dir": "flat",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2856,7 +2832,7 @@ window.FINANCE_DATA = {
               99.9,
               102.78,
               102,
-              103.87
+              104.12
             ],
             "note": "",
             "contract": "Crude Oil Dec 26",
@@ -2865,24 +2841,26 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@CL.1",
-              "cnbc": 103.89,
-              "cnbcChange": 1.85,
-              "valueDiff": 0.02,
+              "cnbc": 102.95,
+              "cnbcChange": 0.93,
+              "valueDiff": 1.14,
               "diffUnit": "%",
-              "changeDiff": 0.02,
-              "status": "ok"
+              "changeDiff": 1.15,
+              "status": "mismatch"
             },
-            "verified": true
+            "rollover": true,
+            "rolloverReason": "與 CNBC 近月報價差 1.14%(CNBC 102.95),疑似 Yahoo 已換到下個月合約",
+            "verified": false
           },
           {
             "name": "黃金",
             "symbol": "GC=F",
-            "value": 3951.2,
-            "change": -1.99,
+            "value": 3898.9,
+            "change": -3.29,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2915,7 +2893,7 @@ window.FINANCE_DATA = {
               4074.6,
               4051.6,
               4031.4,
-              3951.2
+              3898.9
             ],
             "note": "",
             "contract": "Gold Dec 26",
@@ -2924,24 +2902,24 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@GC.1",
-              "cnbc": 3951.3,
-              "cnbcChange": -1.99,
-              "valueDiff": 0,
+              "cnbc": 3884.9,
+              "cnbcChange": -3.63,
+              "valueDiff": 0.36,
               "diffUnit": "%",
-              "changeDiff": 0,
-              "status": "ok"
+              "changeDiff": 0.34,
+              "status": "mismatch"
             },
-            "verified": true
+            "verified": false
           },
           {
             "name": "白銀",
             "symbol": "SI=F",
-            "value": 49.77,
-            "change": -4.64,
+            "value": 49.276,
+            "change": -5.59,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -2974,7 +2952,7 @@ window.FINANCE_DATA = {
               54.293,
               53.457,
               52.191,
-              49.77
+              49.276
             ],
             "note": "",
             "contract": "Silver Dec 26",
@@ -2983,25 +2961,25 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@SI.1",
-              "cnbc": 49.78,
-              "cnbcChange": -4.96,
-              "valueDiff": 0.02,
+              "cnbc": 49.135,
+              "cnbcChange": -6.2,
+              "valueDiff": 0.29,
               "diffUnit": "%",
-              "changeDiff": 0.32,
-              "status": "ok"
+              "changeDiff": 0.61,
+              "status": "mismatch"
             },
-            "verified": true
+            "verified": false
           },
           {
             "name": "銅",
             "symbol": "HG=F",
             "hint": "用途廣泛的工業原料,價格常反映全球景氣,有「銅博士」之稱(單位:美元/磅)",
-            "value": 6.518,
-            "change": -0.96,
+            "value": 6.482,
+            "change": -1.5,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -3034,7 +3012,7 @@ window.FINANCE_DATA = {
               6.622,
               6.641,
               6.581,
-              6.518
+              6.482
             ],
             "note": "",
             "contract": "Copper Dec 26",
@@ -3043,24 +3021,24 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@HG.1",
-              "cnbc": 6.5175,
-              "cnbcChange": -1.29,
-              "valueDiff": 0.01,
+              "cnbc": 6.5095,
+              "cnbcChange": -1.41,
+              "valueDiff": 0.42,
               "diffUnit": "%",
-              "changeDiff": 0.33,
-              "status": "ok"
+              "changeDiff": 0.09,
+              "status": "mismatch"
             },
-            "verified": true
+            "verified": false
           },
           {
             "name": "天然氣",
             "symbol": "NG=F",
-            "value": 2.856,
-            "change": -3.25,
+            "value": 2.898,
+            "change": -1.83,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -3093,7 +3071,7 @@ window.FINANCE_DATA = {
               2.697,
               2.817,
               2.952,
-              2.856
+              2.898
             ],
             "note": "",
             "contract": "Natural Gas Dec 26",
@@ -3102,30 +3080,29 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "@NG.1",
-              "cnbc": 2.856,
-              "cnbcChange": -3.25,
-              "valueDiff": 0,
+              "cnbc": 2.883,
+              "cnbcChange": -2.34,
+              "valueDiff": 0.52,
               "diffUnit": "%",
-              "changeDiff": 0,
-              "status": "ok"
+              "changeDiff": 0.51,
+              "status": "mismatch"
             },
-            "verified": true
+            "verified": false
           }
         ],
         "crypto": [
           {
             "name": "比特幣",
             "symbol": "BTC-USD",
-            "value": 77037,
-            "change": -4.63,
+            "value": 77361,
+            "change": 1.07,
             "unit": "%",
-            "dir": "down",
-            "asOf": "2026-10-30",
+            "dir": "up",
+            "asOf": "2026-10-31",
             "live": true,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
-              84853,
               84497,
               84764,
               86480,
@@ -3154,14 +3131,15 @@ window.FINANCE_DATA = {
               80805,
               81268,
               77775,
-              77037
+              77198,
+              77361
             ],
             "note": "",
             "check": {
               "src": "FRED",
               "id": "CBBTCUSD",
               "status": "ok",
-              "through": "2026-10-29",
+              "through": "2026-10-30",
               "latest": false,
               "worstDate": "2026-10-29",
               "yahoo": 77775.1094,
@@ -3173,12 +3151,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "BTC.CM=",
-              "cnbc": 77020.85,
-              "cnbcChange": -4.63,
-              "valueDiff": 0.02,
+              "cnbc": 77370.77,
+              "cnbcChange": 1.07,
+              "valueDiff": 0.01,
               "diffUnit": "%",
-              "changeDiff": 3.68,
-              "changeFrom": -0.95,
+              "changeDiff": 0.86,
+              "changeFrom": 0.21,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -3187,16 +3165,15 @@ window.FINANCE_DATA = {
           {
             "name": "以太幣",
             "symbol": "ETH-USD",
-            "value": 2222.19,
-            "change": -4.7,
+            "value": 2247.35,
+            "change": 0.77,
             "unit": "%",
-            "dir": "down",
-            "asOf": "2026-10-30",
+            "dir": "up",
+            "asOf": "2026-10-31",
             "live": true,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
-              2705.54,
               2668.15,
               2687.26,
               2726.51,
@@ -3225,31 +3202,32 @@ window.FINANCE_DATA = {
               2347.73,
               2357.62,
               2249.5,
-              2222.19
+              2241.05,
+              2247.35
             ],
             "note": "",
             "check": {
               "src": "FRED",
               "id": "CBETHUSD",
               "status": "ok",
-              "through": "2026-10-29",
+              "through": "2026-10-30",
               "latest": false,
-              "worstDate": "2026-10-25",
-              "yahoo": 2326.9202,
-              "fred": 2321.28,
-              "diff": 0.24,
+              "worstDate": "2026-10-27",
+              "yahoo": 2347.73,
+              "fred": 2345.06,
+              "diff": 0.11,
               "diffUnit": "%",
               "tol": 3
             },
             "check2": {
               "src": "CNBC",
               "id": "ETH.CM=",
-              "cnbc": 2222.28,
-              "cnbcChange": -4.7,
-              "valueDiff": 0,
+              "cnbc": 2247.8,
+              "cnbcChange": 0.77,
+              "valueDiff": 0.02,
               "diffUnit": "%",
-              "changeDiff": 3.49,
-              "changeFrom": -1.21,
+              "changeDiff": 0.49,
+              "changeFrom": 0.28,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -3260,12 +3238,12 @@ window.FINANCE_DATA = {
           {
             "name": "美元兌台幣(USD/TWD)",
             "symbol": "TWD=X",
-            "value": 32.608,
-            "change": 0.05,
+            "value": 32.605,
+            "change": 0.04,
             "unit": "%",
             "dir": "up",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -3298,7 +3276,7 @@ window.FINANCE_DATA = {
               32.535,
               32.425,
               32.383,
-              32.608
+              32.605
             ],
             "note": "",
             "check": {
@@ -3317,12 +3295,12 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "TWD=",
-              "cnbc": 32.609,
-              "cnbcChange": 0.05,
+              "cnbc": 32.605,
+              "cnbcChange": 0.04,
               "valueDiff": 0,
               "diffUnit": "%",
               "changeDiff": 0.65,
-              "changeFrom": 0.7,
+              "changeFrom": 0.69,
               "changeAdopted": true,
               "status": "ok"
             },
@@ -3331,12 +3309,12 @@ window.FINANCE_DATA = {
           {
             "name": "美元兌日圓(USD/JPY)",
             "symbol": "JPY=X",
-            "value": 157.23,
-            "change": -0.39,
+            "value": 157.52,
+            "change": -0.2,
             "unit": "%",
             "dir": "down",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -3369,7 +3347,7 @@ window.FINANCE_DATA = {
               157.53,
               157.99,
               157.83,
-              157.23
+              157.52
             ],
             "note": "",
             "check": {
@@ -3388,11 +3366,11 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "JPY=",
-              "cnbc": 157.21,
-              "cnbcChange": -0.3044,
+              "cnbc": 157.53,
+              "cnbcChange": -0.1016,
               "valueDiff": 0.01,
               "diffUnit": "%",
-              "changeDiff": 0.09,
+              "changeDiff": 0.1,
               "status": "ok"
             },
             "verified": true
@@ -3400,12 +3378,12 @@ window.FINANCE_DATA = {
           {
             "name": "歐元兌美元(EUR/USD)",
             "symbol": "EURUSD=X",
-            "value": 1.1168,
-            "change": -0.12,
+            "value": 1.1166,
+            "change": 0.09,
             "unit": "%",
-            "dir": "down",
+            "dir": "up",
             "asOf": "2026-10-30",
-            "live": true,
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
@@ -3438,7 +3416,7 @@ window.FINANCE_DATA = {
               1.1174,
               1.113,
               1.1156,
-              1.1168
+              1.1166
             ],
             "note": "",
             "check": {
@@ -3457,13 +3435,10 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "EUR=",
-              "cnbc": 1.1165,
-              "cnbcChange": -0.1163,
-              "valueDiff": 0.03,
+              "cnbc": 1.1158,
+              "cnbcChange": null,
+              "valueDiff": 0.07,
               "diffUnit": "%",
-              "changeDiff": 0.23,
-              "changeFrom": 0.11,
-              "changeAdopted": true,
               "status": "ok"
             },
             "verified": true
@@ -3471,16 +3446,15 @@ window.FINANCE_DATA = {
           {
             "name": "美元兌人民幣(USD/CNY)",
             "symbol": "CNY=X",
-            "value": 6.6422,
-            "change": -0.13,
+            "value": 6.654,
+            "change": -0.11,
             "unit": "%",
             "dir": "down",
-            "asOf": "2026-10-30",
-            "live": true,
+            "asOf": "2026-10-31",
+            "live": false,
             "source": "Yahoo",
             "bigMove": false,
             "series": [
-              6.6975,
               6.6953,
               6.6996,
               6.7111,
@@ -3509,7 +3483,8 @@ window.FINANCE_DATA = {
               6.67,
               6.668,
               6.666,
-              6.6422
+              6.661,
+              6.654
             ],
             "note": "",
             "check": {
@@ -3528,16 +3503,10 @@ window.FINANCE_DATA = {
             "check2": {
               "src": "CNBC",
               "id": "CNY=",
-              "cnbc": 6.6526,
-              "cnbcChange": -0.1261,
-              "valueDiff": 0.16,
-              "diffUnit": "%",
-              "changeDiff": 0.23,
-              "changeFrom": -0.36,
-              "changeAdopted": true,
-              "status": "ok"
+              "status": "skip",
+              "reason": "報價日期不同(Yahoo 2026-10-31 / CNBC 2026-10-30)"
             },
-            "verified": true
+            "verified": false
           }
         ]
       },
@@ -3551,7 +3520,7 @@ window.FINANCE_DATA = {
           "change": 0,
           "unit": "%",
           "dir": "flat",
-          "period": "2026-10-30",
+          "period": "2026-10-31",
           "freq": "daily",
           "series": [
             3.75,
@@ -3569,7 +3538,7 @@ window.FINANCE_DATA = {
             3.75,
             3.75,
             3.75,
-            3.75,
+            4,
             4,
             4,
             4,
@@ -3621,15 +3590,14 @@ window.FINANCE_DATA = {
           "name": "美債2年期殖利率",
           "id": "DGS2",
           "group": "貨幣政策",
-          "value": 4.67,
-          "prev": 4.7,
-          "change": -0.03,
+          "value": 4.61,
+          "prev": 4.67,
+          "change": -0.06,
           "unit": "%",
           "dir": "down",
-          "period": "2026-10-28",
+          "period": "2026-10-29",
           "freq": "daily",
           "series": [
-            4.2,
             4.18,
             4.25,
             4.19,
@@ -3688,7 +3656,8 @@ window.FINANCE_DATA = {
             4.69,
             4.68,
             4.7,
-            4.67
+            4.67,
+            4.61
           ],
           "hint": "美國政府借 2 年期的利率。市場預期聯準會會升息它就先漲、預期降息就先跌,是猜測央行動向的風向球。"
         },
@@ -3696,15 +3665,14 @@ window.FINANCE_DATA = {
           "name": "10年-2年期利差",
           "id": "T10Y2Y",
           "group": "貨幣政策",
-          "value": 0.37,
-          "prev": 0.38,
-          "change": -0.01,
+          "value": 0.38,
+          "prev": 0.37,
+          "change": 0.01,
           "unit": "%",
-          "dir": "down",
-          "period": "2026-10-29",
+          "dir": "up",
+          "period": "2026-10-30",
           "freq": "daily",
           "series": [
-            0.45,
             0.44,
             0.46,
             0.47,
@@ -3763,7 +3731,8 @@ window.FINANCE_DATA = {
             0.32,
             0.29,
             0.38,
-            0.37
+            0.37,
+            0.38
           ],
           "hint": "10 年期減 2 年期公債殖利率。正常時長天期利率較高(正值);變負值稱為「倒掛」,過去常出現在經濟衰退之前。"
         },
@@ -3771,15 +3740,14 @@ window.FINANCE_DATA = {
           "name": "10年-3個月利差",
           "id": "T10Y3M",
           "group": "貨幣政策",
-          "value": 0.8,
-          "prev": 0.87,
-          "change": -0.07,
+          "value": 0.78,
+          "prev": 0.8,
+          "change": -0.02,
           "unit": "%",
           "dir": "down",
-          "period": "2026-10-29",
+          "period": "2026-10-30",
           "freq": "daily",
           "series": [
-            0.74,
             0.79,
             0.78,
             0.83,
@@ -3838,7 +3806,8 @@ window.FINANCE_DATA = {
             0.78,
             0.77,
             0.87,
-            0.8
+            0.8,
+            0.78
           ],
           "hint": "10 年期減 3 個月期公債殖利率,另一種衰退訊號。紐約聯準銀行用它推估未來一年衰退機率,負值代表風險升高。"
         },
@@ -3846,15 +3815,14 @@ window.FINANCE_DATA = {
           "name": "10年期實質利率",
           "id": "DFII10",
           "group": "貨幣政策",
-          "value": 2.67,
-          "prev": 2.64,
-          "change": 0.03,
+          "value": 2.63,
+          "prev": 2.67,
+          "change": -0.04,
           "unit": "%",
-          "dir": "up",
-          "period": "2026-10-28",
+          "dir": "down",
+          "period": "2026-10-29",
           "freq": "daily",
           "series": [
-            2.4,
             2.41,
             2.43,
             2.4,
@@ -3913,7 +3881,8 @@ window.FINANCE_DATA = {
             2.66,
             2.66,
             2.64,
-            2.67
+            2.67,
+            2.63
           ],
           "hint": "扣掉通膨後的 10 年期利率(取自抗通膨公債 TIPS)。代表「真正的」借錢成本;上升時黃金和科技成長股通常承壓。"
         },
@@ -4194,15 +4163,14 @@ window.FINANCE_DATA = {
           "name": "5年期通膨預期",
           "id": "T5YIE",
           "group": "通膨",
-          "value": 2.47,
-          "prev": 2.49,
-          "change": -0.02,
+          "value": 2.46,
+          "prev": 2.47,
+          "change": -0.01,
           "unit": "%",
           "dir": "down",
-          "period": "2026-10-29",
+          "period": "2026-10-30",
           "freq": "daily",
           "series": [
-            2.18,
             2.23,
             2.22,
             2.25,
@@ -4261,7 +4229,8 @@ window.FINANCE_DATA = {
             2.47,
             2.45,
             2.49,
-            2.47
+            2.47,
+            2.46
           ],
           "hint": "債市投資人預期未來 5 年平均通膨多少(普通公債與抗通膨公債的殖利率差)。升高代表市場擔心通膨,聯準會很重視。"
         },
@@ -4729,15 +4698,14 @@ window.FINANCE_DATA = {
           "name": "高收益債利差",
           "id": "BAMLH0A0HYM2",
           "group": "金融壓力",
-          "value": 3.14,
-          "prev": 3.18,
-          "change": -0.04,
+          "value": 3.26,
+          "prev": 3.14,
+          "change": 0.12,
           "unit": "%",
-          "dir": "down",
-          "period": "2026-10-28",
+          "dir": "up",
+          "period": "2026-10-29",
           "freq": "daily",
           "series": [
-            2.71,
             2.7,
             2.7,
             2.72,
@@ -4796,7 +4764,8 @@ window.FINANCE_DATA = {
             3.38,
             3.3,
             3.18,
-            3.14
+            3.14,
+            3.26
           ],
           "hint": "債券利差=公司債殖利率減同天期公債殖利率,是投資人借錢給企業要求多拿的「風險補償」。這裡看信用較差的「高收益債(垃圾債)」:利差擴大=市場擔心企業倒債,常伴隨股市下跌。"
         },
@@ -4804,15 +4773,14 @@ window.FINANCE_DATA = {
           "name": "投資級債利差",
           "id": "BAMLC0A0CM",
           "group": "金融壓力",
-          "value": 0.86,
-          "prev": 0.88,
-          "change": -0.02,
+          "value": 0.89,
+          "prev": 0.86,
+          "change": 0.03,
           "unit": "%",
-          "dir": "down",
-          "period": "2026-10-28",
+          "dir": "up",
+          "period": "2026-10-29",
           "freq": "daily",
           "series": [
-            0.78,
             0.78,
             0.78,
             0.79,
@@ -4871,7 +4839,8 @@ window.FINANCE_DATA = {
             0.91,
             0.9,
             0.88,
-            0.86
+            0.86,
+            0.89
           ],
           "hint": "信用評等較好的「投資級」公司債,比公債多出的殖利率。比高收益債穩定;連它都明顯擴大,代表市場壓力已擴散。"
         },
@@ -4916,19 +4885,97 @@ window.FINANCE_DATA = {
         }
       ],
       "calendar": {
-        "from": "2026-10-30",
-        "to": "2026-11-06",
+        "from": "2026-10-31",
+        "to": "2026-11-07",
         "tz": "Asia/Taipei",
         "nasdaqOffset": -1,
-        "calibrated": false,
+        "calibrated": true,
         "fomc": {
           "start": "2026-12-08",
           "end": "2026-12-09",
           "sep": true,
-          "daysToDecision": 40,
+          "daysToDecision": 39,
           "decisionTpe": "12-10 03:00"
         },
         "events": [
+          {
+            "date": "2026-10-31",
+            "time": "09:30",
+            "sortKey": "2026-10-31T09:30",
+            "country": "中國",
+            "flag": "🇨🇳",
+            "name": "官方製造業 PMI",
+            "raw": "Manufacturing PMI",
+            "importance": "high",
+            "previous": "50.1",
+            "consensus": "49.9",
+            "actual": "49.3"
+          },
+          {
+            "date": "2026-10-31",
+            "time": "09:30",
+            "sortKey": "2026-10-31T09:30",
+            "country": "中國",
+            "flag": "🇨🇳",
+            "name": "官方非製造業 PMI",
+            "raw": "Non-Manufacturing PMI",
+            "importance": "medium",
+            "previous": "50.2",
+            "consensus": "50.0",
+            "actual": "49.7"
+          },
+          {
+            "date": "2026-11-01",
+            "time": "08:00",
+            "sortKey": "2026-11-01T08:00",
+            "country": "南韓",
+            "flag": "🇰🇷",
+            "name": "出口",
+            "raw": "Exports",
+            "importance": "medium",
+            "previous": "83.7%",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-02",
+            "time": "17:00",
+            "sortKey": "2026-11-02T17:00",
+            "country": "歐元區",
+            "flag": "🇪🇺",
+            "name": "製造業 PMI",
+            "raw": "HCOB Eurozone Manufacturing PMI",
+            "importance": "medium",
+            "previous": "52.4",
+            "consensus": "52.4",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-02",
+            "time": "23:00",
+            "sortKey": "2026-11-02T23:00",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "ISM 製造業 PMI",
+            "raw": "ISM Manufacturing PMI",
+            "importance": "medium",
+            "previous": "54.5",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-03",
+            "time": "07:00",
+            "sortKey": "2026-11-03T07:00",
+            "country": "南韓",
+            "flag": "🇰🇷",
+            "name": "CPI 消費者物價",
+            "raw": "CPI",
+            "importance": "medium",
+            "previous": "2.9% / 0.3%",
+            "consensus": "2.9% / 0.3%",
+            "actual": ""
+          },
           {
             "date": "2026-11-03",
             "time": "23:00",
@@ -4941,49 +4988,126 @@ window.FINANCE_DATA = {
             "previous": "7.079M",
             "consensus": "",
             "actual": ""
+          },
+          {
+            "date": "2026-11-04",
+            "time": "18:00",
+            "sortKey": "2026-11-04T18:00",
+            "country": "歐元區",
+            "flag": "🇪🇺",
+            "name": "CPI 消費者物價",
+            "raw": "CPI",
+            "importance": "high",
+            "previous": "0.6% / 3.8%",
+            "consensus": "3.9%",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-04",
+            "time": "23:00",
+            "sortKey": "2026-11-04T23:00",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "ISM 服務業 PMI",
+            "raw": "ISM Non-Manufacturing PMI",
+            "importance": "medium",
+            "previous": "54.9",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-05",
+            "time": "20:00",
+            "sortKey": "2026-11-05T20:00",
+            "country": "英國",
+            "flag": "🇬🇧",
+            "name": "英國央行利率決議",
+            "raw": "BoE Interest Rate Decision",
+            "importance": "high",
+            "previous": "3.75%",
+            "consensus": "4.00%",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-05",
+            "time": "21:30",
+            "sortKey": "2026-11-05T21:30",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "初領失業救濟金",
+            "raw": "Initial Jobless Claims",
+            "importance": "medium",
+            "previous": "194K",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-06",
+            "time": "05:30",
+            "sortKey": "2026-11-06T05:30",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "聯準會資產負債表",
+            "raw": "Fed's Balance Sheet",
+            "importance": "medium",
+            "previous": "6,746B",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-06",
+            "time": "21:30",
+            "sortKey": "2026-11-06T21:30",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "平均時薪年增",
+            "raw": "Average Hourly Earnings (YoY)",
+            "importance": "medium",
+            "previous": "3.0%",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-06",
+            "time": "21:30",
+            "sortKey": "2026-11-06T21:30",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "非農就業人數",
+            "raw": "Nonfarm Payrolls",
+            "importance": "high",
+            "previous": "29K",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-06",
+            "time": "21:30",
+            "sortKey": "2026-11-06T21:30",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "失業率",
+            "raw": "Unemployment Rate",
+            "importance": "high",
+            "previous": "4.2%",
+            "consensus": "",
+            "actual": ""
+          },
+          {
+            "date": "2026-11-06",
+            "time": "23:00",
+            "sortKey": "2026-11-06T23:00",
+            "country": "美國",
+            "flag": "🇺🇸",
+            "name": "密大消費者信心",
+            "raw": "Michigan Consumer Sentiment",
+            "importance": "medium",
+            "previous": "48.0",
+            "consensus": "",
+            "actual": ""
           }
         ],
         "earnings": [
-          {
-            "date": "2026-10-30",
-            "usDate": "2026-10-30",
-            "symbol": "XOM",
-            "name": "ExxonMobil Holdings",
-            "when": "盤前",
-            "capB": 748,
-            "epsForecast": "$3.90",
-            "lastYearEPS": "$1.88"
-          },
-          {
-            "date": "2026-10-30",
-            "usDate": "2026-10-30",
-            "symbol": "ABBV",
-            "name": "AbbVie",
-            "when": "盤前",
-            "capB": 505,
-            "epsForecast": "$3.74",
-            "lastYearEPS": "$1.86"
-          },
-          {
-            "date": "2026-10-30",
-            "usDate": "2026-10-30",
-            "symbol": "CVX",
-            "name": "Chevron",
-            "when": "盤前",
-            "capB": 453,
-            "epsForecast": "$4.78",
-            "lastYearEPS": "$1.85"
-          },
-          {
-            "date": "2026-10-30",
-            "usDate": "2026-10-30",
-            "symbol": "AZN",
-            "name": "AstraZeneca",
-            "when": "盤前",
-            "capB": 265,
-            "epsForecast": "$2.60",
-            "lastYearEPS": "$2.38"
-          },
           {
             "date": "2026-11-03",
             "usDate": "2026-11-02",
@@ -5063,16 +5187,24 @@ window.FINANCE_DATA = {
             "capB": 243,
             "epsForecast": "$0.22",
             "lastYearEPS": "$0.15"
+          },
+          {
+            "date": "2026-11-06",
+            "usDate": "2026-11-06",
+            "symbol": "BRK.A",
+            "name": "Berkshire Hathaway",
+            "when": "",
+            "capB": 1174,
+            "epsForecast": null,
+            "lastYearEPS": "N/A"
           }
         ],
-        "warnings": [
-          "無法用初領失業金校準 Nasdaq 日期偏移,沿用預設 -1 天"
-        ]
+        "warnings": []
       },
-      "mood": "neutral",
+      "mood": "risk-off",
       "risk": {
-        "score": 43.5,
-        "zone": "neutral",
+        "score": 35.3,
+        "zone": "risk-off",
         "asOf": "2026-10-30",
         "zones": {
           "on": 62,
@@ -5085,36 +5217,36 @@ window.FINANCE_DATA = {
             "key": "vix",
             "name": "波動恐慌",
             "weight": 25,
-            "score": 51.5,
-            "detail": "VIX 17.2,近一年第 52 百分位"
+            "score": 31.8,
+            "detail": "VIX 19.42,近一年第 78 百分位"
           },
           {
             "key": "credit",
             "name": "信用壓力",
             "weight": 25,
-            "score": 38,
-            "detail": "高收益債利差 3.14%,近一年第 86 百分位"
+            "score": 31.7,
+            "detail": "高收益債利差 3.26%,近一年第 95 百分位"
           },
           {
             "key": "momentum",
             "name": "股市動能",
             "weight": 25,
-            "score": 25.4,
-            "detail": "標普500 距 50 日均線 -0.9%;費城半導體 -8%"
+            "score": 17.6,
+            "detail": "標普500 距 50 日均線 -1.5%;費城半導體 -9.9%"
           },
           {
             "key": "haven",
             "name": "避險需求",
             "weight": 15,
-            "score": 59.8,
-            "detail": "近 20 日標普500 減黃金報酬 +3.8 個百分點;美元指數 0%"
+            "score": 60.9,
+            "detail": "近 20 日標普500 減黃金報酬 +4.5 個百分點;美元指數 +0%"
           },
           {
             "key": "curve",
             "name": "殖利率曲線",
             "weight": 10,
-            "score": 58,
-            "detail": "10年-2年期利差 0.37%"
+            "score": 58.7,
+            "detail": "10年-2年期利差 0.38%"
           }
         ],
         "history": [
@@ -5410,13 +5542,1039 @@ window.FINANCE_DATA = {
           },
           {
             "d": "2026-10-29",
-            "s": 48.5,
+            "s": 46.9,
             "z": "neutral"
           },
           {
             "d": "2026-10-30",
-            "s": 43.5,
-            "z": "neutral"
+            "s": 35.3,
+            "z": "risk-off"
+          }
+        ]
+      },
+      "moodByModel": "neutral",
+      "date": "2026-10-31",
+      "weekday": "Saturday"
+    },
+    {
+      "moodNote": "風險溫度計 43.5 分(前一日 48.5),仍屬中性但明顯降溫。主導分項為股市動能(25.4):標普500跌破50日均線約0.9%、費半偏離達-8%;其次是信用壓力(38,高收益債利差處近一年第86百分位)。原因是亞馬遜、英特爾財報加深AI支出疑慮。需留意:美債殖利率回落、避險需求(59.8)與殖利率曲線(58)仍偏多。部分數據來源不一致,已略過。",
+      "news": [
+        {
+          "id": "20261030-01",
+          "title": "英特爾暴跌25%,PC疲軟與現金流警訊引發全球晶片股拋售",
+          "summary": "Q4營收指引150~160億美元低於預期的170.7億;AMD、Arm、輝達、博通、美光盤前跌2%~9%,戴爾、超微電腦跌6%~12%,台積電ADR跌3.9%。",
+          "importance": "high",
+          "category": "tech",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001574042"
+        },
+        {
+          "id": "20261030-02",
+          "title": "科技巨頭支出狂潮讓投資人緊張,AI概念股回檔",
+          "summary": "亞馬遜盤前跌6.8%領跌七巨頭,CoreWeave、Nebius、IREN跌6.7%~7.5%;費半有望創7月以來最大單月跌幅。",
+          "importance": "high",
+          "category": "tech",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001573626"
+        },
+        {
+          "id": "20261030-03",
+          "title": "納指開盤跌逾2%,創兩個多月新低",
+          "summary": "亞馬遜與英特爾加劇AI投資回報疑慮;標普500開盤-1.16%,納指-2.26%,道瓊小漲0.08%。",
+          "importance": "high",
+          "category": "macro",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001574102"
+        },
+        {
+          "id": "20261030-04",
+          "title": "美債殖利率續降,10年期回測4.9%附近",
+          "summary": "避險買盤使10年期低見4.8917%,周四收4.988%,較10/7高點5.3645%持續回落;Q3就業成本指數季增0.8%符合預期,關注20週均線約4.80%。",
+          "importance": "medium",
+          "category": "macro",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001573729"
+        },
+        {
+          "id": "20261030-05",
+          "title": "輝達遭美司法部調查收購Hugging Face,並捲入中國間諜報導",
+          "summary": "司法部審查129.3億美元併購是否讓輝達掌控AI分發入口;華倫議員要求黃仁勳說明,輝達稱指控已被駁斥,盤後跌1.64%。",
+          "importance": "medium",
+          "category": "tech",
+          "source": "Benzinga/Longbridge",
+          "url": "https://longbridge.com/news/100000001570033"
+        },
+        {
+          "id": "20261030-06",
+          "title": "亞洲晶片供應鏈稱AI需求仍強,但投資人憂回報",
+          "summary": "工業富聯董事長稱AI非泡沫,東京威力科創預測營業利益增87%;SK海力士、台積電、愛德萬測試股價仍承壓。",
+          "importance": "medium",
+          "category": "tech",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001571140"
+        },
+        {
+          "id": "20261030-07",
+          "title": "台灣Q3 GDP年增14.36%,優於預期",
+          "summary": "高於經濟學家預期的12%與Q2的12.93%,顯示AI晶片與技術需求具韌性。",
+          "importance": "medium",
+          "category": "macro",
+          "source": "路透/Longbridge",
+          "url": "https://longbridge.com/news/100000001570985"
+        }
+      ],
+      "market": {
+        "indices": [
+          {
+            "name": "道瓊工業指數",
+            "symbol": "^DJI",
+            "value": 52149.53,
+            "change": -0.37,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DJIA",
+              "status": "ok",
+              "through": "2026-10-29",
+              "latest": false,
+              "worstDate": "2026-10-26",
+              "yahoo": 52361.5781,
+              "fred": 52361.58,
+              "diff": 0,
+              "diffUnit": "%",
+              "tol": 0.15
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": ".DJI",
+              "cnbc": 52140.29,
+              "cnbcChange": -0.39,
+              "valueDiff": 0.02,
+              "diffUnit": "%",
+              "changeDiff": 0.02,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "標普500",
+            "symbol": "^GSPC",
+            "value": 7625.01,
+            "change": -1.24,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "SP500",
+              "status": "ok",
+              "through": "2026-10-28",
+              "latest": false,
+              "worstDate": "2026-10-23",
+              "yahoo": 7623.6802,
+              "fred": 7623.68,
+              "diff": 0,
+              "diffUnit": "%",
+              "tol": 0.15
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": ".SPX",
+              "cnbc": 7624.73,
+              "cnbcChange": -1.24,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "那斯達克綜合指數",
+            "symbol": "^IXIC",
+            "value": 25570.13,
+            "change": -2.35,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "NASDAQCOM",
+              "status": "ok",
+              "through": "2026-10-29",
+              "latest": false,
+              "worstDate": "2026-10-26",
+              "yahoo": 26169.3809,
+              "fred": 26169.38,
+              "diff": 0,
+              "diffUnit": "%",
+              "tol": 0.15
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": ".IXIC",
+              "cnbc": 25570.02,
+              "cnbcChange": -2.35,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "羅素2000",
+            "symbol": "^RUT",
+            "hint": "美國 2,000 檔中小型股指數,對利率與美國內需景氣較敏感",
+            "value": 2859.22,
+            "change": 1.01,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-29",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".RUT",
+              "cnbc": 2859.217,
+              "cnbcChange": 1.01,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "費城半導體指數",
+            "symbol": "^SOX",
+            "hint": "美國 30 檔主要半導體股組成(含台積電 ADR),和台股電子股連動很高",
+            "value": 10912.82,
+            "change": -5.26,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": true,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".SOX",
+              "cnbc": 10909.187,
+              "cnbcChange": -5.29,
+              "valueDiff": 0.03,
+              "diffUnit": "%",
+              "changeDiff": 0.03,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "台灣加權指數",
+            "symbol": "^TWII",
+            "value": 45211.83,
+            "change": -2.49,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "證交所",
+            "bigMove": false,
+            "note": "光電、玻陶重挫,金融與生技相對抗跌",
+            "check2": {
+              "src": "CNBC",
+              "id": ".TWII",
+              "cnbc": 45211.83,
+              "cnbcChange": -2.49,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "櫃買指數",
+            "symbol": "^TWOII",
+            "hint": "台灣上櫃股票指數,以中小型電子、生技股為主,反映內資與散戶的風險偏好",
+            "value": 370.26,
+            "change": -4.42,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "櫃買中心",
+            "bigMove": true,
+            "note": "",
+            "verified": false
+          },
+          {
+            "name": "日經225",
+            "symbol": "^N225",
+            "value": 63290.11,
+            "change": -2.12,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".N225",
+              "cnbc": 63290.11,
+              "cnbcChange": -2.12,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "南韓KOSPI",
+            "symbol": "^KS11",
+            "value": 5730.74,
+            "change": -3.48,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".KS11",
+              "cnbc": 5730.74,
+              "cnbcChange": -3.48,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "恒生指數",
+            "symbol": "^HSI",
+            "value": 23294.42,
+            "change": 1.46,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".HSI",
+              "cnbc": 23294.42,
+              "cnbcChange": 1.46,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "上證指數",
+            "symbol": "000001.SS",
+            "value": 3599.02,
+            "change": -1.44,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".SSEC",
+              "cnbc": 3599.017,
+              "cnbcChange": -1.44,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "德國DAX",
+            "symbol": "^GDAXI",
+            "value": 25842.82,
+            "change": -0.76,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".GDAXI",
+              "cnbc": 25842.82,
+              "cnbcChange": -0.76,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "英國富時100",
+            "symbol": "^FTSE",
+            "value": 10725.62,
+            "change": 0.03,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".FTSE",
+              "cnbc": 10725.37,
+              "cnbcChange": 0.03,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "印度Sensex",
+            "symbol": "^BSESN",
+            "value": 74459.53,
+            "change": 0.42,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-30",
+            "live": false,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "verified": false
+          }
+        ],
+        "indicators": [
+          {
+            "name": "VIX恐慌指數",
+            "symbol": "^VIX",
+            "hint": "由標普500選擇權價格算出市場預期的未來 30 天波動。20 以下偏平靜,30 以上代表市場恐慌",
+            "value": 17.2,
+            "change": 1.71,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-29",
+            "live": false,
+            "source": "CBOE",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "VIXCLS",
+              "status": "ok",
+              "through": "2026-10-29",
+              "latest": true,
+              "worstDate": "2026-10-23",
+              "yahoo": 19.45,
+              "fred": 19.45,
+              "diff": 0,
+              "diffUnit": "%",
+              "tol": 2
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": ".VIX",
+              "status": "ok",
+              "viaPrev": true,
+              "cnbc": 17.2,
+              "cnbcChange": null,
+              "valueDiff": 0,
+              "diffUnit": "%"
+            },
+            "verified": true
+          },
+          {
+            "name": "美債10年期殖利率",
+            "symbol": "^TNX",
+            "hint": "買美國 10 年期公債每年可拿到的報酬率,是全球房貸、企業借款與股票估值的基準。1bp(基點)= 0.01%",
+            "value": 4.98,
+            "change": -7,
+            "unit": "bp",
+            "dir": "down",
+            "asOf": "2026-10-29",
+            "live": false,
+            "source": "美國財政部",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DGS10",
+              "status": "ok",
+              "through": "2026-10-28",
+              "latest": false,
+              "worstDate": "2026-10-22",
+              "yahoo": 4.96,
+              "fred": 4.96,
+              "diff": 0,
+              "diffUnit": "bp",
+              "tol": 6
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "US10Y",
+              "status": "ok",
+              "viaPrev": true,
+              "cnbc": 4.989,
+              "cnbcChange": null,
+              "valueDiff": 0.9,
+              "diffUnit": "bp"
+            },
+            "verified": true
+          },
+          {
+            "name": "美債30年期殖利率",
+            "symbol": "^TYX",
+            "hint": "最長天期公債的利率,反映市場對長期通膨與美國財政赤字的擔憂",
+            "value": 5.32,
+            "change": -5,
+            "unit": "bp",
+            "dir": "down",
+            "asOf": "2026-10-29",
+            "live": false,
+            "source": "美國財政部",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DGS30",
+              "status": "ok",
+              "through": "2026-10-28",
+              "latest": false,
+              "worstDate": "2026-10-22",
+              "yahoo": 5.29,
+              "fred": 5.29,
+              "diff": 0,
+              "diffUnit": "bp",
+              "tol": 6
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "US30Y",
+              "status": "ok",
+              "viaPrev": true,
+              "cnbc": 5.329,
+              "cnbcChange": null,
+              "valueDiff": 0.9,
+              "diffUnit": "bp"
+            },
+            "verified": true
+          },
+          {
+            "name": "美元指數(DXY)",
+            "symbol": "DX-Y.NYB",
+            "hint": "美元對歐元、日圓等 6 種主要貨幣的強弱。上升=美元走強,資金常流出新興市場",
+            "value": 101.91,
+            "change": -0.13,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check2": {
+              "src": "CNBC",
+              "id": ".DXY",
+              "cnbc": 101.883,
+              "cnbcChange": -0.15,
+              "valueDiff": 0.03,
+              "diffUnit": "%",
+              "changeDiff": 0.02,
+              "status": "ok"
+            },
+            "verified": true
+          }
+        ],
+        "commodities": [
+          {
+            "name": "布蘭特原油",
+            "symbol": "BZ=F",
+            "value": 113.02,
+            "change": -1.62,
+            "unit": "%",
+            "dir": "flat",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Brent Crude Oil Last Day Financ",
+            "barContract": "Brent Crude Oil Last Day Financ",
+            "prevBarContract": "Brent Crude Oil Last Day Financ",
+            "check2": {
+              "src": "CNBC",
+              "id": "@LCO.1",
+              "cnbc": 117.18,
+              "cnbcChange": 2,
+              "valueDiff": 3.55,
+              "diffUnit": "%",
+              "changeDiff": 3.62,
+              "status": "mismatch"
+            },
+            "rollover": true,
+            "rolloverReason": "與 CNBC 近月報價差 3.55%(CNBC 117.18),疑似 Yahoo 已換到下個月合約",
+            "verified": false
+          },
+          {
+            "name": "WTI原油",
+            "symbol": "CL=F",
+            "value": 103.87,
+            "change": 1.83,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Crude Oil Dec 26",
+            "barContract": "Crude Oil Dec 26",
+            "prevBarContract": "Crude Oil Dec 26",
+            "check2": {
+              "src": "CNBC",
+              "id": "@CL.1",
+              "cnbc": 103.89,
+              "cnbcChange": 1.85,
+              "valueDiff": 0.02,
+              "diffUnit": "%",
+              "changeDiff": 0.02,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "黃金",
+            "symbol": "GC=F",
+            "value": 3951.2,
+            "change": -1.99,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Gold Dec 26",
+            "barContract": "Gold Dec 26",
+            "prevBarContract": "Gold Dec 26",
+            "check2": {
+              "src": "CNBC",
+              "id": "@GC.1",
+              "cnbc": 3951.3,
+              "cnbcChange": -1.99,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "白銀",
+            "symbol": "SI=F",
+            "value": 49.77,
+            "change": -4.64,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Silver Dec 26",
+            "barContract": "Silver Dec 26",
+            "prevBarContract": "Silver Dec 26",
+            "check2": {
+              "src": "CNBC",
+              "id": "@SI.1",
+              "cnbc": 49.78,
+              "cnbcChange": -4.96,
+              "valueDiff": 0.02,
+              "diffUnit": "%",
+              "changeDiff": 0.32,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "銅",
+            "symbol": "HG=F",
+            "hint": "用途廣泛的工業原料,價格常反映全球景氣,有「銅博士」之稱(單位:美元/磅)",
+            "value": 6.518,
+            "change": -0.96,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Copper Dec 26",
+            "barContract": "Copper Dec 26",
+            "prevBarContract": "Copper Dec 26",
+            "check2": {
+              "src": "CNBC",
+              "id": "@HG.1",
+              "cnbc": 6.5175,
+              "cnbcChange": -1.29,
+              "valueDiff": 0.01,
+              "diffUnit": "%",
+              "changeDiff": 0.33,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "天然氣",
+            "symbol": "NG=F",
+            "value": 2.856,
+            "change": -3.25,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "contract": "Natural Gas Dec 26",
+            "barContract": "Natural Gas Dec 26",
+            "prevBarContract": "Natural Gas Dec 26",
+            "check2": {
+              "src": "CNBC",
+              "id": "@NG.1",
+              "cnbc": 2.856,
+              "cnbcChange": -3.25,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0,
+              "status": "ok"
+            },
+            "verified": true
+          }
+        ],
+        "crypto": [
+          {
+            "name": "比特幣",
+            "symbol": "BTC-USD",
+            "value": 77037,
+            "change": -4.63,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "CBBTCUSD",
+              "status": "ok",
+              "through": "2026-10-29",
+              "latest": false,
+              "worstDate": "2026-10-29",
+              "yahoo": 77775.1094,
+              "fred": 77938.86,
+              "diff": 0.21,
+              "diffUnit": "%",
+              "tol": 3
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "BTC.CM=",
+              "cnbc": 77020.85,
+              "cnbcChange": -4.63,
+              "valueDiff": 0.02,
+              "diffUnit": "%",
+              "changeDiff": 3.68,
+              "changeFrom": -0.95,
+              "changeAdopted": true,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "以太幣",
+            "symbol": "ETH-USD",
+            "value": 2222.19,
+            "change": -4.7,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "CBETHUSD",
+              "status": "ok",
+              "through": "2026-10-29",
+              "latest": false,
+              "worstDate": "2026-10-25",
+              "yahoo": 2326.9202,
+              "fred": 2321.28,
+              "diff": 0.24,
+              "diffUnit": "%",
+              "tol": 3
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "ETH.CM=",
+              "cnbc": 2222.28,
+              "cnbcChange": -4.7,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 3.49,
+              "changeFrom": -1.21,
+              "changeAdopted": true,
+              "status": "ok"
+            },
+            "verified": true
+          }
+        ],
+        "fx": [
+          {
+            "name": "美元兌台幣(USD/TWD)",
+            "symbol": "TWD=X",
+            "value": 32.608,
+            "change": 0.05,
+            "unit": "%",
+            "dir": "up",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DEXTAUS",
+              "status": "ok",
+              "through": "2026-10-22",
+              "latest": false,
+              "worstDate": "2026-10-15",
+              "yahoo": 32.3269,
+              "fred": 32.4,
+              "diff": 0.23,
+              "diffUnit": "%",
+              "tol": 0.8
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "TWD=",
+              "cnbc": 32.609,
+              "cnbcChange": 0.05,
+              "valueDiff": 0,
+              "diffUnit": "%",
+              "changeDiff": 0.65,
+              "changeFrom": 0.7,
+              "changeAdopted": true,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "美元兌日圓(USD/JPY)",
+            "symbol": "JPY=X",
+            "value": 157.23,
+            "change": -0.39,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DEXJPUS",
+              "status": "ok",
+              "through": "2026-10-22",
+              "latest": false,
+              "worstDate": "2026-10-22",
+              "yahoo": 156.494,
+              "fred": 157.11,
+              "diff": 0.39,
+              "diffUnit": "%",
+              "tol": 0.8
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "JPY=",
+              "cnbc": 157.21,
+              "cnbcChange": -0.3044,
+              "valueDiff": 0.01,
+              "diffUnit": "%",
+              "changeDiff": 0.09,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "歐元兌美元(EUR/USD)",
+            "symbol": "EURUSD=X",
+            "value": 1.1168,
+            "change": -0.12,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DEXUSEU",
+              "status": "ok",
+              "through": "2026-10-22",
+              "latest": false,
+              "worstDate": "2026-10-22",
+              "yahoo": 1.1221,
+              "fred": 1.1212,
+              "diff": 0.08,
+              "diffUnit": "%",
+              "tol": 0.8
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "EUR=",
+              "cnbc": 1.1165,
+              "cnbcChange": -0.1163,
+              "valueDiff": 0.03,
+              "diffUnit": "%",
+              "changeDiff": 0.23,
+              "changeFrom": 0.11,
+              "changeAdopted": true,
+              "status": "ok"
+            },
+            "verified": true
+          },
+          {
+            "name": "美元兌人民幣(USD/CNY)",
+            "symbol": "CNY=X",
+            "value": 6.6422,
+            "change": -0.13,
+            "unit": "%",
+            "dir": "down",
+            "asOf": "2026-10-30",
+            "live": true,
+            "source": "Yahoo",
+            "bigMove": false,
+            "note": "",
+            "check": {
+              "src": "FRED",
+              "id": "DEXCHUS",
+              "status": "ok",
+              "through": "2026-10-22",
+              "latest": false,
+              "worstDate": "2026-10-22",
+              "yahoo": 6.6779,
+              "fred": 6.6745,
+              "diff": 0.05,
+              "diffUnit": "%",
+              "tol": 0.8
+            },
+            "check2": {
+              "src": "CNBC",
+              "id": "CNY=",
+              "cnbc": 6.6526,
+              "cnbcChange": -0.1261,
+              "valueDiff": 0.16,
+              "diffUnit": "%",
+              "changeDiff": 0.23,
+              "changeFrom": -0.36,
+              "changeAdopted": true,
+              "status": "ok"
+            },
+            "verified": true
+          }
+        ]
+      },
+      "mood": "neutral",
+      "risk": {
+        "score": 43.5,
+        "zone": "neutral",
+        "asOf": "2026-10-30",
+        "zones": {
+          "on": 62,
+          "onExit": 55,
+          "off": 40,
+          "offExit": 46
+        },
+        "components": [
+          {
+            "key": "vix",
+            "name": "波動恐慌",
+            "weight": 25,
+            "score": 51.5,
+            "detail": "VIX 17.2,近一年第 52 百分位"
+          },
+          {
+            "key": "credit",
+            "name": "信用壓力",
+            "weight": 25,
+            "score": 38,
+            "detail": "高收益債利差 3.14%,近一年第 86 百分位"
+          },
+          {
+            "key": "momentum",
+            "name": "股市動能",
+            "weight": 25,
+            "score": 25.4,
+            "detail": "標普500 距 50 日均線 -0.9%;費城半導體 -8%"
+          },
+          {
+            "key": "haven",
+            "name": "避險需求",
+            "weight": 15,
+            "score": 59.8,
+            "detail": "近 20 日標普500 減黃金報酬 +3.8 個百分點;美元指數 0%"
+          },
+          {
+            "key": "curve",
+            "name": "殖利率曲線",
+            "weight": 10,
+            "score": 58,
+            "detail": "10年-2年期利差 0.37%"
           }
         ]
       },
@@ -15891,164 +17049,6 @@ window.FINANCE_DATA = {
         }
       ],
       "date": "2026-09-29",
-      "weekday": "Tuesday"
-    },
-    {
-      "mood": "risk-on",
-      "moodNote": "美股AI/半導體與台股續創新高，惟金融股遭Fed鷹派利率前景拖累重挫，陸港AI應用股同步回落，市場觀望川習峰會結果",
-      "market": {
-        "indices": [
-          {
-            "name": "道瓊工業指數",
-            "value": "51,864",
-            "change": "-185",
-            "dir": "down",
-            "note": "9/22收盤，-0.36%，金融股走弱拖累(數字依漲跌幅換算，官方精確收盤點數待確認)"
-          },
-          {
-            "name": "S&P 500",
-            "value": "7,764.7",
-            "change": "-0.3",
-            "dir": "flat",
-            "note": "9/22收盤，與前一交易日幾乎持平(-0.00%)"
-          },
-          {
-            "name": "那斯達克綜合指數",
-            "value": "27,272.72",
-            "change": "+150.63",
-            "dir": "up",
-            "note": "9/22收盤創新高，+0.56%，AI/半導體股領漲"
-          },
-          {
-            "name": "台灣加權指數",
-            "value": "48,157.29",
-            "change": "+357.12",
-            "dir": "up",
-            "note": "9/23收盤，+0.75%，創歷史新高，台積電、外資買超挺盤"
-          },
-          {
-            "name": "香港恒生指數",
-            "value": "24,834.12",
-            "change": "-1.01%",
-            "dir": "down",
-            "note": "9/23收盤，AI應用股走弱，市場觀望川習峰會"
-          },
-          {
-            "name": "上證指數",
-            "value": "3,952.13",
-            "change": "+2.22",
-            "dir": "up",
-            "note": "9/23收盤，+0.06%，窄幅盤整"
-          }
-        ],
-        "indicators": [
-          {
-            "name": "VIX恐慌指數",
-            "value": "14.21",
-            "change": "-0.66",
-            "dir": "down",
-            "note": "9/22收盤，-4.44%，市場情緒轉穩"
-          },
-          {
-            "name": "美債10年期殖利率",
-            "value": "4.97%",
-            "change": "+0.01pp",
-            "dir": "up",
-            "note": "9/22收盤，Fed鷹派升息後小幅走高"
-          }
-        ],
-        "commodities": [
-          {
-            "name": "WTI原油",
-            "value": "$89.85",
-            "change": "-2.31%",
-            "dir": "down",
-            "note": "9/22收盤，美伊外交轉圜及荷姆茲海峽復通訊號使地緣溢價消退，續處跌勢"
-          },
-          {
-            "name": "黃金",
-            "value": "$4,307.63",
-            "change": "-0.81%",
-            "dir": "down",
-            "note": "9/22收盤，Fed鷹派言論推升美元，黃金回落至$4,310下方"
-          }
-        ],
-        "crypto": [
-          {
-            "name": "比特幣(BTC)",
-            "value": "$86,213.8",
-            "change": "+0.77%",
-            "dir": "up",
-            "note": "9/23最新，站穩8.6萬美元上方，接近8個月高點，市場討論「加密寒冬」是否結束"
-          }
-        ],
-        "fx": [
-          {
-            "name": "USD/TWD 美元兌台幣",
-            "value": "31.78",
-            "change": "+0.10",
-            "dir": "up",
-            "note": "9/23最新，較9/22收盤31.676回貶，惟仍處相對強勢區間"
-          }
-        ]
-      },
-      "news": [
-        {
-          "id": "20260923-01",
-          "title": "習近平抵美展開國事訪問，川習峰會9/24白宮登場",
-          "summary": "習近平與夫人彭麗媛9/23抵達安德魯斯聯合基地，川普親自接機；白宮訂9/24舉行南草坪歡迎儀式及國宴，峰會聚焦貿易、AI、伊朗與台灣議題。",
-          "importance": "high",
-          "category": "geopolitics",
-          "source": "白宮聲明",
-          "url": "https://www.whitehouse.gov/briefings-statements/2026/09/first-lady-melania-trump-releases-details-ahead-of-his-excellency-xi-jinping-president-of-the-peoples-republic-of-china-and-madame-peng-liyuans-visit-to-the-white-house/"
-        },
-        {
-          "id": "20260923-02",
-          "title": "那斯達克創收盤新高，惟道瓊受金融股拖累下跌",
-          "summary": "AI與半導體股續強帶動那斯達克收在27,272.72點歷史新高，Russell 2000表現最佳；道瓊因金融股重挫收跌0.36%。",
-          "importance": "high",
-          "category": "markets",
-          "source": "TheStreet",
-          "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-22-2026"
-        },
-        {
-          "id": "20260923-03",
-          "title": "Fed鷹派升息後遺症發酵，金融股全面重挫",
-          "summary": "嘉信理財、Raymond James、Allstate等金融股單日下跌5%以上，市場消化Fed三年來首次升息及鷹派利率路徑的衝擊。",
-          "importance": "medium",
-          "category": "markets",
-          "source": "TheStreet",
-          "url": "https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-sept-22-2026"
-        },
-        {
-          "id": "20260923-04",
-          "title": "伊朗提議7天內重開荷姆茲海峽，換取美方解除封鎖",
-          "summary": "伊朗官員向路透表示，若美方降低軍事壓力並解除對伊朗港口封鎖，伊朗可於一週內重開荷姆茲海峽；伊朗總統目前在紐約出席聯大，惟不會與川普會面。",
-          "importance": "medium",
-          "category": "geopolitics",
-          "source": "Reuters",
-          "url": "https://www.reuters.com/world/middle-east/iran-ready-reopen-strait-hormuz-if-us-eases-military-pressure-lifts-blockade-2026-09-22/"
-        },
-        {
-          "id": "20260923-05",
-          "title": "恒生科指跌1.33%，AI應用股智譜跌逾12%",
-          "summary": "港股受AI應用股獲利了結拖累走弱，恒指跌1.01%，內房股逆勢走強，市場觀望川習峰會後續發展。",
-          "importance": "medium",
-          "category": "markets",
-          "source": "新浪財經",
-          "url": "https://finance.sina.com.cn/stock/hkstock/marketalerts/2026-09-23/doc-inisvcqc5296303.shtml"
-        },
-        {
-          "id": "20260923-06",
-          "title": "台股加權指數收48,157點創新高",
-          "summary": "台積電領軍收漲30元至2,490元，外資買超居冠，加權指數終場上漲357點、漲幅0.75%，改寫歷史新高。",
-          "importance": "medium",
-          "category": "taiwan",
-          "source": "ETtoday財經雲",
-          "url": "https://finance.ettoday.net/news/3242428"
-        }
-      ],
-      "date": "2026-09-23",
       "weekday": "Tuesday"
     }
   ]
