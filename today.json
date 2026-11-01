@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "stocks": {
     "sectors": [
       {
@@ -839,61 +839,52 @@
     }
   },
   "day": {
-    "moodNote": "今日休市,行情沿用 10/30 收盤。風險溫度計 35.3 分(前一日 46.9),Risk-Off。休市期間幣安傳遭駭 63 億美元、輝達中國間諜報導延燒。下週關注:11/3 蘋果、Palantir 財報,11/5 20:00 英國央行決議,11/6 21:30 美國非農。",
+    "moodNote": "今日休市,行情沿用 10/30 收盤。風險溫度計 35.6 分(前一日 47.7),Risk-Off。休市期間幣安稱已補足九成被盜資產、OPEC+ 擬維持12月產量。下週關注:11/3 蘋果、Palantir 財報,11/5 20:00 英國央行決議,11/6 21:30 美國非農。",
     "news": [
       {
         "id": "n1",
-        "title": "美股收盤大跌:AI現金消耗憂慮引爆科技股拋售",
-        "summary": "納指單日-2.84%,為6月5日以來最大跌幅;標普500-1.80%、道瓊-1.09%;標普與那指10月收黑,道瓊月線收漲。",
-        "importance": 5,
-        "category": "美股",
-        "source": "路透/Longbridge",
-        "url": "https://longbridge.com/news/100000001576897"
-      },
-      {
-        "id": "n2",
-        "title": "晶片股一天蒸發約1兆美元,5檔占六成",
-        "summary": "英特爾暴跌約28%,輝達、台積電ADR、博通、AMD合計市值損失約6100億美元;費半單週第二次單日跌逾6%。",
-        "importance": 5,
-        "category": "半導體",
-        "source": "Benzinga/Longbridge",
-        "url": "https://longbridge.com/news/100000001576147"
-      },
-      {
-        "id": "n3",
-        "title": "幣安遭駭63億美元,加密貨幣同業趕緊補強防禦",
-        "summary": "分析師指與北韓過往攻擊相似;Coinbase調整離線金鑰系統,比特幣週四一度跌逾4%、週五收復部分跌幅。",
+        "title": "幣安:90%被盜資產已補足,11/1 重開提現",
+        "summary": "幣安稱自行承擔損失,動用企業金庫與部分期貨保險基金,預計24小時內部分動用SAFU;主要幣種已100%足額支持,提現預定11/1(週日)重開(具體時間未公布)。",
         "importance": 5,
         "category": "加密貨幣",
         "source": "路透/Longbridge",
-        "url": "https://longbridge.com/news/100000001577989"
+        "url": "https://longbridge.com/news/100000001578526"
+      },
+      {
+        "id": "n2",
+        "title": "幣安遭駭後,Coinbase、Robinhood等加密股續挫",
+        "summary": "Coinbase跌至136美元,為2024年2月以來低點、較高點跌約70%;Robinhood跌至84.9美元,Bullish連跌六週。",
+        "importance": 4,
+        "category": "加密貨幣",
+        "source": "Benzinga/Longbridge",
+        "url": "https://longbridge.com/news/100000001578780"
+      },
+      {
+        "id": "n3",
+        "title": "OPEC+原則上維持12月產量目標不變",
+        "summary": "七個核心成員會前同意暫停調整,海灣產油國因伊朗戰爭中斷產量低於配額;布蘭特油價徘徊六個月高位附近。",
+        "importance": 4,
+        "category": "原物料",
+        "source": "Benzinga/Longbridge",
+        "url": "https://longbridge.com/news/100000001579192"
       },
       {
         "id": "n4",
-        "title": "美銀哈特內特:科技債是「璞玉」",
-        "summary": "今年美國科技債約下跌9%,AI超大規模業者已發債1820億美元;長天期收益率6%~8%,CoreWeave 2031年債約14.26%。",
+        "title": "克莱默:晶片股蒸發1兆美元後,別假設最糟已過",
+        "summary": "他提醒下週有重大財報、月度就業報告與期中選舉,建議勿猜測納指底部;英特爾稱晶圓與基板短缺可能限制伺服器出貨至2027下半年。",
         "importance": 3,
-        "category": "債市",
+        "category": "美股",
         "source": "Benzinga/Longbridge",
-        "url": "https://longbridge.com/news/100000001574536"
+        "url": "https://longbridge.com/news/100000001579207"
       },
       {
         "id": "n5",
-        "title": "十月市場動盪:標普500僅跌0.5%,但75%成分股上漲",
-        "summary": "等權重ETF RSP 10月漲5.5%;英特爾月跌43.5%、Alphabet跌18.5%、輝達跌8.7%,漲勢集中在非大型科技股。",
+        "title": "標普500受阻7830點,遠期本益比降至18.7倍",
+        "summary": "標普10/30回落至約7530點,為9/16以來低點、較高點低約4%;FactSet顯示已公布財報公司盈利成長30%,估值低於五年均值19.8倍。",
         "importance": 3,
         "category": "美股",
-        "source": "MarketWatch/Longbridge",
-        "url": "https://longbridge.com/news/100000001575282"
-      },
-      {
-        "id": "n6",
-        "title": "輝達與新加坡Megaspeed關係曝光美國晶片管制盲點",
-        "summary": "紐時報導美方曾監控Megaspeed前負責人涉中國情報;輝達稱與區域雲端客戶往來屬正常,未涉機密。",
-        "importance": 4,
-        "category": "科技",
-        "source": "MarketWatch/Longbridge",
-        "url": "https://longbridge.com/news/100000001578393"
+        "source": "Benzinga/Longbridge",
+        "url": "https://longbridge.com/news/100000001578859"
       }
     ],
     "market": {
@@ -1919,15 +1910,14 @@
           "symbol": "DX-Y.NYB",
           "hint": "美元對歐元、日圓等 6 種主要貨幣的強弱。上升=美元走強,資金常流出新興市場",
           "value": 101.96,
-          "change": -0.07,
+          "change": 0.08,
           "unit": "%",
-          "dir": "down",
+          "dir": "up",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            100.43,
             100.6,
             101.1,
             101.29,
@@ -1956,6 +1946,7 @@
             102.32,
             102.19,
             102.04,
+            101.88,
             101.96
           ],
           "note": "",
@@ -1966,7 +1957,7 @@
             "cnbcChange": -0.07,
             "valueDiff": 0,
             "diffUnit": "%",
-            "changeDiff": 0,
+            "changeDiff": 0.15,
             "status": "ok"
           },
           "verified": true
@@ -1977,15 +1968,14 @@
           "name": "布蘭特原油",
           "symbol": "BZ=F",
           "value": 113.43,
-          "change": -1.26,
+          "change": 0,
           "unit": "%",
-          "dir": "down",
+          "dir": "flat",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            100.34,
             99.25,
             103.08,
             106.6,
@@ -2014,6 +2004,7 @@
             113.88,
             115.32,
             114.88,
+            113.43,
             113.43
           ],
           "note": "",
@@ -2035,7 +2026,7 @@
           "name": "WTI原油",
           "symbol": "CL=F",
           "value": 104.12,
-          "change": 2.08,
+          "change": 0,
           "unit": "%",
           "dir": "flat",
           "asOf": "2026-10-30",
@@ -2043,7 +2034,6 @@
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            95.78,
             94.59,
             92.16,
             94.61,
@@ -2072,6 +2062,7 @@
             99.9,
             102.78,
             102,
+            104.12,
             104.12
           ],
           "note": "",
@@ -2085,7 +2076,7 @@
             "cnbcChange": 0.93,
             "valueDiff": 1.14,
             "diffUnit": "%",
-            "changeDiff": 1.15,
+            "changeDiff": 0.93,
             "status": "mismatch"
           },
           "rollover": true,
@@ -2096,15 +2087,14 @@
           "name": "黃金",
           "symbol": "GC=F",
           "value": 3898.9,
-          "change": -3.29,
+          "change": 0,
           "unit": "%",
-          "dir": "down",
+          "dir": "flat",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            4383.9,
             4376.4,
             4318.4,
             4298,
@@ -2133,6 +2123,7 @@
             4074.6,
             4051.6,
             4031.4,
+            3898.9,
             3898.9
           ],
           "note": "",
@@ -2146,7 +2137,7 @@
             "cnbcChange": -3.63,
             "valueDiff": 0.36,
             "diffUnit": "%",
-            "changeDiff": 0.34,
+            "changeDiff": 3.63,
             "status": "mismatch"
           },
           "verified": false
@@ -2155,15 +2146,14 @@
           "name": "白銀",
           "symbol": "SI=F",
           "value": 49.276,
-          "change": -5.59,
+          "change": 0,
           "unit": "%",
-          "dir": "down",
+          "dir": "flat",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            65.825,
             65.932,
             64.382,
             63.457,
@@ -2192,6 +2182,7 @@
             54.293,
             53.457,
             52.191,
+            49.276,
             49.276
           ],
           "note": "",
@@ -2205,7 +2196,7 @@
             "cnbcChange": -6.2,
             "valueDiff": 0.29,
             "diffUnit": "%",
-            "changeDiff": 0.61,
+            "changeDiff": 6.2,
             "status": "mismatch"
           },
           "verified": false
@@ -2215,15 +2206,14 @@
           "symbol": "HG=F",
           "hint": "用途廣泛的工業原料,價格常反映全球景氣,有「銅博士」之稱(單位:美元/磅)",
           "value": 6.482,
-          "change": -1.5,
+          "change": 0,
           "unit": "%",
-          "dir": "down",
+          "dir": "flat",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            6.687,
             6.76,
             6.678,
             6.719,
@@ -2252,6 +2242,7 @@
             6.622,
             6.641,
             6.581,
+            6.482,
             6.482
           ],
           "note": "",
@@ -2265,7 +2256,7 @@
             "cnbcChange": -1.41,
             "valueDiff": 0.42,
             "diffUnit": "%",
-            "changeDiff": 0.09,
+            "changeDiff": 1.41,
             "status": "mismatch"
           },
           "verified": false
@@ -2274,15 +2265,14 @@
           "name": "天然氣",
           "symbol": "NG=F",
           "value": 2.898,
-          "change": -1.83,
+          "change": 0,
           "unit": "%",
-          "dir": "down",
+          "dir": "flat",
           "asOf": "2026-10-30",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            2.836,
             2.965,
             3.023,
             3.297,
@@ -2311,6 +2301,7 @@
             2.697,
             2.817,
             2.952,
+            2.898,
             2.898
           ],
           "note": "",
@@ -2324,7 +2315,7 @@
             "cnbcChange": -2.34,
             "valueDiff": 0.52,
             "diffUnit": "%",
-            "changeDiff": 0.51,
+            "changeDiff": 2.34,
             "status": "mismatch"
           },
           "verified": false
@@ -2334,16 +2325,15 @@
         {
           "name": "比特幣",
           "symbol": "BTC-USD",
-          "value": 77361,
-          "change": 1.07,
+          "value": 77797,
+          "change": 0.47,
           "unit": "%",
           "dir": "up",
-          "asOf": "2026-10-31",
+          "asOf": "2026-11-01",
           "live": true,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            84497,
             84764,
             86480,
             85787,
@@ -2372,14 +2362,15 @@
             81268,
             77775,
             77198,
-            77361
+            77435,
+            77797
           ],
           "note": "",
           "check": {
             "src": "FRED",
             "id": "CBBTCUSD",
             "status": "ok",
-            "through": "2026-10-30",
+            "through": "2026-10-31",
             "latest": false,
             "worstDate": "2026-10-29",
             "yahoo": 77775.1094,
@@ -2391,13 +2382,11 @@
           "check2": {
             "src": "CNBC",
             "id": "BTC.CM=",
-            "cnbc": 77370.77,
-            "cnbcChange": 1.07,
+            "cnbc": 77804.76,
+            "cnbcChange": 0.47,
             "valueDiff": 0.01,
             "diffUnit": "%",
-            "changeDiff": 0.86,
-            "changeFrom": 0.21,
-            "changeAdopted": true,
+            "changeDiff": 0,
             "status": "ok"
           },
           "verified": true
@@ -2405,16 +2394,15 @@
         {
           "name": "以太幣",
           "symbol": "ETH-USD",
-          "value": 2247.35,
-          "change": 0.77,
+          "value": 2260.44,
+          "change": 0.34,
           "unit": "%",
           "dir": "up",
-          "asOf": "2026-10-31",
+          "asOf": "2026-11-01",
           "live": true,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            2668.15,
             2687.26,
             2726.51,
             2711.03,
@@ -2443,14 +2431,15 @@
             2357.62,
             2249.5,
             2241.05,
-            2247.35
+            2252.75,
+            2260.44
           ],
           "note": "",
           "check": {
             "src": "FRED",
             "id": "CBETHUSD",
             "status": "ok",
-            "through": "2026-10-30",
+            "through": "2026-10-31",
             "latest": false,
             "worstDate": "2026-10-27",
             "yahoo": 2347.73,
@@ -2462,13 +2451,11 @@
           "check2": {
             "src": "CNBC",
             "id": "ETH.CM=",
-            "cnbc": 2247.8,
-            "cnbcChange": 0.77,
-            "valueDiff": 0.02,
+            "cnbc": 2260.23,
+            "cnbcChange": 0.42,
+            "valueDiff": 0.01,
             "diffUnit": "%",
-            "changeDiff": 0.49,
-            "changeFrom": 0.28,
-            "changeAdopted": true,
+            "changeDiff": 0.08,
             "status": "ok"
           },
           "verified": true
@@ -2690,7 +2677,7 @@
           "change": -0.11,
           "unit": "%",
           "dir": "down",
-          "asOf": "2026-10-31",
+          "asOf": "2026-11-01",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
@@ -2744,7 +2731,7 @@
             "src": "CNBC",
             "id": "CNY=",
             "status": "skip",
-            "reason": "報價日期不同(Yahoo 2026-10-31 / CNBC 2026-10-30)"
+            "reason": "報價日期不同(Yahoo 2026-11-01 / CNBC 2026-10-30)"
           },
           "verified": false
         }
@@ -2760,7 +2747,7 @@
         "change": 0,
         "unit": "%",
         "dir": "flat",
-        "period": "2026-10-31",
+        "period": "2026-11-01",
         "freq": "daily",
         "series": [
           3.75,
@@ -2777,7 +2764,7 @@
           3.75,
           3.75,
           3.75,
-          3.75,
+          4,
           4,
           4,
           4,
@@ -4125,8 +4112,8 @@
       }
     ],
     "calendar": {
-      "from": "2026-10-31",
-      "to": "2026-11-07",
+      "from": "2026-11-01",
+      "to": "2026-11-08",
       "tz": "Asia/Taipei",
       "nasdaqOffset": -1,
       "calibrated": true,
@@ -4134,36 +4121,10 @@
         "start": "2026-12-08",
         "end": "2026-12-09",
         "sep": true,
-        "daysToDecision": 39,
+        "daysToDecision": 38,
         "decisionTpe": "12-10 03:00"
       },
       "events": [
-        {
-          "date": "2026-10-31",
-          "time": "09:30",
-          "sortKey": "2026-10-31T09:30",
-          "country": "中國",
-          "flag": "🇨🇳",
-          "name": "官方製造業 PMI",
-          "raw": "Manufacturing PMI",
-          "importance": "high",
-          "previous": "50.1",
-          "consensus": "49.9",
-          "actual": "49.3"
-        },
-        {
-          "date": "2026-10-31",
-          "time": "09:30",
-          "sortKey": "2026-10-31T09:30",
-          "country": "中國",
-          "flag": "🇨🇳",
-          "name": "官方非製造業 PMI",
-          "raw": "Non-Manufacturing PMI",
-          "importance": "medium",
-          "previous": "50.2",
-          "consensus": "50.0",
-          "actual": "49.7"
-        },
         {
           "date": "2026-11-01",
           "time": "08:00",
@@ -4174,8 +4135,8 @@
           "raw": "Exports",
           "importance": "medium",
           "previous": "83.7%",
-          "consensus": "",
-          "actual": ""
+          "consensus": "93.2%",
+          "actual": "93.7%"
         },
         {
           "date": "2026-11-02",
@@ -4200,7 +4161,7 @@
           "raw": "ISM Manufacturing PMI",
           "importance": "medium",
           "previous": "54.5",
-          "consensus": "",
+          "consensus": "54.7",
           "actual": ""
         },
         {
@@ -4226,7 +4187,7 @@
           "raw": "JOLTS Job Openings",
           "importance": "medium",
           "previous": "7.079M",
-          "consensus": "",
+          "consensus": "7.110M",
           "actual": ""
         },
         {
@@ -4239,7 +4200,7 @@
           "raw": "CPI",
           "importance": "high",
           "previous": "0.6% / 3.8%",
-          "consensus": "3.9%",
+          "consensus": "4.0%",
           "actual": ""
         },
         {
@@ -4252,7 +4213,7 @@
           "raw": "ISM Non-Manufacturing PMI",
           "importance": "medium",
           "previous": "54.9",
-          "consensus": "",
+          "consensus": "54.8",
           "actual": ""
         },
         {
@@ -4278,7 +4239,7 @@
           "raw": "Initial Jobless Claims",
           "importance": "medium",
           "previous": "194K",
-          "consensus": "",
+          "consensus": "197K",
           "actual": ""
         },
         {
@@ -4317,7 +4278,7 @@
           "raw": "Nonfarm Payrolls",
           "importance": "high",
           "previous": "29K",
-          "consensus": "",
+          "consensus": "63K",
           "actual": ""
         },
         {
@@ -4330,7 +4291,7 @@
           "raw": "Unemployment Rate",
           "importance": "high",
           "previous": "4.2%",
-          "consensus": "",
+          "consensus": "4.2%",
           "actual": ""
         },
         {
@@ -4343,7 +4304,7 @@
           "raw": "Michigan Consumer Sentiment",
           "importance": "medium",
           "previous": "48.0",
-          "consensus": "",
+          "consensus": "47.8",
           "actual": ""
         }
       ],
@@ -4443,7 +4404,7 @@
     },
     "mood": "risk-off",
     "risk": {
-      "score": 35.3,
+      "score": 35.6,
       "zone": "risk-off",
       "asOf": "2026-10-30",
       "zones": {
@@ -4478,8 +4439,8 @@
           "key": "haven",
           "name": "避險需求",
           "weight": 15,
-          "score": 60.9,
-          "detail": "近 20 日標普500 減黃金報酬 +4.5 個百分點;美元指數 +0%"
+          "score": 62.9,
+          "detail": "近 20 日標普500 減黃金報酬 +4.4 個百分點;美元指數 -0.2%"
         },
         {
           "key": "curve",
@@ -4502,17 +4463,17 @@
         },
         {
           "d": "2026-08-11",
-          "s": 66.2,
+          "s": 64.8,
           "z": "risk-on"
         },
         {
           "d": "2026-08-12",
-          "s": 68.6,
+          "s": 68.8,
           "z": "risk-on"
         },
         {
           "d": "2026-08-13",
-          "s": 70.2,
+          "s": 70.8,
           "z": "risk-on"
         },
         {
@@ -4522,22 +4483,22 @@
         },
         {
           "d": "2026-08-17",
-          "s": 70.6,
+          "s": 72,
           "z": "risk-on"
         },
         {
           "d": "2026-08-18",
-          "s": 63,
+          "s": 63.8,
           "z": "risk-on"
         },
         {
           "d": "2026-08-19",
-          "s": 66.1,
+          "s": 65.1,
           "z": "risk-on"
         },
         {
           "d": "2026-08-20",
-          "s": 60.7,
+          "s": 60.6,
           "z": "risk-on"
         },
         {
@@ -4547,22 +4508,22 @@
         },
         {
           "d": "2026-08-24",
-          "s": 61.7,
+          "s": 61.6,
           "z": "risk-on"
         },
         {
           "d": "2026-08-25",
-          "s": 63.8,
+          "s": 62.6,
           "z": "risk-on"
         },
         {
           "d": "2026-08-26",
-          "s": 64.4,
+          "s": 63.7,
           "z": "risk-on"
         },
         {
           "d": "2026-08-27",
-          "s": 67.7,
+          "s": 67.9,
           "z": "risk-on"
         },
         {
@@ -4572,22 +4533,22 @@
         },
         {
           "d": "2026-08-31",
-          "s": 64.2,
+          "s": 65.1,
           "z": "risk-on"
         },
         {
           "d": "2026-09-01",
-          "s": 57.9,
+          "s": 59,
           "z": "risk-on"
         },
         {
           "d": "2026-09-02",
-          "s": 63.4,
+          "s": 63.5,
           "z": "risk-on"
         },
         {
           "d": "2026-09-03",
-          "s": 67.6,
+          "s": 68.3,
           "z": "risk-on"
         },
         {
@@ -4597,17 +4558,17 @@
         },
         {
           "d": "2026-09-08",
-          "s": 67,
+          "s": 67.1,
           "z": "risk-on"
         },
         {
           "d": "2026-09-09",
-          "s": 62.4,
+          "s": 62.9,
           "z": "risk-on"
         },
         {
           "d": "2026-09-10",
-          "s": 56.9,
+          "s": 56.3,
           "z": "risk-on"
         },
         {
@@ -4617,22 +4578,22 @@
         },
         {
           "d": "2026-09-14",
-          "s": 55,
+          "s": 55.2,
           "z": "risk-on"
         },
         {
           "d": "2026-09-15",
-          "s": 52.6,
+          "s": 50.7,
           "z": "neutral"
         },
         {
           "d": "2026-09-16",
-          "s": 51.7,
+          "s": 51.5,
           "z": "neutral"
         },
         {
           "d": "2026-09-17",
-          "s": 62.2,
+          "s": 62.3,
           "z": "risk-on"
         },
         {
@@ -4642,12 +4603,12 @@
         },
         {
           "d": "2026-09-21",
-          "s": 72.5,
+          "s": 72.8,
           "z": "risk-on"
         },
         {
           "d": "2026-09-22",
-          "s": 75,
+          "s": 74.6,
           "z": "risk-on"
         },
         {
@@ -4657,7 +4618,7 @@
         },
         {
           "d": "2026-09-24",
-          "s": 64.3,
+          "s": 64.6,
           "z": "risk-on"
         },
         {
@@ -4667,22 +4628,22 @@
         },
         {
           "d": "2026-09-28",
-          "s": 57.3,
+          "s": 56.2,
           "z": "risk-on"
         },
         {
           "d": "2026-09-29",
-          "s": 56.4,
+          "s": 55.9,
           "z": "risk-on"
         },
         {
           "d": "2026-09-30",
-          "s": 54.7,
+          "s": 53.6,
           "z": "neutral"
         },
         {
           "d": "2026-10-01",
-          "s": 53.1,
+          "s": 54.4,
           "z": "neutral"
         },
         {
@@ -4692,22 +4653,22 @@
         },
         {
           "d": "2026-10-05",
-          "s": 61.4,
+          "s": 60.9,
           "z": "neutral"
         },
         {
           "d": "2026-10-06",
-          "s": 64.5,
+          "s": 65,
           "z": "risk-on"
         },
         {
           "d": "2026-10-07",
-          "s": 63.4,
+          "s": 62.9,
           "z": "risk-on"
         },
         {
           "d": "2026-10-08",
-          "s": 57.4,
+          "s": 56.9,
           "z": "risk-on"
         },
         {
@@ -4717,22 +4678,22 @@
         },
         {
           "d": "2026-10-12",
-          "s": 56,
+          "s": 55.9,
           "z": "risk-on"
         },
         {
           "d": "2026-10-13",
-          "s": 54.6,
-          "z": "neutral"
+          "s": 56.1,
+          "z": "risk-on"
         },
         {
           "d": "2026-10-14",
-          "s": 45.3,
+          "s": 45.6,
           "z": "neutral"
         },
         {
           "d": "2026-10-15",
-          "s": 46.2,
+          "s": 46.5,
           "z": "neutral"
         },
         {
@@ -4742,22 +4703,22 @@
         },
         {
           "d": "2026-10-19",
-          "s": 38.2,
+          "s": 38.9,
           "z": "risk-off"
         },
         {
           "d": "2026-10-20",
-          "s": 41.4,
+          "s": 41.6,
           "z": "risk-off"
         },
         {
           "d": "2026-10-21",
-          "s": 46.4,
+          "s": 47.6,
           "z": "neutral"
         },
         {
           "d": "2026-10-22",
-          "s": 35.2,
+          "s": 35.1,
           "z": "risk-off"
         },
         {
@@ -4767,27 +4728,27 @@
         },
         {
           "d": "2026-10-26",
-          "s": 38.3,
+          "s": 37.8,
           "z": "risk-off"
         },
         {
           "d": "2026-10-27",
-          "s": 44.1,
+          "s": 44.7,
           "z": "risk-off"
         },
         {
           "d": "2026-10-28",
-          "s": 49.3,
+          "s": 50.8,
           "z": "neutral"
         },
         {
           "d": "2026-10-29",
-          "s": 46.9,
+          "s": 47.7,
           "z": "neutral"
         },
         {
           "d": "2026-10-30",
-          "s": 35.3,
+          "s": 35.6,
           "z": "risk-off"
         }
       ]
@@ -4797,36 +4758,19 @@
   "eventOps": [
     {
       "op": "appendTimeline",
-      "id": "evt-ai-debt-credit-selloff-2026",
-      "note": "10/30 美股收盤納指-2.84%創6月以來最大跌幅,晶片股單日蒸發約1兆美元;美銀稱科技債為「璞玉」。"
+      "id": "evt-binance-hack-2026",
+      "note": "10/31 幣安稱90%被盜資產已補足,將自行承擔損失,提現預定11/1重開(時間未公布);Coinbase、Robinhood等加密股續創低點。"
     },
     {
-      "op": "add",
-      "event": {
-        "id": "evt-binance-hack-2026",
-        "title": "幣安遭駭63億美元,創加密史上最大竊案",
-        "summary": "10/29深夜約20分鐘內遭竊,分析師歸咎北韓;幣安暫停提款並稱以公司資金補損,同業加強防禦。",
-        "category": "加密貨幣",
-        "importance": 4,
-        "status": "ongoing",
-        "timeline": [
-          {
-            "note": "10/30 幣安聯席執行長稱攻擊可能始於工程師筆電遭入侵;Tether凍結部分相關資金,比特幣一度跌逾4%。"
-          }
-        ],
-        "relatedStocks": [
-          "COIN.US",
-          "MSTR.US",
-          "HOOD.US"
-        ],
-        "sources": [
-          {
-            "title": "路透:同業呼籲加強防禦",
-            "url": "https://longbridge.com/news/100000001577989"
-          }
-        ]
-      }
+      "op": "appendTimeline",
+      "id": "evt-houthi-saudi-oil-2026",
+      "note": "OPEC+原則上同意12月產量目標不變,布蘭特油價仍在六個月高位附近。"
+    },
+    {
+      "op": "appendTimeline",
+      "id": "evt-ai-debt-credit-selloff-2026",
+      "note": "10/31 分析指標普500回落至約7530點、距高點約4%,下週蘋果、Palantir(11/3盤後)、AMD(11/4盤後)財報與11/6 21:30 非農為觀察重點。"
     }
   ],
-  "marketFetchedAt": "2026-10-31T13:02:42.299Z"
+  "marketFetchedAt": "2026-11-01T13:02:45.504Z"
 }
