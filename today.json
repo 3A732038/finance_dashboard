@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-07",
+  "date": "2026-11-08",
   "stocks": {
     "sectors": [
       {
@@ -839,47 +839,55 @@
     }
   },
   "day": {
-    "moodNote": "風險溫度計 21 分(前一日 20),維持 Risk-Off。主導的是波動恐慌(VIX 25.64、近一年第95百分位)與股市動能(標普距50日線-3.9%、費半-19.7%)。美股11/6晶片股反彈,但亞股仍補跌、信用利差偏高。需留意:台北11/10 20:30公布美國CPI,12月升息預期約80%。部分數據來源不一致,已略過。",
+    "moodNote": "今日休市,行情沿用 11/06 收盤。風險溫度計 21 分(前一日 20),維持 Risk-Off,與前一日相同。休市期間焦點:波克夏 Q3 營業利潤年減 6%、回購加速至 96 億美元;記憶體股財報強勁卻續跌,DRAM ETF 近 30 日流出逾 22 億美元。下週重點:台北 11/10 20:30 公布美國 CPI,11/13 CSCO、AMAT 財報。",
     "news": [
       {
-        "title": "本週回顧:納指百強單日-6.4%,非農強勁推高12月升息機率至約80%",
-        "summary": "民主黨掌控國會、德州數據中心暫停承諾引爆AI拋售;10月非農 +16.5萬、失業率4.1%,10年債殖利率回升至4.86%。",
+        "title": "波克夏Q3營業利潤年減6%至127億美元,回購加速至96億美元",
+        "summary": "路透:因保險承保表現下滑,營業利潤自134.9億降至127.1億美元;淨利年減28%至221.1億美元,含未實現投資損益。",
+        "importance": "high",
+        "category": "美股",
+        "source": "路透",
+        "url": "https://longbridge.com/news/100000001642676"
+      },
+      {
+        "title": "馬斯克:Cybertruck積壓訂單遠超產能,將加開班次趕在明年停產前交車",
+        "summary": "特斯拉預計明年6~7月拆除德州產線以擴產Cybercab;Q3「其他車型」交付僅8,295輛,投資者批評停產計畫。",
+        "importance": "medium",
+        "category": "美股",
+        "source": "路透",
+        "url": "https://longbridge.com/news/100000001642974"
+      },
+      {
+        "title": "DRAM ETF 跌至4月以來低點,近30日資金流出逾22億美元",
+        "summary": "美光、SanDisk、三星財報強勁並宣布大額回購,但記憶體股仍較高點回落逾40%;美光690美元,較高點低45%。",
+        "importance": "high",
+        "category": "半導體",
+        "source": "Benzinga",
+        "url": "https://longbridge.com/news/100000001643115"
+      },
+      {
+        "title": "散戶本週熱議:AMD、特斯拉、英特爾、輝達、美光",
+        "summary": "AMD Q3雙超預期但隨AI股回檔;特斯拉受期中選舉政策風險與馬斯克言論影響;蘇姿丰稱市場對AI支出看法「短視」。",
+        "importance": "medium",
+        "category": "美股",
+        "source": "Benzinga",
+        "url": "https://longbridge.com/news/100000001642905"
+      },
+      {
+        "title": "Benzinga週末回顧:費半單日-12%、輝達蒸發約4,500億美元市值",
+        "summary": "民主黨主張限制新建資料中心引發AI資本支出疑慮,SanDisk單日-22%;非農後12月升息機率由約70%升至約80%。",
         "importance": "high",
         "category": "美股",
         "source": "Benzinga",
-        "url": "https://longbridge.com/news/100000001641549"
+        "url": "https://longbridge.com/news/100000001642883"
       },
       {
-        "title": "晶片股反彈,但分析師警告波動仍將延續",
-        "summary": "德州當選州長稱未排除數據中心、Anthropic年化營收逾800億美元提供支撐;Stifel稱屬『波動反覆震盪』。",
-        "importance": "high",
-        "category": "科技",
-        "source": "MarketWatch",
-        "url": "https://longbridge.com/news/100000001640757"
-      },
-      {
-        "title": "美銀:晶片股相對標普折價22%,AI循環以來首見",
-        "summary": "費半估值13.7倍對標普17.7倍;自6月高點已跌35%,關鍵變數是2027年雲端資本支出可能低於共識約3550億美元。",
-        "importance": "medium",
-        "category": "科技",
+        "title": "波克夏旗下太平洋電力申請加州電價上調57%",
+        "summary": "年增1.03億美元基本收入,典型住戶月電費約增120美元;公司指款項多用於野火防護電網汰換,並面臨保費與通膨壓力。",
+        "importance": "low",
+        "category": "公用事業",
         "source": "Benzinga",
-        "url": "https://longbridge.com/news/100000001640499"
-      },
-      {
-        "title": "報導:輝達砸數十億美元擴充矽品先進封裝產能",
-        "summary": "路透引業界高層稱,資金流向日月光投控子公司矽品;日月光2026資本支出上調至115億美元,封裝仍是AI晶片最大瓶頸。",
-        "importance": "medium",
-        "category": "台股",
-        "source": "Benzinga",
-        "url": "https://longbridge.com/news/100000001641504"
-      },
-      {
-        "title": "標普全球:信貸市場未恐慌,壓力集中在CoreWeave等高收益借款人",
-        "summary": "CDX北美投資級指數59→62bp僅回到選舉前水準;CoreWeave CDS前置點20→23,亞馬遜、谷歌CDS數月來大幅走闊。",
-        "importance": "medium",
-        "category": "債市",
-        "source": "Benzinga",
-        "url": "https://longbridge.com/news/100000001639881"
+        "url": "https://longbridge.com/news/100000001642829"
       }
     ],
     "market": {
@@ -1647,16 +1655,15 @@
         {
           "name": "印度Sensex",
           "symbol": "^BSESN",
-          "value": 81028.02,
-          "change": 2.17,
+          "value": 80999.4,
+          "change": -0.04,
           "unit": "%",
-          "dir": "up",
-          "asOf": "2026-11-06",
+          "dir": "down",
+          "asOf": "2026-11-08",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            73580.54,
             73895.74,
             72771.72,
             72529.07,
@@ -1685,7 +1692,8 @@
             76917.85,
             77301.4,
             79310.01,
-            81028.02
+            81028.02,
+            80999.4
           ],
           "note": "",
           "verified": false
@@ -2318,16 +2326,15 @@
         {
           "name": "比特幣",
           "symbol": "BTC-USD",
-          "value": 75802,
-          "change": 0.07,
+          "value": 75900,
+          "change": 0.4,
           "unit": "%",
           "dir": "up",
-          "asOf": "2026-11-07",
+          "asOf": "2026-11-08",
           "live": true,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            82546,
             82912,
             83679,
             81763,
@@ -2356,14 +2363,15 @@
             80405,
             75942,
             75747,
-            75802
+            75748,
+            75900
           ],
           "note": "",
           "check": {
             "src": "FRED",
             "id": "CBBTCUSD",
             "status": "ok",
-            "through": "2026-11-06",
+            "through": "2026-11-07",
             "latest": false,
             "worstDate": "2026-11-03",
             "yahoo": 77345.0469,
@@ -2375,11 +2383,13 @@
           "check2": {
             "src": "CNBC",
             "id": "BTC.CM=",
-            "cnbc": 75802.3,
-            "cnbcChange": 0.06,
+            "cnbc": 75902.82,
+            "cnbcChange": 0.4,
             "valueDiff": 0,
             "diffUnit": "%",
-            "changeDiff": 0.01,
+            "changeDiff": 0.2,
+            "changeFrom": 0.2,
+            "changeAdopted": true,
             "status": "ok"
           },
           "verified": true
@@ -2387,16 +2397,15 @@
         {
           "name": "以太幣",
           "symbol": "ETH-USD",
-          "value": 2238.79,
-          "change": 0.46,
+          "value": 2237.07,
+          "change": 0.45,
           "unit": "%",
           "dir": "up",
-          "asOf": "2026-11-07",
+          "asOf": "2026-11-08",
           "live": true,
           "source": "Yahoo",
           "bigMove": false,
           "series": [
-            2485.54,
             2504.03,
             2534.7,
             2444.36,
@@ -2425,14 +2434,15 @@
             2422.31,
             2234.48,
             2235.05,
-            2238.79
+            2236.32,
+            2237.07
           ],
           "note": "",
           "check": {
             "src": "FRED",
             "id": "CBETHUSD",
             "status": "ok",
-            "through": "2026-11-06",
+            "through": "2026-11-07",
             "latest": false,
             "worstDate": "2026-11-03",
             "yahoo": 2272.7258,
@@ -2444,12 +2454,12 @@
           "check2": {
             "src": "CNBC",
             "id": "ETH.CM=",
-            "cnbc": 2238.76,
-            "cnbcChange": 0.46,
+            "cnbc": 2237.07,
+            "cnbcChange": 0.45,
             "valueDiff": 0,
             "diffUnit": "%",
-            "changeDiff": 0.29,
-            "changeFrom": 0.17,
+            "changeDiff": 0.42,
+            "changeFrom": 0.03,
             "changeAdopted": true,
             "status": "ok"
           },
@@ -2535,7 +2545,7 @@
           "change": 0.59,
           "unit": "%",
           "dir": "up",
-          "asOf": "2026-11-07",
+          "asOf": "2026-11-08",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
@@ -2589,7 +2599,7 @@
             "src": "CNBC",
             "id": "JPY=",
             "status": "skip",
-            "reason": "報價日期不同(Yahoo 2026-11-07 / CNBC 2026-11-06)"
+            "reason": "報價日期不同(Yahoo 2026-11-08 / CNBC 2026-11-06)"
           },
           "verified": false
         },
@@ -2668,7 +2678,7 @@
           "change": -0.25,
           "unit": "%",
           "dir": "down",
-          "asOf": "2026-11-07",
+          "asOf": "2026-11-08",
           "live": false,
           "source": "Yahoo",
           "bigMove": false,
@@ -2722,7 +2732,7 @@
             "src": "CNBC",
             "id": "CNY=",
             "status": "skip",
-            "reason": "報價日期不同(Yahoo 2026-11-07 / CNBC 2026-11-06)"
+            "reason": "報價日期不同(Yahoo 2026-11-08 / CNBC 2026-11-06)"
           },
           "verified": false
         }
@@ -2738,7 +2748,7 @@
         "change": 0,
         "unit": "%",
         "dir": "flat",
-        "period": "2026-11-07",
+        "period": "2026-11-08",
         "freq": "daily",
         "series": [
           3.75,
@@ -2748,7 +2758,7 @@
           3.75,
           3.75,
           3.75,
-          3.75,
+          4,
           4,
           4,
           4,
@@ -4103,8 +4113,8 @@
       }
     ],
     "calendar": {
-      "from": "2026-11-07",
-      "to": "2026-11-14",
+      "from": "2026-11-08",
+      "to": "2026-11-15",
       "tz": "Asia/Taipei",
       "nasdaqOffset": -1,
       "calibrated": true,
@@ -4112,7 +4122,7 @@
         "start": "2026-12-08",
         "end": "2026-12-09",
         "sep": true,
-        "daysToDecision": 32,
+        "daysToDecision": 31,
         "decisionTpe": "12-10 03:00"
       },
       "events": [
@@ -4156,22 +4166,35 @@
           "actual": ""
         },
         {
-          "date": "2026-11-11",
-          "time": "01:38",
-          "sortKey": "2026-11-11T01:38",
+          "date": "2026-11-10",
+          "time": "22:16",
+          "sortKey": "2026-11-10T22:16",
           "country": "中國",
           "flag": "🇨🇳",
           "name": "出口",
           "raw": "Exports",
           "importance": "medium",
-          "previous": "36.3% / 29.60M",
+          "previous": "36.3%",
           "consensus": "",
           "actual": ""
         },
         {
-          "date": "2026-11-11",
-          "time": "01:38",
-          "sortKey": "2026-11-11T01:38",
+          "date": "2026-11-10",
+          "time": "22:17",
+          "sortKey": "2026-11-10T22:17",
+          "country": "中國",
+          "flag": "🇨🇳",
+          "name": "出口",
+          "raw": "Exports",
+          "importance": "medium",
+          "previous": "29.60M",
+          "consensus": "",
+          "actual": ""
+        },
+        {
+          "date": "2026-11-10",
+          "time": "22:17",
+          "sortKey": "2026-11-10T22:17",
           "country": "中國",
           "flag": "🇨🇳",
           "name": "貿易收支",
@@ -4204,7 +4227,7 @@
           "raw": "GDP",
           "importance": "medium",
           "previous": "0.5% / 0.1% / 1.4% / 2.1%",
-          "consensus": "0.7%",
+          "consensus": "0.7% / 0.0%",
           "actual": ""
         },
         {
@@ -4217,7 +4240,7 @@
           "raw": "Initial Jobless Claims",
           "importance": "medium",
           "previous": "189K",
-          "consensus": "",
+          "consensus": "194K",
           "actual": ""
         },
         {
@@ -4234,9 +4257,35 @@
           "actual": ""
         },
         {
-          "date": "2026-11-14",
+          "date": "2026-11-13",
+          "time": "17:00",
+          "sortKey": "2026-11-13T17:00",
+          "country": "歐元區",
+          "flag": "🇪🇺",
+          "name": "GDP",
+          "raw": "GDP",
+          "importance": "medium",
+          "previous": "0.4% / 1.3%",
+          "consensus": "0.4% / 1.3%",
+          "actual": ""
+        },
+        {
+          "date": "2026-11-13",
+          "time": "20:30",
+          "sortKey": "2026-11-13T20:30",
+          "country": "美國",
+          "flag": "🇺🇸",
+          "name": "PPI 生產者物價",
+          "raw": "PPI",
+          "importance": "medium",
+          "previous": "1.3% / 6.3%",
+          "consensus": "0.4%",
+          "actual": ""
+        },
+        {
+          "date": "2026-11-15",
           "time": "07:00",
-          "sortKey": "2026-11-14T07:00",
+          "sortKey": "2026-11-15T07:00",
           "country": "南韓",
           "flag": "🇰🇷",
           "name": "出口",
@@ -4248,16 +4297,6 @@
         }
       ],
       "earnings": [
-        {
-          "date": "2026-11-07",
-          "usDate": "2026-11-07",
-          "symbol": "BRK.A",
-          "name": "Berkshire Hathaway",
-          "when": "盤前",
-          "capB": 1231,
-          "epsForecast": null,
-          "lastYearEPS": "N/A"
-        },
         {
           "date": "2026-11-13",
           "usDate": "2026-11-12",
@@ -4646,24 +4685,14 @@
   "eventOps": [
     {
       "op": "appendTimeline",
-      "id": "evt-fed-hawkish-hike-sep2026",
-      "note": "11/6非農+16.5萬、失業率4.1%,市場12月升息機率升至約80%;台北11/10 20:30公布CPI(日曆)"
-    },
-    {
-      "op": "appendTimeline",
-      "id": "evt-midterm-ai-datacenter-2026",
-      "note": "德州當選州長稱『並未排除數據中心』,晶片股11/6反彈,政策不確定性仍在"
-    },
-    {
-      "op": "appendTimeline",
       "id": "evt-ai-debt-credit-selloff-2026",
-      "note": "標普全球稱信貸未恐慌,壓力集中CoreWeave等高收益借款人;高收益債利差3.48%"
+      "note": "休市期間:記憶體股財報強勁仍續跌,DRAM ETF 近30日流出逾22億美元,AI 資金面降溫(Benzinga)"
     },
     {
       "op": "appendTimeline",
-      "id": "evt-anthropic-ipo-2026",
-      "note": "WSJ:Anthropic 10月底年化營收逾800億美元,但部分投資者認為1.5兆美元IPO目標估值需下調(MarketWatch轉述)"
+      "id": "evt-fed-hawkish-hike-sep2026",
+      "note": "下週關鍵:台北11/10 20:30公布美國CPI(預期0.3%、核心0.2%),交易員押12月升息機率約80%"
     }
   ],
-  "marketFetchedAt": "2026-11-07T13:02:23.260Z"
+  "marketFetchedAt": "2026-11-08T13:02:19.611Z"
 }

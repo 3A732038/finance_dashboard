@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-11-07T13:02:23.260Z",
+  "fetchedAt": "2026-11-08T13:02:19.611Z",
   "fresh": {
-    "comparedWith": "2026-11-06",
+    "comparedWith": "2026-11-07",
     "us": {
       "name": "標普500",
       "asOf": "2026-11-06",
-      "prev": "2026-11-05",
-      "isNew": true
+      "prev": "2026-11-06",
+      "isNew": false
     },
     "tw": {
       "name": "台灣加權指數",
@@ -15,11 +15,7 @@
       "isNew": false
     },
     "newIndices": [
-      "道瓊工業指數",
-      "標普500",
-      "那斯達克綜合指數",
-      "羅素2000",
-      "費城半導體指數"
+      "印度Sensex"
     ],
     "any": true
   },
@@ -788,16 +784,15 @@
       {
         "name": "印度Sensex",
         "symbol": "^BSESN",
-        "value": 81028.02,
-        "change": 2.17,
+        "value": 80999.4,
+        "change": -0.04,
         "unit": "%",
-        "dir": "up",
-        "asOf": "2026-11-06",
+        "dir": "down",
+        "asOf": "2026-11-08",
         "live": false,
         "source": "Yahoo",
         "bigMove": false,
         "series": [
-          73580.54,
           73895.74,
           72771.72,
           72529.07,
@@ -826,7 +821,8 @@
           76917.85,
           77301.4,
           79310.01,
-          81028.02
+          81028.02,
+          80999.4
         ],
         "note": "",
         "verified": false
@@ -1459,16 +1455,15 @@
       {
         "name": "比特幣",
         "symbol": "BTC-USD",
-        "value": 75802,
-        "change": 0.07,
+        "value": 75900,
+        "change": 0.4,
         "unit": "%",
         "dir": "up",
-        "asOf": "2026-11-07",
+        "asOf": "2026-11-08",
         "live": true,
         "source": "Yahoo",
         "bigMove": false,
         "series": [
-          82546,
           82912,
           83679,
           81763,
@@ -1497,14 +1492,15 @@
           80405,
           75942,
           75747,
-          75802
+          75748,
+          75900
         ],
         "note": "",
         "check": {
           "src": "FRED",
           "id": "CBBTCUSD",
           "status": "ok",
-          "through": "2026-11-06",
+          "through": "2026-11-07",
           "latest": false,
           "worstDate": "2026-11-03",
           "yahoo": 77345.0469,
@@ -1516,11 +1512,13 @@
         "check2": {
           "src": "CNBC",
           "id": "BTC.CM=",
-          "cnbc": 75802.3,
-          "cnbcChange": 0.06,
+          "cnbc": 75902.82,
+          "cnbcChange": 0.4,
           "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.01,
+          "changeDiff": 0.2,
+          "changeFrom": 0.2,
+          "changeAdopted": true,
           "status": "ok"
         },
         "verified": true
@@ -1528,16 +1526,15 @@
       {
         "name": "以太幣",
         "symbol": "ETH-USD",
-        "value": 2238.79,
-        "change": 0.46,
+        "value": 2237.07,
+        "change": 0.45,
         "unit": "%",
         "dir": "up",
-        "asOf": "2026-11-07",
+        "asOf": "2026-11-08",
         "live": true,
         "source": "Yahoo",
         "bigMove": false,
         "series": [
-          2485.54,
           2504.03,
           2534.7,
           2444.36,
@@ -1566,14 +1563,15 @@
           2422.31,
           2234.48,
           2235.05,
-          2238.79
+          2236.32,
+          2237.07
         ],
         "note": "",
         "check": {
           "src": "FRED",
           "id": "CBETHUSD",
           "status": "ok",
-          "through": "2026-11-06",
+          "through": "2026-11-07",
           "latest": false,
           "worstDate": "2026-11-03",
           "yahoo": 2272.7258,
@@ -1585,12 +1583,12 @@
         "check2": {
           "src": "CNBC",
           "id": "ETH.CM=",
-          "cnbc": 2238.76,
-          "cnbcChange": 0.46,
+          "cnbc": 2237.07,
+          "cnbcChange": 0.45,
           "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.29,
-          "changeFrom": 0.17,
+          "changeDiff": 0.42,
+          "changeFrom": 0.03,
           "changeAdopted": true,
           "status": "ok"
         },
@@ -1676,7 +1674,7 @@
         "change": 0.59,
         "unit": "%",
         "dir": "up",
-        "asOf": "2026-11-07",
+        "asOf": "2026-11-08",
         "live": false,
         "source": "Yahoo",
         "bigMove": false,
@@ -1730,7 +1728,7 @@
           "src": "CNBC",
           "id": "JPY=",
           "status": "skip",
-          "reason": "報價日期不同(Yahoo 2026-11-07 / CNBC 2026-11-06)"
+          "reason": "報價日期不同(Yahoo 2026-11-08 / CNBC 2026-11-06)"
         },
         "verified": false
       },
@@ -1809,7 +1807,7 @@
         "change": -0.25,
         "unit": "%",
         "dir": "down",
-        "asOf": "2026-11-07",
+        "asOf": "2026-11-08",
         "live": false,
         "source": "Yahoo",
         "bigMove": false,
@@ -1863,7 +1861,7 @@
           "src": "CNBC",
           "id": "CNY=",
           "status": "skip",
-          "reason": "報價日期不同(Yahoo 2026-11-07 / CNBC 2026-11-06)"
+          "reason": "報價日期不同(Yahoo 2026-11-08 / CNBC 2026-11-06)"
         },
         "verified": false
       }
@@ -1879,7 +1877,7 @@
       "change": 0,
       "unit": "%",
       "dir": "flat",
-      "period": "2026-11-07",
+      "period": "2026-11-08",
       "freq": "daily",
       "series": [
         3.75,
@@ -1889,7 +1887,7 @@
         3.75,
         3.75,
         3.75,
-        3.75,
+        4,
         4,
         4,
         4,
@@ -3244,8 +3242,8 @@
     }
   ],
   "calendar": {
-    "from": "2026-11-07",
-    "to": "2026-11-14",
+    "from": "2026-11-08",
+    "to": "2026-11-15",
     "tz": "Asia/Taipei",
     "nasdaqOffset": -1,
     "calibrated": true,
@@ -3253,7 +3251,7 @@
       "start": "2026-12-08",
       "end": "2026-12-09",
       "sep": true,
-      "daysToDecision": 32,
+      "daysToDecision": 31,
       "decisionTpe": "12-10 03:00"
     },
     "events": [
@@ -3297,22 +3295,35 @@
         "actual": ""
       },
       {
-        "date": "2026-11-11",
-        "time": "01:38",
-        "sortKey": "2026-11-11T01:38",
+        "date": "2026-11-10",
+        "time": "22:16",
+        "sortKey": "2026-11-10T22:16",
         "country": "中國",
         "flag": "🇨🇳",
         "name": "出口",
         "raw": "Exports",
         "importance": "medium",
-        "previous": "36.3% / 29.60M",
+        "previous": "36.3%",
         "consensus": "",
         "actual": ""
       },
       {
-        "date": "2026-11-11",
-        "time": "01:38",
-        "sortKey": "2026-11-11T01:38",
+        "date": "2026-11-10",
+        "time": "22:17",
+        "sortKey": "2026-11-10T22:17",
+        "country": "中國",
+        "flag": "🇨🇳",
+        "name": "出口",
+        "raw": "Exports",
+        "importance": "medium",
+        "previous": "29.60M",
+        "consensus": "",
+        "actual": ""
+      },
+      {
+        "date": "2026-11-10",
+        "time": "22:17",
+        "sortKey": "2026-11-10T22:17",
         "country": "中國",
         "flag": "🇨🇳",
         "name": "貿易收支",
@@ -3345,7 +3356,7 @@
         "raw": "GDP",
         "importance": "medium",
         "previous": "0.5% / 0.1% / 1.4% / 2.1%",
-        "consensus": "0.7%",
+        "consensus": "0.7% / 0.0%",
         "actual": ""
       },
       {
@@ -3358,7 +3369,7 @@
         "raw": "Initial Jobless Claims",
         "importance": "medium",
         "previous": "189K",
-        "consensus": "",
+        "consensus": "194K",
         "actual": ""
       },
       {
@@ -3375,9 +3386,35 @@
         "actual": ""
       },
       {
-        "date": "2026-11-14",
+        "date": "2026-11-13",
+        "time": "17:00",
+        "sortKey": "2026-11-13T17:00",
+        "country": "歐元區",
+        "flag": "🇪🇺",
+        "name": "GDP",
+        "raw": "GDP",
+        "importance": "medium",
+        "previous": "0.4% / 1.3%",
+        "consensus": "0.4% / 1.3%",
+        "actual": ""
+      },
+      {
+        "date": "2026-11-13",
+        "time": "20:30",
+        "sortKey": "2026-11-13T20:30",
+        "country": "美國",
+        "flag": "🇺🇸",
+        "name": "PPI 生產者物價",
+        "raw": "PPI",
+        "importance": "medium",
+        "previous": "1.3% / 6.3%",
+        "consensus": "0.4%",
+        "actual": ""
+      },
+      {
+        "date": "2026-11-15",
         "time": "07:00",
-        "sortKey": "2026-11-14T07:00",
+        "sortKey": "2026-11-15T07:00",
         "country": "南韓",
         "flag": "🇰🇷",
         "name": "出口",
@@ -3389,16 +3426,6 @@
       }
     ],
     "earnings": [
-      {
-        "date": "2026-11-07",
-        "usDate": "2026-11-07",
-        "symbol": "BRK.A",
-        "name": "Berkshire Hathaway",
-        "when": "盤前",
-        "capB": 1231,
-        "epsForecast": null,
-        "lastYearEPS": "N/A"
-      },
       {
         "date": "2026-11-13",
         "usDate": "2026-11-12",
