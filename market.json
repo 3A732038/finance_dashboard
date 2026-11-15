@@ -1,12 +1,12 @@
 {
-  "fetchedAt": "2026-11-14T13:02:23.598Z",
+  "fetchedAt": "2026-11-15T13:01:49.080Z",
   "fresh": {
-    "comparedWith": "2026-11-13",
+    "comparedWith": "2026-11-14",
     "us": {
       "name": "標普500",
       "asOf": "2026-11-13",
-      "prev": "2026-11-12",
-      "isNew": true
+      "prev": "2026-11-13",
+      "isNew": false
     },
     "tw": {
       "name": "台灣加權指數",
@@ -14,14 +14,8 @@
       "prev": "2026-11-13",
       "isNew": false
     },
-    "newIndices": [
-      "道瓊工業指數",
-      "標普500",
-      "那斯達克綜合指數",
-      "羅素2000",
-      "費城半導體指數"
-    ],
-    "any": true
+    "newIndices": [],
+    "any": false
   },
   "market": {
     "indices": [
@@ -358,7 +352,6 @@
         "source": "證交所",
         "bigMove": false,
         "series": [
-          47940.13,
           48353.49,
           48475.74,
           49712.04,
@@ -415,7 +408,6 @@
         "source": "櫃買中心",
         "bigMove": false,
         "series": [
-          417.07,
           418.82,
           426.93,
           432.48,
@@ -1459,16 +1451,15 @@
       {
         "name": "比特幣",
         "symbol": "BTC-USD",
-        "value": 66873,
-        "change": -2.89,
+        "value": 65549,
+        "change": 0.43,
         "unit": "%",
-        "dir": "down",
-        "asOf": "2026-11-14",
+        "dir": "up",
+        "asOf": "2026-11-15",
         "live": true,
         "source": "Yahoo",
         "bigMove": false,
         "series": [
-          81501,
           81382,
           82018,
           81854,
@@ -1497,31 +1488,32 @@
           73964,
           71343,
           68249,
-          66873
+          64128,
+          65549
         ],
         "note": "",
         "check": {
           "src": "FRED",
           "id": "CBBTCUSD",
           "status": "ok",
-          "through": "2026-11-13",
+          "through": "2026-11-14",
           "latest": false,
-          "worstDate": "2026-11-12",
-          "yahoo": 71342.9688,
-          "fred": 70822.24,
-          "diff": 0.74,
+          "worstDate": "2026-11-14",
+          "yahoo": 64128.0508,
+          "fred": 62890.64,
+          "diff": 1.97,
           "diffUnit": "%",
           "tol": 3
         },
         "check2": {
           "src": "CNBC",
           "id": "BTC.CM=",
-          "cnbc": 66890.89,
-          "cnbcChange": -2.89,
-          "valueDiff": 0.03,
+          "cnbc": 65550.78,
+          "cnbcChange": 0.43,
+          "valueDiff": 0,
           "diffUnit": "%",
-          "changeDiff": 0.87,
-          "changeFrom": -2.02,
+          "changeDiff": 1.79,
+          "changeFrom": 2.22,
           "changeAdopted": true,
           "status": "ok"
         },
@@ -1530,16 +1522,15 @@
       {
         "name": "以太幣",
         "symbol": "ETH-USD",
-        "value": 1895.39,
-        "change": -2.61,
+        "value": 1836.57,
+        "change": 1.34,
         "unit": "%",
-        "dir": "down",
-        "asOf": "2026-11-14",
+        "dir": "up",
+        "asOf": "2026-11-15",
         "live": true,
         "source": "Yahoo",
         "bigMove": false,
         "series": [
-          2419.77,
           2399.8,
           2408.74,
           2404.82,
@@ -1568,31 +1559,32 @@
           2055.88,
           2016.83,
           1927.59,
-          1895.39
+          1769.12,
+          1836.57
         ],
         "note": "",
         "check": {
           "src": "FRED",
           "id": "CBETHUSD",
           "status": "ok",
-          "through": "2026-11-13",
+          "through": "2026-11-14",
           "latest": false,
-          "worstDate": "2026-11-12",
-          "yahoo": 2016.8297,
-          "fred": 2006.46,
-          "diff": 0.52,
+          "worstDate": "2026-11-14",
+          "yahoo": 1769.1205,
+          "fred": 1725.73,
+          "diff": 2.51,
           "diffUnit": "%",
           "tol": 3
         },
         "check2": {
           "src": "CNBC",
           "id": "ETH.CM=",
-          "cnbc": 1896.56,
-          "cnbcChange": -2.61,
-          "valueDiff": 0.06,
+          "cnbc": 1837.33,
+          "cnbcChange": 1.34,
+          "valueDiff": 0.04,
           "diffUnit": "%",
-          "changeDiff": 0.94,
-          "changeFrom": -1.67,
+          "changeDiff": 2.47,
+          "changeFrom": 3.81,
           "changeAdopted": true,
           "status": "ok"
         },
@@ -1815,7 +1807,7 @@
         "change": 0.01,
         "unit": "%",
         "dir": "up",
-        "asOf": "2026-11-14",
+        "asOf": "2026-11-15",
         "live": false,
         "source": "Yahoo",
         "bigMove": false,
@@ -1869,7 +1861,7 @@
           "src": "CNBC",
           "id": "CNY=",
           "status": "skip",
-          "reason": "報價日期不同(Yahoo 2026-11-14 / CNBC 2026-11-13)"
+          "reason": "報價日期不同(Yahoo 2026-11-15 / CNBC 2026-11-13)"
         },
         "verified": false
       }
@@ -1885,10 +1877,10 @@
       "change": 0,
       "unit": "%",
       "dir": "flat",
-      "period": "2026-11-14",
+      "period": "2026-11-15",
       "freq": "daily",
       "series": [
-        3.75,
+        4,
         4,
         4,
         4,
@@ -3250,8 +3242,8 @@
     }
   ],
   "calendar": {
-    "from": "2026-11-14",
-    "to": "2026-11-21",
+    "from": "2026-11-15",
+    "to": "2026-11-22",
     "tz": "Asia/Taipei",
     "nasdaqOffset": -1,
     "calibrated": true,
@@ -3259,7 +3251,7 @@
       "start": "2026-12-08",
       "end": "2026-12-09",
       "sep": true,
-      "daysToDecision": 25,
+      "daysToDecision": 24,
       "decisionTpe": "12-10 03:00"
     },
     "events": [
@@ -3274,7 +3266,7 @@
         "importance": "medium",
         "previous": "93.7%",
         "consensus": "93.7%",
-        "actual": ""
+        "actual": "93.9%"
       },
       {
         "date": "2026-11-16",
@@ -3299,7 +3291,7 @@
         "raw": "Retail Sales",
         "importance": "medium",
         "previous": "6.29% / 0.8%",
-        "consensus": "0.0%",
+        "consensus": "0.2%",
         "actual": ""
       },
       {
@@ -3317,41 +3309,41 @@
       },
       {
         "date": "2026-11-18",
+        "time": "14:00",
+        "sortKey": "2026-11-18T14:00",
+        "country": "英國",
+        "flag": "🇬🇧",
+        "name": "CPI 消費者物價",
+        "raw": "CPI",
+        "importance": "medium",
+        "previous": "0.4% / 3.5%",
+        "consensus": "3.6%",
+        "actual": ""
+      },
+      {
+        "date": "2026-11-18",
+        "time": "17:00",
+        "sortKey": "2026-11-18T17:00",
+        "country": "歐元區",
+        "flag": "🇪🇺",
+        "name": "CPI 消費者物價",
+        "raw": "CPI",
+        "importance": "high",
+        "previous": "4.0% / 0.6%",
+        "consensus": "4.0% / 0.4%",
+        "actual": ""
+      },
+      {
+        "date": "2026-11-18",
         "time": "20:30",
         "sortKey": "2026-11-18T20:30",
         "country": "美國",
         "flag": "🇺🇸",
-        "name": "初領失業救濟金",
-        "raw": "Initial Jobless Claims",
+        "name": "新屋開工",
+        "raw": "Housing Starts",
         "importance": "medium",
-        "previous": "200K",
-        "consensus": "",
-        "actual": ""
-      },
-      {
-        "date": "2026-11-19",
-        "time": "04:30",
-        "sortKey": "2026-11-19T04:30",
-        "country": "美國",
-        "flag": "🇺🇸",
-        "name": "聯準會資產負債表",
-        "raw": "Fed's Balance Sheet",
-        "importance": "medium",
-        "previous": "6,759B",
-        "consensus": "",
-        "actual": ""
-      },
-      {
-        "date": "2026-11-19",
-        "time": "06:30",
-        "sortKey": "2026-11-19T06:30",
-        "country": "日本",
-        "flag": "🇯🇵",
-        "name": "全國核心 CPI",
-        "raw": "National Core CPI",
-        "importance": "medium",
-        "previous": "2.1%",
-        "consensus": "",
+        "previous": "-5.2% / 1.221M",
+        "consensus": "1.250M",
         "actual": ""
       },
       {
@@ -3364,7 +3356,7 @@
         "raw": "Initial Jobless Claims",
         "importance": "medium",
         "previous": "200K",
-        "consensus": "",
+        "consensus": "199K",
         "actual": ""
       },
       {
@@ -3390,7 +3382,7 @@
         "raw": "National Core CPI",
         "importance": "medium",
         "previous": "2.1%",
-        "consensus": "",
+        "consensus": "2.3%",
         "actual": ""
       },
       {
